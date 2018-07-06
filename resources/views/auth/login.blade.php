@@ -11,7 +11,7 @@
             {!! Form::open(['route' => 'login.post']) !!}
                 <div class="form-group">
                     {!! Form::label('nickname', 'Nickname') !!}
-                    {!! Form::nickname('nickname', old('nickname'), ['class' => 'form-control']) !!}
+                    {!! Form::text('nickname', old('nickname'), ['class' => 'form-control']) !!}
                 </div>
 
                 <div class="form-group">
