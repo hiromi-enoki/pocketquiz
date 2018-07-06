@@ -36,4 +36,12 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+    
+    
+    // nicknameでログインできるようにする
+    public function username()
+    {
+        return 'nickname';
+    }    
+    
 }
