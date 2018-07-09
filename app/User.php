@@ -26,4 +26,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    
+    
+    //一対多
+    public function quizzes()
+    {
+        return $this->hasMany(Quiz::class);
+    }
 }

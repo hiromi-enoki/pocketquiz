@@ -10,4 +10,12 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    
+    public function counts($user) {
+        $count_quizzes = $user->quizzes()->count();
+
+        return [
+            'count_quizzes' => $count_quizzes,
+        ];
+    }
 }
