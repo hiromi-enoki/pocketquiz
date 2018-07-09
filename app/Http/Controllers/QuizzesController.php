@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Quiz;
+
 use App\Http\Controllers\Controller;
+
 
 class QuizzesController extends Controller
 {
@@ -30,6 +33,20 @@ class QuizzesController extends Controller
             return view('welcome');
         }
     }
+    
+    public function show($id)
+    {
+    // quizzes.showに飛ばす
+        $quiz = Quiz::find($id);
+        
+        return view('quizzes.show',[
+            'quiz' => $quiz,
+            ]);
+        
+    }
+        
+    
+    
     
     public function store(Request $request)
     {
