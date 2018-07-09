@@ -12,7 +12,7 @@
                   {!! Form::open(['route' => 'quizzes.store']) !!}
                       <div class="form-group">
                           {!! Form::textarea('title', old('title'), ['class' => 'form-control', 'rows' => '2']) !!}
-                          {!! Form::submit('Post', ['class' => 'btn btn-primary btn-block']) !!}
+                          {!! Form::submit('ADD Quiz Title', ['class' => 'btn btn-primary btn-block']) !!}
                       </div>
                   {!! Form::close() !!}
             @endif
