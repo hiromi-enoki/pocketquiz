@@ -38,10 +38,13 @@ class QuizzesController extends Controller
     {
     // quizzes.showに飛ばす
         $quiz = Quiz::find($id);
-        
+        $question = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('quizzes.*','quizzes.title', 'questions.question', 'questions.answer')->orderBy('quizzes.id', 'DESC')->get();
+        var_dump($quiz, $question); //変数内要素確認用0709
         return view('quizzes.show',[
             'quiz' => $quiz,
+            'question' => $question,
             ]);
+            
         
     }
         
@@ -52,11 +55,18 @@ class QuizzesController extends Controller
     {
         $this->validate($request, [
             'title' => 'required|max:191',
+            // 'question' => 'required|max:191',
+            // 'answer' => 'required|max:191',
         ]);
 
-        $request->user()->quizzes()->create([
-            'title' => $request->title,
-        ]);
+        // $request->user()->quizzes()->create([
+        //     'title' => $request->title,
+        // ]);
+        
+        // $request->question()->quizzes()->create([
+        //     'question' => $request->question,
+        //     'answer'=> $request->answer,
+        //     ]);
 
         return redirect()->back();
     }
