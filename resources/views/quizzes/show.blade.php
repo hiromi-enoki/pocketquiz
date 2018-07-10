@@ -14,7 +14,7 @@
                        <!--trying to access questions.blade-->
                      
                        @foreach ($questions as $question)
-                            <a href="{{ route('quizzes.questions', $question->q_id) }}">{{ $category->question }}</a>
+                            <a href="{{ route('quizzes.questions', $question->q_id) }}">{{ $question->question }}</a>
                         @endforeach
                       
                     </div>
