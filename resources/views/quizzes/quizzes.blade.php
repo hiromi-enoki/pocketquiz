@@ -8,7 +8,7 @@
             <!--</div>-->
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <div class="btn btn-default"><a href="#">
+                    <div class="btn btn-default"><a href="{{ route('quizzes.show', $quiz->id) }}">
                         <h3 class="panel-title">{!! nl2br(e($quiz->title)) !!}</h3>
                     </a></div>
                 </div>

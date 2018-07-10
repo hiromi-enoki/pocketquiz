@@ -12,7 +12,7 @@
         <div class="wrapper" class="clearfix">
 
        
-              <h1>LAT (TAX)</h1>
+              <h1>{!! nl2br(e($quiz->title)) !!}のquestions一覧</h1>
         <div class="cols">
             <div class="col" ontouchstart="this.classList.toggle('hover');">
                 <div class="container">
