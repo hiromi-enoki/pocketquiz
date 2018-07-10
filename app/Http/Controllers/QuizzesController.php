@@ -37,15 +37,40 @@ class QuizzesController extends Controller
     public function show($id)
     {
     // quizzes.showに飛ばす
+        $user = \Auth::user();
         $quiz = Quiz::find($id);
-        $question = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('quizzes.*','quizzes.title', 'questions.question', 'questions.answer')->orderBy('quizzes.id', 'DESC')->get();
-        var_dump($quiz, $question); //変数内要素確認用0709
+        $question = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('quizzes.*', 'questions.question', 'questions.answer')->get();
+        $quizzes = $user->quizzes()->orderBy('created_at', 'desc')->paginate(10);
+        $questions = $quiz->questions()->orderBy('created_at', 'desc')->paginate(10);
+        // var_dump($quiz, $question); //変数内要素確認用0709
         return view('quizzes.show',[
             'quiz' => $quiz,
             'question' => $question,
-            ]);
+            'questions' => $questions,
+            'quizzes' => $quizzes,
+            'user' => $user
             
+            ]);
+    }
+    
+    public function action($id)
+    {
+        if (\Auth::check()) {
+            $user = \Auth::user();
+      
+            $quiz = Quiz::find($id);
+            $quizzes = $quiz->quizzes;
+ 
+
         
+        return view ('quizzes.questions', [
+            'user' => $user,
+            'quiz' => $quiz,
+            'quizzes' => $quizzes,
+            ]);
+    }else {
+            return view('welcome');
+    }
     }
         
     
