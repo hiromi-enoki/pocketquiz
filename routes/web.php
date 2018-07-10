@@ -28,3 +28,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
     Route::resource('quizzes', 'QuizzesController', ['only' => ['store', 'show','destroy']]);
 });
+
+//trying to see questions
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('questions', 'QuizzesController@action')->name('quizzes.questions');
+});
