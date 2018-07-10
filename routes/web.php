@@ -31,5 +31,5 @@ Route::group(['middleware' => 'auth'], function () {
 
 //trying to see questions
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('questions', 'QuizzesController@action')->name('quizzes.questions');
+    Route::get('questions/{id}', 'QuizzesController@action')->name('quizzes.questions');
 });

@@ -5,20 +5,20 @@
         <div class="wrapper" class="clearfix">
 
        
-              <h1>{!! nl2br(e($quiz->title)) !!}のquestions一覧</h1>
+              <h1>くるくるさせるページ</h1>
         <div class="cols">
             <div class="col" ontouchstart="this.classList.toggle('hover');">
                 <div class="container">
                     <div class="front" style="background-image:cheburashka.jpg">
                         <div class="inner">
-                   @foreach ($questions as $question)
-                            <a href="{{ route('quizzes.questions', $question->q_id) }}">{{ $question->question }}</a>
-                   @endforeach
+
+                       @foreach ($questions as $question)
+                            <p>{{ $question->question }}</p>
+                        @endforeach
                    
-                      @foreach ($answers as $answer)
-                            <a href="{{ route('quizzes.questions', $answer->q_id) }}">{{ $answer->answer }}</a>
-                   @endforeach
+                
                    
+
                  </div>
                     </div>
                     <div class="back" style="background-image: /pocketquiz/Screenshot_20180520-201405.png">

@@ -44,8 +44,7 @@ class QuizzesController extends Controller
         $question = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('quizzes.*', 'questions.question', 'questions.answer')->get();
         $quizzes = $user->quizzes()->orderBy('created_at', 'desc')->paginate(10);
         $questions = $quiz->questions()->orderBy('created_at', 'desc')->paginate(10);
-        $answer = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('quizzes.*', 'questions.question', 'questions.answer')->get();
-        $answers = $answer->answers()->orderBy('created_at', 'desc')->paginate(10);
+        
         
         
         // var_dump($quiz, $question); //変数内要素確認用0709
@@ -55,8 +54,7 @@ class QuizzesController extends Controller
             'questions' => $questions,
             'quizzes' => $quizzes,
             'user' => $user,
-            'answer' => $answer,
-            'answers' => $answers
+          
             
             ]);
     }
@@ -64,17 +62,20 @@ class QuizzesController extends Controller
     public function action($id)
     {
         if (\Auth::check()) {
-            $user = \Auth::user();
-      
-            $quiz = Quiz::find($id);
-            $quizzes = $quiz->quizzes;
+           $user = \Auth::user();
+        $quiz = Quiz::find($id);
+        $question = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('quizzes.*', 'questions.question', 'questions.answer')->get();
+        $quizzes = $user->quizzes()->orderBy('created_at', 'desc')->paginate(10);
+        $questions = $quiz->questions()->orderBy('created_at', 'desc')->paginate(10);
  
 
         
         return view ('quizzes.questions', [
-            'user' => $user,
             'quiz' => $quiz,
+            'question' => $question,
+            'questions' => $questions,
             'quizzes' => $quizzes,
+            'user' => $user
             ]);
     }else {
             return view('welcome');
@@ -100,6 +101,8 @@ class QuizzesController extends Controller
             'question' => $request->question,
             'answer'=> $request->answer,
             ]);
+            
+            
 
         return redirect()->back();
     }
