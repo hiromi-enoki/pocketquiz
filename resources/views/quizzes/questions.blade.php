@@ -18,8 +18,9 @@
                 <div class="container">
                     <div class="front" style="background-image:cheburashka.jpg">
                         <div class="inner">
-                            <p>Question1</p>
-                 <span>税の問題が<br>ここに入ります</span>
+                             @foreach ($questions as $question)
+                            <p>{{ $question->question }}</p>
+                        @endforeach
                  </div>
                     </div>
                     <div class="back" style="background-image: /pocketquiz/Screenshot_20180520-201405.png">
