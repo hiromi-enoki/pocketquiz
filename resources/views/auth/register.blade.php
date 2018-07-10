@@ -2,7 +2,8 @@
 
 @section('content')
     <div class="text-center">
-        <h1>Sign up</h1>
+        <img src="{{ secure_asset("images/signup.jpg") }}" alt="sign up pic">
+        <!--<h1>Sign up</h1>-->
     </div>
 
     <div class="row">
@@ -23,9 +24,10 @@
                     {!! Form::label('password_confirmation', 'Confirmation') !!}
                     {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
                 </div>
-
-                {!! Form::submit('Sign up', ['class' => 'btn btn-primary btn-block']) !!}
+                {!! Form::submit('Sign up', ['class' => 'btn btn-warning btn-block']) !!}
             {!! Form::close() !!}
+            <p>Done before? {!! link_to_route('login', 'log in') !!}</p>
         </div>
     </div>
+    
 @endsection
