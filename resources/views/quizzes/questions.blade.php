@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <title>Quiz</title>
-        <link rel="stylesheet" href="hiromin.css"> 
+@extends('layouts.app')
 
-</head>  
-    
-    <body>
-        <!--ここからヘッダー-->
+@section('content')
+<link rel="stylesheet" href="public/css/questions.css">
         <div class="wrapper" class="clearfix">
 
        
@@ -18,8 +11,14 @@
                 <div class="container">
                     <div class="front" style="background-image:cheburashka.jpg">
                         <div class="inner">
-                            <p>Question1</p>
-                 <span>税の問題が<br>ここに入ります</span>
+                   @foreach ($questions as $question)
+                            <a href="{{ route('quizzes.questions', $question->q_id) }}">{{ $question->question }}</a>
+                   @endforeach
+                   
+                      @foreach ($answers as $answer)
+                            <a href="{{ route('quizzes.questions', $answer->q_id) }}">{{ $answer->answer }}</a>
+                   @endforeach
+                   
                  </div>
                     </div>
                     <div class="back" style="background-image: /pocketquiz/Screenshot_20180520-201405.png">
@@ -33,9 +32,4 @@
             <a href="#" class="square_btn">◀</a>
             <a href="#" class="square_btn">QUIT</a>
             <a href="#" class="square_btn">▶</a>
-
-        
-        
-    </body>
-</html>
-                           
+@endsection

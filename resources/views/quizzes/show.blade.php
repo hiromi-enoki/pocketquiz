@@ -12,7 +12,7 @@
                     </div>
                     <div class="panel-body">
                        <!--trying to access questions.blade-->
-                     
+                     @include('quizzes.questions') 
                        @foreach ($questions as $question)
                             <a href="{{ route('quizzes.questions', $question->q_id) }}">{{ $question->question }}</a>
                         @endforeach
