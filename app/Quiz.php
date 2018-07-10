@@ -13,10 +13,8 @@ class Quiz extends Model
         return $this->belongsTo(User::class);
     }
     
-//   quizに複数のquestion
-    // public function question()
-    // {
-    //     return $this->belongsTo(Quiz::class);
-    // }
-    
+    public function questions()
+    {
+        return $this->hasMany(Question::class, 'q_id');
+    }
 }

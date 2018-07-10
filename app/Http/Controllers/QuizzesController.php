@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Quiz;
 
+use App\Question;
+
 use App\Http\Controllers\Controller;
 
 
@@ -55,18 +57,18 @@ class QuizzesController extends Controller
     {
         $this->validate($request, [
             'title' => 'required|max:191',
-            // 'question' => 'required|max:191',
-            // 'answer' => 'required|max:191',
+            'question' => 'required|max:191',
+            'answer' => 'required|max:191',
         ]);
 
-        // $request->user()->quizzes()->create([
-        //     'title' => $request->title,
-        // ]);
+        $mondai = $request->user()->quizzes()->create([
+            'title' => $request->title,
+        ]);
         
-        // $request->question()->quizzes()->create([
-        //     'question' => $request->question,
-        //     'answer'=> $request->answer,
-        //     ]);
+        $mondai->questions()->create([
+            'question' => $request->question,
+            'answer'=> $request->answer,
+            ]);
 
         return redirect()->back();
     }

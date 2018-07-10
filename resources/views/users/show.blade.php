@@ -12,9 +12,9 @@
                   {!! Form::open(['route' => 'quizzes.store']) !!}
                       <div class="form-group">
                           {!! Form::textarea('title', old('title'), ['class' => 'form-control', 'rows' => '2']) !!}
-                          {!! Form::submit('ADD Quiz Title', ['class' => 'btn btn-primary btn-block']) !!}
+                          <!--{!! Form::submit('ADD Quiz Title', ['class' => 'btn btn-primary btn-block']) !!}-->
                           {!! Form::textarea('question', old('question'), ['class' => 'form-control', 'rows' => '2']) !!}
-                          {!! Form::submit('ADD Your question', ['class' => 'btn btn-primary btn-block']) !!}
+                          <!--{!! Form::submit('ADD Your question', ['class' => 'btn btn-primary btn-block']) !!}-->
                           {!! Form::textarea('answer', old('answer'), ['class' => 'form-control', 'rows' => '2']) !!}
                           {!! Form::submit('ADD Your answer', ['class' => 'btn btn-primary btn-block']) !!}
                       </div>
