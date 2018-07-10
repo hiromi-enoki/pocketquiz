@@ -26,5 +26,10 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 //まだコントローラーない
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
-    Route::resource('quizzes', 'QuizzesController', ['only' => ['store', 'destroy']]);
+    Route::resource('quizzes', 'QuizzesController', ['only' => ['store', 'show','destroy']]);
+});
+
+//trying to see questions
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('questions/{id}', 'QuizzesController@action')->name('quizzes.questions');
 });
