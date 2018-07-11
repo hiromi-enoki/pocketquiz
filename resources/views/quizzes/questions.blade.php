@@ -26,13 +26,13 @@
                     </div>
                     <div class="back" style="background-image:{{ secure_asset("images/ura.bmp") }}">
                         <div class="inner">
-                          <p>Q1の答え</p>
+               
                         </div>
                     </div>
                 </div>
                    <div>
             <a href="#" class="square_btn">◀</a>
-            <a href="#" class="square_btn">QUIT</a>
+            <a href="/" class="square_btn">QUIT</a>
             <a href="#" class="square_btn">▶</a>
             </div>
             </div>
