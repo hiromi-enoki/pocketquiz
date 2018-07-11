@@ -20,20 +20,33 @@ class QuizzesController extends Controller
      */
     public function index()
     {
-        $data = [];
         if (\Auth::check()) {
-            $user = \Auth::user();
-            $quizzes = $user->quizzes()->orderBy('created_at', 'desc')->paginate(10);
-
-            $data = [
-                'user' => $user,
-                'quizzes' => $quizzes,
-            ];
-            $data += $this->counts($user);
-            return view('users.show', $data);
+             $user = \Auth::user();
+             $quizzes = Quiz::orderBy('id', 'DESC')->paginate(10);
+    
+        return view('users.show',[
+            'quizzes' => $quizzes]);
         }else {
             return view('welcome');
         }
+        
+    //  $posts = Post::orderBy('id', 'DESC')->get();
+    
+        
+        // $data = [];
+        // if (\Auth::check()) {
+        //     $user = \Auth::user();
+        //     $quizzes = $user->quizzes()->orderBy('created_at', 'desc')->paginate(10);
+
+        //     $data = [
+        //         'user' => $user,
+        //         'quizzes' => $quizzes,
+        //     ];
+        //     $data += $this->counts($user);
+        //     return view('users.show', $data);
+        // }else {
+        //     return view('welcome');
+        // }
     }
     
 public function show($id)
@@ -51,7 +64,6 @@ public function show($id)
             'quiz' => $quiz,
             'question' => $question,
             'questions' => $questions,
-            'answer' => $answer,
             'answers' => $answers,
             'quizzes' => $quizzes,
             'user' => $user
