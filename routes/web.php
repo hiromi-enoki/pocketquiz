@@ -33,3 +33,8 @@ Route::group(['middleware' => 'auth'], function () {
 Route::group(['middleware' => ['auth']], function () {
     Route::get('questions/{id}', 'QuizzesController@action')->name('quizzes.questions');
 });
+
+//route to quizzes.create to make a page to 'make a new quiz'
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('newquiz/{id}', 'QuizzesController@create')->name('quizzes.create');
+});
