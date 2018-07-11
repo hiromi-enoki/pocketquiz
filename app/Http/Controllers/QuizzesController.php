@@ -39,6 +39,7 @@ class QuizzesController extends Controller
 public function show($id)
     {
     // quizzes.showに飛ばす
+    if (\Auth::check()) {
         $user = \Auth::user();
         $quiz = Quiz::find($id);  //title
         $question = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('questions.question')->get();
@@ -55,18 +56,22 @@ public function show($id)
             'answers' => $answers,
             'quizzes' => $quizzes,
             'user' => $user
-            
             ]);
+    }else {
+            return view('welcome');
+    }
     }
     
     public function action($id)
     {
         if (\Auth::check()) {
-           $user = \Auth::user();
-        $quiz = Quiz::find($id);
-        $question = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('quizzes.*', 'questions.question', 'questions.answer')->get();
+        $user = \Auth::user();
+        $quiz = Quiz::find($id);  //title
+        $question = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('questions.question')->get();
+        $answer = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('questions.answer')->get();
         $quizzes = $user->quizzes()->orderBy('created_at', 'desc')->paginate(10);
         $questions = $quiz->questions()->orderBy('created_at', 'desc')->paginate(10);
+        $answers = $quiz->answers()->orderBy('created_at', 'desc')->paginate(10);
  
 
         
@@ -74,6 +79,8 @@ public function show($id)
             'quiz' => $quiz,
             'question' => $question,
             'questions' => $questions,
+            'answer' => $answer,
+            'answers' => $answers,
             'quizzes' => $quizzes,
             'user' => $user
             ]);
