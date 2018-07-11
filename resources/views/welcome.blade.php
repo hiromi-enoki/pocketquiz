@@ -8,7 +8,7 @@
         <?php $user = Auth::user(); ?>
         {{ $user->nickname }}
     @else
-    <div class="center jumbotron">
+    
         <div class="text-center">
             
             {!! link_to_route('signup.get', 'Sign up', null, ['class' => 'btn btn-lg btn-warning']) !!}

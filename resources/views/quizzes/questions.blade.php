@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Quiz</title>
-        <link rel="stylesheet" href="hiromin.css"> 
+        <link rel="stylesheet" href="questions.css"> 
 
 </head>  
     

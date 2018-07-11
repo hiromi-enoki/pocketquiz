@@ -7,27 +7,15 @@
                 <p>ランキングあとで入れるよ</p>
             </aside>
         </div>
-        <div class="col-xs-8">
-            @if (Auth::id() == $user->id)
-                  {!! Form::open(['route' => 'quizzes.store']) !!}
-                      <div class="form-group">
-                          {!! Form::textarea('title', old('title'), ['class' => 'form-control', 'rows' => '2']) !!}
-                          <!--{!! Form::submit('ADD Quiz Title', ['class' => 'btn btn-primary btn-block']) !!}-->
-                          {!! Form::textarea('question', old('question'), ['class' => 'form-control', 'rows' => '2']) !!}
-                          <!--{!! Form::submit('ADD Your question', ['class' => 'btn btn-primary btn-block']) !!}-->
-                          {!! Form::textarea('answer', old('answer'), ['class' => 'form-control', 'rows' => '2']) !!}
-                          {!! Form::submit('ADD Your answer', ['class' => 'btn btn-primary btn-block']) !!}
-                      </div>
-                  {!! Form::close() !!}
-            @endif
-                <div class="form-group form-inline">
+        <div class="col-md-3 col-sm-6 col-xs-12 col-md-offset-3">
+        <img src="{{ secure_asset("images/quizlist.jpg") }}" alt="quizlist pic">
+         
+        <div class="form-group form-inline">
             @if (count($quizzes) > 0)
                 @include('quizzes.quizzes', ['quizzes' => $quizzes])
             @endif
-                </div>
         </div>
-            <!--<div>-->
-            <!--    マイページ用！-->
-            <!--</div>-->
+                
+       
     </div>
 @endsection

@@ -4,6 +4,7 @@
 
 @section('content')
     <div class="row">
+        <img src="{{ secure_asset("images/contents.jpg") }}" alt="contents pic">
         <div class="col-md-3 col-sm-6 col-xs-12 col-md-offset-3">
             <div class="quiz">
                 <div class="panel panel-default">
