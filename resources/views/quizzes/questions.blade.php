@@ -2,8 +2,8 @@
 
 @section('content')
 <link rel="stylesheet" href="public/css/questions.css">
-                      <h1>くるくるさせるページ</h1>
-              <h2>quizzes.question</h2>
+              <!--        <h1>くるくるさせるページ</h1>-->
+              <!--<h2>quizzes.question</h2>-->
         <div class="wrapper" class="clearfix">
         <div class="cols">
             <div class="col" ontouchstart="this.classList.toggle('hover');">
