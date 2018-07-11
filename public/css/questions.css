@@ -33,7 +33,7 @@ h1{
 }
 
 .col{
-  width: calc(25% - 2rem);
+  width: calc(140% - 2rem);
   margin: 1rem;
   cursor: pointer;
 }
@@ -221,4 +221,9 @@ footer small {
 
 .square_btn:hover{
 	border: dotted 1px #FFF;
+}
+
+.button_wrapper{
+  text-align: center;
+  position: relative;
 }

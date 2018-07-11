@@ -28,11 +28,14 @@
                         </div>
                     </div>
                 </div>
-                   <div>
-            <a href="#" class="square_btn">◀</a>
-            <a href="/" class="square_btn">QUIT</a>
-            <a href="#" class="square_btn">▶</a>
             </div>
-            </div>
+                 <div class="wrapper">   
+                    <div class="button_wrapper">
+                        <a href="#" class="square_btn">◀</a>
+                        <a href="/" class="square_btn">QUIT</a>
+                        <a href="#" class="square_btn">▶</a>
+                    </div>
+                </div>
+        </div>    
          
 @endsection
