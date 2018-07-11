@@ -36,7 +36,7 @@ class QuizzesController extends Controller
         }
     }
     
-    public function show($id)
+public function show($id)
     {
     // quizzes.showに飛ばす
         $user = \Auth::user();
@@ -116,5 +116,29 @@ class QuizzesController extends Controller
         }
 
         return redirect()->back();
+    }
+    
+    
+    public function create($id)
+    {
+        if (\Auth::check()) {
+        $user = \Auth::user();
+        $quiz = Quiz::find($id);
+        $question = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('quizzes.*', 'questions.question', 'questions.answer')->get();
+        $quizzes = $user->quizzes()->orderBy('created_at', 'desc')->paginate(10);
+        $questions = $quiz->questions()->orderBy('created_at', 'desc')->paginate(10);
+ 
+
+        
+       return view('quizzes.create', [
+            'quiz' => $quiz,
+            'question' => $question,
+            'questions' => $questions,
+            'quizzes' => $quizzes,
+            'user' => $user
+            ]);
+    }else {
+            return view('welcome');
+    }
     }
 }
