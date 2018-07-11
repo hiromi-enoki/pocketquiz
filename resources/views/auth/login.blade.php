@@ -2,7 +2,8 @@
 
 @section('content')
     <div class="text-center">
-        <h1>Log in</h1>
+        <img src="{{ secure_asset("images/login.jpg") }}" alt="login pic">
+        <!--<h1>Log in</h1>-->
     </div>
 
     <div class="row">
@@ -11,7 +12,7 @@
             {!! Form::open(['route' => 'login.post']) !!}
                 <div class="form-group">
                     {!! Form::label('nickname', 'Nickname') !!}
-                    {!! Form::nickname('nickname', old('nickname'), ['class' => 'form-control']) !!}
+                    {!! Form::text('nickname', old('nickname'), ['class' => 'form-control']) !!}
                 </div>
 
                 <div class="form-group">
@@ -19,7 +20,7 @@
                     {!! Form::password('password', ['class' => 'form-control']) !!}
                 </div>
 
-                {!! Form::submit('Log in', ['class' => 'btn btn-primary btn-block']) !!}
+                {!! Form::submit('Log in', ['class' => 'btn btn-info btn-block']) !!}
             {!! Form::close() !!}
 
             <p>New user? {!! link_to_route('signup.get', 'Sign up now!') !!}</p>
