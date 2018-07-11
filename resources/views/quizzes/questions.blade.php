@@ -16,13 +16,13 @@
         <div class="cols">
             <div class="col" ontouchstart="this.classList.toggle('hover');">
                 <div class="container">
-                    <div class="front" style="background-image:cheburashka.jpg">
+                    <div class="front" style="background-image:{{ secure_asset("images/omote.bmp") }}">
                         <div class="inner">
                             <p>Question1</p>
                  <span>税の問題が<br>ここに入ります</span>
                  </div>
                     </div>
-                    <div class="back" style="background-image: /pocketquiz/Screenshot_20180520-201405.png">
+                    <div class="back" style="background-image:{{ secure_asset("images/ura.bmp") }}">
                         <div class="inner">
                           <p>Q1の答え</p>
                         </div>
