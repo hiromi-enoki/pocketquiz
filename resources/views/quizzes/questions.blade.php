@@ -27,9 +27,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            
+                   <div>
             <a href="#" class="square_btn">◀</a>
             <a href="#" class="square_btn">QUIT</a>
             <a href="#" class="square_btn">▶</a>
+            </div>
+            </div>
+         
 @endsection
