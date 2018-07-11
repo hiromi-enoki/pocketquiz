@@ -33,4 +33,5 @@ class User extends Authenticatable
     {
         return $this->hasMany(Quiz::class);
     }
+    
 }
