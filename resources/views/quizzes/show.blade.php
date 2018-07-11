@@ -6,6 +6,7 @@
             <!--確認用-->
               <h2>quizzes.show</h2>
     <div class="row">
+        <img src="{{ secure_asset("images/contents.jpg") }}" alt="contents pic">
         <div class="col-lg-12">
             <div class="quiz">
                 <div class="panel panel-default">
