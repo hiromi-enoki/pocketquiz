@@ -13,7 +13,7 @@
             <div class="col" ontouchstart="this.classList.toggle('hover');">
                 <div class="container">
                     <!--クイズの問題-->
-                    <div class="front" style="background-image:{{ secure_asset("images/omote.bmp") }}">
+                    <div class="front" style=.bgImage { background-image: url(public_path('images/omote.jpg')); }>
                         <div class="inner">
                            @foreach ($questions as $question)
                                 <p>{{ $question->question }}</p>
@@ -21,7 +21,7 @@
                          </div>
                     </div>
                     <!--クイズの答え-->
-                    <div class="back" style="background-image:{{ secure_asset("images/ura.bmp") }}">
+                    <div class="back" style=.bgImage { background-image: url(public_path('images/ura.jpg')); }>
                         <div class="inner">
                             @foreach ($answers as $answer)
                                 <p>{{ $answer->answer }}</p>
