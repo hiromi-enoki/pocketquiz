@@ -1,33 +1,43 @@
 @extends('layouts.app')
 
 @section('content')
+
+<link rel="stylesheet" href="public/css/questions.css">
+              <!--        <h1>くるくるさせるページ</h1>-->
+              <!--<h2>quizzes.question</h2>-->
         <div class="wrapper" class="clearfix">
 
-       
-              <h1>{!! nl2br(e($quiz->title)) !!}のquestions一覧</h1>
         <div class="cols">
             <div class="col" ontouchstart="this.classList.toggle('hover');">
                 <div class="container">
-                    <div class="front" style="background-image:cheburashka.jpg">
+                    <!--クイズの問題-->
+                    <div class="front" style=.bgImage { background-image: url(public_path('images/omote.jpg')); }>
                         <div class="inner">
-                            <p>Question1</p>
-                 @foreach ($questions as $question)
-                            <a href="{{ route('quizzes.questions', $question->id) }}">{{ $question->question }}</a>
-                        @endforeach
-                 </div>
+
+                           @foreach ($questions as $question)
+                                <p>{{ $question->question }}</p>
+                           @endforeach
+                         </div>
+
                     </div>
-                    <div class="back" style="background-image: /pocketquiz/Screenshot_20180520-201405.png">
+                    <!--クイズの答え-->
+                    <div class="back" style=.bgImage { background-image: url(public_path('images/ura.jpg')); }>
                         <div class="inner">
-                          <p>Q1の答え</p>
+                            @foreach ($answers as $answer)
+                                <p>{{ $answer->answer }}</p>
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <a href="#" class="square_btn">◀</a>
-            <a href="/" class="square_btn">QUIT</a>
-            <a href="#" class="square_btn">▶</a>
 
-        
+                 <div class="wrapper">   
+                    <div class="button_wrapper">
+                        <a href="#" class="square_btn">◀</a>
+                        <a href="/" class="square_btn">QUIT</a>
+                        <a href="#" class="square_btn">▶</a>
+                    </div>
+                </div>
+        </div>    
+         
 @endsection
-                           
