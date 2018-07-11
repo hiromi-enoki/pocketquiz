@@ -6,6 +6,9 @@
 
        
               <h1>くるくるさせるページ</h1>
+              <h1>{!! nl2br(e($quiz->title)) !!}のquestions一覧</h1>
+              <!--確認用-->
+              <h2>quizzes.question</h2>
         <div class="cols">
             <div class="col" ontouchstart="this.classList.toggle('hover');">
                 <div class="container">
