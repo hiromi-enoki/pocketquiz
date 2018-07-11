@@ -6,14 +6,13 @@
 
        
               <h1>くるくるさせるページ</h1>
-              <h1>{!! nl2br(e($quiz->title)) !!}のquestions一覧</h1>
               <!--確認用-->
               <h2>quizzes.question</h2>
         <div class="cols">
             <div class="col" ontouchstart="this.classList.toggle('hover');">
                 <div class="container">
                     <!--クイズの問題-->
-                    <div class="front" style="background-image:{{ secure_asset("images/omote.bmp") }}">
+                    <div class="front" style="background-image:{{ secure_asset(".images/omote.jpg") }}">
                         <div class="inner">
                            @foreach ($questions as $question)
                                 <p>{{ $question->question }}</p>
@@ -21,7 +20,7 @@
                          </div>
                     </div>
                     <!--クイズの答え-->
-                    <div class="back" style="background-image:{{ secure_asset("images/ura.bmp") }}">
+                    <div class="back" style="background-image:{{ secure_asset(".images/ura.jpg") }}">
                         <div class="inner">
                             @foreach ($answers as $answer)
                                 <p>{{ $answer->answer }}</p>

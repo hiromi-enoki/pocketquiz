@@ -10,7 +10,7 @@
             <div class="quiz">
                 <div class="panel panel-default">
                     <div class="panel-heading text-center">
-                         <p class="quiz-title">{!! nl2br(e($quiz->title)) !!}のquestions一覧</p>
+                         <p class="question-title">QUIZ CATEGORY: {!! nl2br(e($quiz->title)) !!}</p>
                     </div>
                 </div>
                     <table class="table table-striped">
