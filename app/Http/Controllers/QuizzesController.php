@@ -139,6 +139,7 @@ public function show($id)
     
     public function create()
     {
+        // login or not
         if (\Auth::check()) {
         $user = \Auth::user();
         
