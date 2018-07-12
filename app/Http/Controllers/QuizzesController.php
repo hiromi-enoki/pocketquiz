@@ -30,7 +30,7 @@ class QuizzesController extends Controller
             return view('welcome');
         }
         
-    //  $posts = Post::orderBy('id', 'DESC')->get();
+  
     
         
         // $data = [];
