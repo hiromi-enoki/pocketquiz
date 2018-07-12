@@ -7,12 +7,12 @@
             <!--  <h2>quizzes.show</h2>-->
     <div class="row">
         <div class="image text-center">
-        <img src="{{ secure_asset("images/contents.jpg") }}" alt="contents pic"> </div>
+        <img src="{{ secure_asset("images/quizlist.jpg") }}" alt="quizlist pic"></div>
         <div class="col-lg-12">
             <div class="quiz">
                 <div class="panel panel-default">
                     <div class="panel-heading text-center">
-                         <p class="question-title">QUIZ CATEGORY: {!! nl2br(e($quiz->title)) !!}</p>
+                         <p class="question-title">QUIZ TITLE: {!! nl2br(e($quiz->title)) !!}</p>
                     </div>
                 </div>
                     <table class="table table-striped">
