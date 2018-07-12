@@ -9,7 +9,7 @@
         <!--</div>-->
         
             <div class="image text-center">
-                <img src="{{ secure_asset("images/quizlist.jpg") }}" alt="quizlist pic">
+                <img src="{{ secure_asset("images/contents.jpg") }}" alt="contents pic">
             
             <!--<div class="row">-->
                 
