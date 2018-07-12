@@ -155,40 +155,4 @@ public function show($id)
             return view('welcome');
     }
     }
-     
-     //editing quizzes
-         public function edit($id)
-    {
-         $quiz = Quiz::find($id);
-        //          $question = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('questions.question')->get();
-        // $answer = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('questions.answer')->get();
-         
-
-        return view('quizzes.edit', [
-            'quiz' => $quiz,
-        ]);
-    }
-     
-     
-        public function update(Request $request, $id)
-    {
-       $this->validate($request, [
-            'title' => 'required|max:191',
-            // 'question' => 'required|max:191',
-            // 'answer' => 'required|max:191',
-        ]);
-
-        $quiz = Quiz::find($id);  //title
-        // $question = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('questions.question')->get();
-        // $answer = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('questions.answer')->get();
-        $quiz->title = $request->title;
-        // $question->question = $request->question;
-        // $answer->answer = $request->answer;
-        $quiz->save();
-        // $question->save();
-        // $answer->save();
-
-        return redirect('/');
-    }
-    
 }

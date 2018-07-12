@@ -3,7 +3,9 @@
 @section('content')
     <div class="row">
             <div class="image text-center">
-                <img src="{{ secure_asset("images/contents.jpg") }}" alt="contents pic">
+                <img src="{{ secure_asset("images/quizlist.jpg") }}" alt="quizlist pic">
+            </div>
+               
             
             <div>
              @if (count($quizzes) > 0)
