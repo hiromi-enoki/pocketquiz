@@ -7,7 +7,7 @@
             <!--  <h2>quizzes.show</h2>-->
     <div class="row">
         <div class="image text-center">
-        <img src="{{ secure_asset("images/contents.jpg") }}" alt="contents pic"> </div>
+        <img src="{{ secure_asset("images/quizlist.jpg") }}" alt="quizlist pic"></div>
         <div class="col-lg-12">
             <div class="quiz">
                 <div class="panel panel-default">
