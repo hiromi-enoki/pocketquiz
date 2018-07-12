@@ -1,3 +1,4 @@
+
 <ul class="media-list">
 @foreach ($quizzes as $quiz)
     <?php $user = $quiz->user; ?>
@@ -8,7 +9,7 @@
             <!--</div>-->
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <div class="btn btn-default"><a href="{{ route('quizzes.show', $quiz->id) }}">
+                    <div class="btn btn-warning"><a href="{{ route('quizzes.show', $quiz->id) }}">
                         <h3 class="panel-title">{!! nl2br(e($quiz->title)) !!}</h3>
                     </a></div>
                 </div>
