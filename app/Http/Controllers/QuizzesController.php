@@ -129,6 +129,7 @@ public function show($id)
     public function destroy($id)
     {
         $quiz = \App\Quiz::find($id);
+        
 
         if (\Auth::id() === $quiz->user_id) {
             $quiz->delete();
