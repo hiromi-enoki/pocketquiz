@@ -4,14 +4,15 @@
 
 @section('content')
             <!--確認用-->
-              <h2>quizzes.show</h2>
+            <!--  <h2>quizzes.show</h2>-->
     <div class="row">
-        <img src="{{ secure_asset("images/contents.jpg") }}" alt="contents pic">
+        <div class="image text-center">
+        <img src="{{ secure_asset("images/contents.jpg") }}" alt="contents pic"> </div>
         <div class="col-lg-12">
             <div class="quiz">
                 <div class="panel panel-default">
                     <div class="panel-heading text-center">
-                         <p class="quiz-title">{!! nl2br(e($quiz->title)) !!}のquestions一覧</p>
+                         <p class="question-title">QUIZ CATEGORY: {!! nl2br(e($quiz->title)) !!}</p>
                     </div>
                 </div>
                     <table class="table table-striped">
