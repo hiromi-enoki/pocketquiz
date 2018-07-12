@@ -12,7 +12,7 @@
             <div class="row">
                 
                 @if (count($quizzes) > 0)
-                    <div class="center-block"> 
+                    <div class="text-center"> 
                         @include('quizzes.quizzes', ['quizzes' => $quizzes])
                     </div>
                 @endif
