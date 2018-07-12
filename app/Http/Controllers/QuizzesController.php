@@ -155,4 +155,29 @@ public function show($id)
             return view('welcome');
     }
     }
+    
+    //editing function
+    
+        public function edit($id)
+    {
+       $quiz = \App\Quiz::find($id);
+
+        return view('quizzes.edit', [
+            'quiz' => $quiz,
+        ]);
+    }
+    
+        public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'title' => 'required',
+            // 'question' => 'required|max:191',
+            // 'answer' => 'required|max:191',
+        ]);
+        $quiz = Quiz::find($id);
+        $quiz->title = $request->title;
+        $quiz->save();
+
+        return redirect('/');
+    }
 }
