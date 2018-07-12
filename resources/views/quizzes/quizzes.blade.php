@@ -17,7 +17,7 @@
                         {!! Form::close() !!}
                     @endif
                 <div>
-                    made by {!! link_to_route('users.show', $user->nickname, ['id' => $user->id]) !!}
+                    made by {!! nl2br(e($user->nickname)) !!}
                 </div>
                 </div>
             </div>
