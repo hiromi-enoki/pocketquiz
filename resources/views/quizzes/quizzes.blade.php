@@ -18,11 +18,11 @@
                 <!--</div>-->
             </div>
             <div>
-                <!--@if (Auth::id() == $quiz->user_id)-->
-                <!--    {!! Form::open(['route' => ['quizzes.destroy', $quiz->id], 'method' => 'delete']) !!}-->
-                <!--        {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}-->
-                <!--    {!! Form::close() !!}-->
-                <!--@endif-->
+                @if (Auth::id() == $quiz->user_id)
+                    {!! Form::open(['route' => ['quizzes.destroy', $quiz->id], 'method' => 'delete']) !!}
+                        {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
+                    {!! Form::close() !!}
+                @endif
         </div>
     </li>
 @endforeach
