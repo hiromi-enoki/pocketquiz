@@ -2,10 +2,10 @@
 <ul class="media-list">
 @foreach ($users as $user)
     <li class="media">
-
+      
         <div class="media-body">
             <div>
-                {{ $user->nickname }}
+               {{ $user->nickname }}
             </div>
              
             <div>
