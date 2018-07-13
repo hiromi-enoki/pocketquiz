@@ -14,18 +14,22 @@
                           <img src="{{ secure_asset("images/title.jpg") }}" alt="title pic">
                           {!! Form::textarea('title', old('title'), ['class' => 'form-control', 'rows' => '2']) !!}<br>
                           <!--{!! Form::submit('ADD Quiz Title', ['class' => 'btn btn-primary btn-block']) !!}-->
-                          <div class="col-sm-8 form-inline">
-                          <p>QUESTIONs</p>
+                          
+                      <form class="form-inline">
+                          <div class="form-group col-sm-6">
+                           <p>QUESTIONs</p>
                           {!! Form::textarea('question', old('question'), ['class' => 'form-control', 'rows' => '3']) !!}
+                          </div>
                           <!--{!! Form::submit('ADD Your question', ['class' => 'btn btn-primary btn-block']) !!}-->
+                           <div class="form-group col-sm-6">
                            <p>ANSWERs</p>
                           {!! Form::textarea('answer', old('answer'), ['class' => 'form-control', 'rows' => '3']) !!}
                           </div>
-                          
+                      </form>
                           {!! Form::submit('ADD Your answer', ['class' => 'btn btn-primary btn-block']) !!}
-                          
+                        {!! Form::close() !!}  
                       </div>
-                  {!! Form::close() !!}
+                  
             @endif
             </div>
         </div>

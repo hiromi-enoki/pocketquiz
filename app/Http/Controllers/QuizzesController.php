@@ -55,19 +55,23 @@ public function show($id)
     if (\Auth::check()) {
         $user = \Auth::user();
         $quiz = Quiz::find($id);  //title
-        $question = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('questions.question')->get();
-        $answer = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('questions.answer')->get();
+        $quizsets = \DB::table('questions')->get();
+        // $question = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('questions.question')->get();
+        // $answer = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('questions.answer')->get();
         $quizzes = $user->quizzes()->orderBy('created_at', 'desc')->paginate(10);
         $questions = $quiz->questions()->orderBy('created_at', 'desc')->paginate(10);
         $answers = $quiz->answers()->orderBy('created_at', 'desc')->paginate(10);
+        
+        
         // var_dump($quiz, $question); //変数内要素確認用0709
         return view('quizzes.show',[
             'quiz' => $quiz,
-            'question' => $question,
+            // 'question' => $question,
             'questions' => $questions,
-            'answers' => $answers,
+            // 'answers' => $answers,
             'quizzes' => $quizzes,
-            'user' => $user
+            'user' => $user,
+            'quizsets' => $quizsets,
             ]);
     }else {
             return view('welcome');
