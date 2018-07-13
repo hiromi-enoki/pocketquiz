@@ -61,7 +61,7 @@ public function show($id)
      // $answers = $quiz->answers()->orderBy('created_at', 'desc')->paginate(10);
         
         
-        // var_dump($quiz, $question); //変数内要素確認用0709
+      
         return view('quizzes.show',[
             'quiz' => $quiz,
             // 'question' => $question,
