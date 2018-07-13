@@ -56,7 +56,7 @@ public function show($id)
         $user = \Auth::user();
         $quiz = Quiz::find($id);  //quiz model
         
-     $quizzes = $user->quizzes()->orderBy('created_at', 'desc')->paginate(10);
+        $quizzes = $user->quizzes()->orderBy('created_at', 'desc')->paginate(10);
         $questions = $quiz->questions()->orderBy('created_at', 'desc')->paginate(10);
      // $answers = $quiz->answers()->orderBy('created_at', 'desc')->paginate(10);
         
