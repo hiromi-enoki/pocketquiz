@@ -51,28 +51,29 @@ class QuizzesController extends Controller
     
 public function show($id)
     {
-    // quizzes.showに飛ばす
+   // quizzes.showに飛ばす
     if (\Auth::check()) {
         $user = \Auth::user();
-        $quiz = Quiz::find($id);  //title
-        $question = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('questions.question')->get();
-        $answer = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('questions.answer')->get();
-        $quizzes = $user->quizzes()->orderBy('created_at', 'desc')->paginate(9);
-        $questions = $quiz->questions()->orderBy('created_at', 'desc')->paginate(9);
-        $answers = $quiz->answers()->orderBy('created_at', 'desc')->paginate(9);
-        // var_dump($quiz, $question); //変数内要素確認用0709
+        $quiz = Quiz::find($id);  //quiz model
+        
+        $quizzes = $user->quizzes()->orderBy('created_at', 'desc')->paginate(10);
+        $questions = $quiz->questions()->orderBy('created_at', 'desc')->paginate(10);
+     // $answers = $quiz->answers()->orderBy('created_at', 'desc')->paginate(10);
+        
+        
+      
         return view('quizzes.show',[
             'quiz' => $quiz,
-            'question' => $question,
+            // 'question' => $question,
             'questions' => $questions,
-            'answers' => $answers,
+            // 'answers' => $answers,
             'quizzes' => $quizzes,
-            'user' => $user
+            'user' => $user,
+           
             ]);
     }else {
             return view('welcome');
-    }
-    }
+    }}
     
     public function action($id)
     {
@@ -161,7 +162,7 @@ public function show($id)
         public function edit($id)
     {
        $quiz = \App\Quiz::find($id);
-       $question = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('questions.question','questions.answer')->get();
+    //   $question = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('questions.question','questions.answer')->get();
 
     //   dd($quiz->questions()->get()->toArray()[0]['answer']);
         return view('quizzes.edit', [
