@@ -11,27 +11,27 @@
     <div class="panel-heading text-center">
         <p class="question-title">QUIZ TITLE:<br><br> {!! nl2br(e($quiz->title)) !!}</p>
     </div>
-    
+    @foreach ($questions as $question)
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
     <div class="panel-heading" role="tab" id="headingOne">
         <h4 class="panel-title">
         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        @foreach ($questions as $question)
-        <p>Question:<br><br>▼click▼<br><br>{{ $question->question }}</p>
-        @endforeach
+       
+        <p>Question:<br><br>▼click▼<br><br>{!! nl2br(e($question->question)) !!}</p>
+        
         </a>
         </h4>
          </div>
          <div id="collapseOne" class="panel-collapse collapse out" role="tabpanel"　aria-labelledby="headingOne">
          <div class="panel-body">
-         @foreach ($answers as $answer)
-         <p>Answer:<br><br> {{ $answer->answer }}</p>
+         
+         <p>Answer:<br><br>{!! nl2br(e($question->answer)) !!}</p>
+    
+         </div>
+         </div>
+         </div>
+    
          @endforeach
-         </div>
-         </div>
-         </div>
-    
-    
 
         </div>
             
