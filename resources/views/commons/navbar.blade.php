@@ -8,13 +8,20 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">PocketQuiz</a>
+                <!--<a class="navbar-brand" href="/">PocketQuiz</a>ボタンデザイン変更-->
+                <a href="/" class="pocketquiz_btn">PocketQuiz</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     @if (Auth::check())
                         <!--<li>{!! link_to_route('users.index', 'Users') !!}</li>-->
-                        <li>{!! link_to_route('quizzes.create', 'Make a NEW QUIZ', auth()->user()->id) !!}</li>
+                        
+                        <a href="{{ route('quizzes.create', auth()->user()->id) }}" class="makeanewquiz_btn">Make a NEW QUIZ</a>
+                        <!--<li>{!! link_to_route('quizzes.create', 'Make a NEW QUIZ', auth()->user()->id) !!}</li>ボタンデザイン変更-->
+                        
+                        
+                        <!--火曜がんばる-->
+                        
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->nickname }} <span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -31,6 +38,10 @@
                                 
                             </ul>
                         </li>
+                        
+                        <!--火曜がんばる-->
+                        
+                        
                     @else
                         <!--<li>{!! link_to_route('signup.get', 'Signup') !!}</li>-->
                         <!--<li>{!! link_to_route('login', 'Login') !!}</li>-->
