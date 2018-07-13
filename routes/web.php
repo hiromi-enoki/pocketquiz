@@ -36,5 +36,11 @@ Route::group(['middleware' => ['auth']], function () {
 
 //route to quizzes.create to make a page to 'make a new quiz'
 Route::group(['middleware' => ['auth']], function () {
+    Route::resource('quizzes', 'QuizzesController');
     Route::get('newquiz/{id}', 'QuizzesController@create')->name('quizzes.create');
+    // Route::get('editquiz/{id}', 'QuizzesController@edit')->name('quizzes.edit');
+    // Route::get('editquiz/{id}', 'QuizzesController@update')->name('quizzes.edit');
 });
+
+// route to quizzes.mypage
+Route::get('mypage/{id}', 'QuizzesController@mypage')->name('quizzes.mypage');

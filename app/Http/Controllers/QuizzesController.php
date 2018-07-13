@@ -22,7 +22,7 @@ class QuizzesController extends Controller
     {
         if (\Auth::check()) {
              $user = \Auth::user();
-             $quizzes = Quiz::orderBy('id', 'DESC')->paginate(10);
+             $quizzes = Quiz::orderBy('id', 'DESC')->paginate(9);
     
         return view('users.show',[
             'quizzes' => $quizzes]);
@@ -51,7 +51,7 @@ class QuizzesController extends Controller
     
 public function show($id)
     {
-    // quizzes.showに飛ばす
+   // quizzes.showに飛ばす
     if (\Auth::check()) {
         $user = \Auth::user();
         $quiz = Quiz::find($id);  //quiz model
@@ -60,8 +60,6 @@ public function show($id)
         $questions = $quiz->questions()->orderBy('created_at', 'desc')->paginate(10);
      // $answers = $quiz->answers()->orderBy('created_at', 'desc')->paginate(10);
         
-        
-        // var_dump($quiz, $question); //変数内要素確認用0709
         return view('quizzes.show',[
             'quiz' => $quiz,
             // 'question' => $question,
@@ -73,8 +71,7 @@ public function show($id)
             ]);
     }else {
             return view('welcome');
-    }
-    }
+    }}
     
     public function action($id)
     {
@@ -156,5 +153,69 @@ public function show($id)
     }else {
             return view('welcome');
     }
+    }
+    
+    //editing function
+    
+        public function edit($id)
+    {
+       $quiz = \App\Quiz::find($id);
+    //   $question = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('questions.question','questions.answer')->get();
+
+    //   dd($quiz->questions()->get()->toArray()[0]['answer']);
+        return view('quizzes.edit', [
+            'quiz' => $quiz,
+        ]);
+    }
+    
+        public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'title' => 'required|max:191',
+            'question' => 'required|max:191',
+            'answer' => 'required|max:191',
+        ]);
+        $quiz = Quiz::find($id);
+
+        // $quiz->title = $request->title;
+        // $quiz->questions = $request->question;
+        // $quiz->answer = $request->answer;
+        // $quiz->save();
+
+        $quiz->update([
+            'title' => $request->title,
+        ]);
+
+        
+        $quiz->questions()->update([
+            'question' => $request->question,
+            'answer'=> $request->answer,
+           
+            ]);
+
+        return redirect('/');
+    }
+        public function mypage($id)
+    {
+        if (\Auth::check()) {
+        $user = \Auth::user();
+        $question = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('questions.question')->get();
+        $answer = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('questions.answer')->get();
+        // $questions = $quiz->questions()->orderBy('created_at', 'desc')->paginate(10);
+        // $answers = $quiz->answers()->orderBy('created_at', 'desc')->paginate(10);
+        $quiz = Quiz::find($id); 
+        $quizzes = $user->quizzes()->orderBy('created_at', 'desc')->paginate(10);
+        
+        return view('quizzes.mypage',[
+            'question' => $question,
+            'quiz' => $quiz,
+            'quizzes' => $quizzes,
+            // 'questions' => $questions,
+            // 'answers' => $answers,
+            'user' => $user
+            ]);
+    }else {
+            return view('welcome');
+    }  
     }
 }

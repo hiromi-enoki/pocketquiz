@@ -24,7 +24,7 @@
 			                	</div>
 			                   	<button type="submit" class="btn btn-default">search</button>
 		                    	</form>
-                                <li>{!! link_to_route('users.show', 'My profile', ['id' => Auth::id()]) !!}</li>
+                                <li>{!! link_to_route('quizzes.mypage', 'My profile', ['id' => Auth::id()]) !!}</li>
                                 
                                 <li role="separator" class="divider"></li>
                                 <li>{!! link_to_route('logout.get', 'Logout') !!}</li>
