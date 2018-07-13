@@ -13,24 +13,26 @@
     </div>
     
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-<div class="panel-heading" role="tab" id="headingOne">
+    <div class="panel-heading" role="tab" id="headingOne">
         <h4 class="panel-title">
         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        @foreach ($quizsets as $quizset)
-        <p>Question:<br><br>▼click▼<br><br>{{ $quizset->question }}</p>
+        @foreach ($questions as $question)
+        <p>Question:<br><br>▼click▼<br><br>{{ $question->question }}</p>
         @endforeach
         </a>
         </h4>
          </div>
          <div id="collapseOne" class="panel-collapse collapse out" role="tabpanel"　aria-labelledby="headingOne">
          <div class="panel-body">
-         @foreach ($quizsets as $quizset)
-         <p>Answer:<br><br> {{ $quizset->answer }}</p>
+         @foreach ($answers as $answer)
+         <p>Answer:<br><br> {{ $answer->answer }}</p>
          @endforeach
          </div>
          </div>
          </div>
-        </div>
+    
+    
+
         </div>
             
                     
