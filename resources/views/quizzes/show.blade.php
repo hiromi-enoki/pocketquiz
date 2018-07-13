@@ -27,13 +27,13 @@
                           <tbody>
                             
                         
-                            @foreach ($quizsets as $quizset)
+                            @foreach ($questions as $question)
                             <tr>
                               <td>
-                            <a href="{{ route('quizzes.questions', $quizset->q_id) }}">{!! nl2br(e($quizset->question)) !!}</a>
+                            <a href="{{ route('quizzes.questions', $question->q_id) }}">{!! nl2br(e($question->question)) !!}</a>
                                 </td>
                                  <td>
-                            <a href="{{ route('quizzes.questions', $quizset->q_id) }}">{!! nl2br(e($quizset->answer)) !!}</a>
+                            <a href="{{ route('quizzes.questions', $question->q_id) }}">{!! nl2br(e($question->answer)) !!}</a>
                                 </td>
                             
                             </tr>
