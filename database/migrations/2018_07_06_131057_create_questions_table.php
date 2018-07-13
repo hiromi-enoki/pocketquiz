@@ -21,7 +21,7 @@ class CreateQuestionsTable extends Migration
             $table->timestamps();
             
             // Foreign key constraint
-            $table->foreign('q_id')->references('id')->on('quizzes');
+            $table->foreign('q_id')->references('id')->on('quizzes')->onDelete('cascade');
         });
     }
 
