@@ -41,3 +41,6 @@ Route::group(['middleware' => ['auth']], function () {
     // Route::get('editquiz/{id}', 'QuizzesController@edit')->name('quizzes.edit');
     // Route::get('editquiz/{id}', 'QuizzesController@update')->name('quizzes.edit');
 });
+
+// route to quizzes.mypage
+Route::get('mypage/{id}', 'QuizzesController@mypage')->name('quizzes.mypage');
