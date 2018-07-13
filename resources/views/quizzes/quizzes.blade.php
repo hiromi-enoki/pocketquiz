@@ -1,5 +1,6 @@
 
 <ul class="media-list">
+     <div class="wrapper">
 @foreach ($quizzes as $quiz)
     <?php $user = $quiz->user; ?>
     <li class="media">
@@ -23,6 +24,7 @@
                 <!--        {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}-->
                 <!--    {!! Form::close() !!}-->
                 <!--@endif-->
+                </div>
         </div>
     </li>
 @endforeach
