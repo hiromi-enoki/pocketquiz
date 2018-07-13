@@ -17,7 +17,7 @@
                             {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
                         {!! Form::close() !!}
                     @endif
-                     @if (Auth::id() == $quiz->user_id)
+                    @if (Auth::id() == $quiz->user_id)
                             <div class="btn btn-success btn-xs"><a href="{{ route('quizzes.edit', ['id' => $quiz->id]) }}">Edit</a></div>
                     @endif
                     
