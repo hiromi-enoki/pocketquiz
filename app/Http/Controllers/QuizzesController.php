@@ -76,24 +76,21 @@ public function show($id)
     public function action($id)
     {
         if (\Auth::check()) {
-        $user = \Auth::user();
-        $quiz = Quiz::find($id);  //title
-        $question = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('questions.question')->get();
-        $answer = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('questions.answer')->get();
+         $user = \Auth::user();
+        $quiz = Quiz::find($id);  //quiz model
+        
         $quizzes = $user->quizzes()->orderBy('created_at', 'desc')->paginate(10);
         $questions = $quiz->questions()->orderBy('created_at', 'desc')->paginate(10);
-        $answers = $quiz->answers()->orderBy('created_at', 'desc')->paginate(10);
  
 
         
         return view ('quizzes.questions', [
             'quiz' => $quiz,
-            'question' => $question,
+            // 'question' => $question,
             'questions' => $questions,
-            'answer' => $answer,
-            'answers' => $answers,
+            // 'answers' => $answers,
             'quizzes' => $quizzes,
-            'user' => $user
+            'user' => $user,
             ]);
     }else {
             return view('welcome');
@@ -101,44 +98,8 @@ public function show($id)
     }
         
     
-    
-    
-    public function store(Request $request)
-    {
-        $this->validate($request, [
-            'title' => 'required|max:191',
-            'question' => 'required|max:191',
-            'answer' => 'required|max:191',
-        ]);
-
-        $mondai = $request->user()->quizzes()->create([
-            'title' => $request->title,
-        ]);
-        
-        $mondai->questions()->create([
-            'question' => $request->question,
-            'answer'=> $request->answer,
-            ]);
-            
-            
-
-        return redirect()->back();
-    }
-    
-    public function destroy($id)
-    {
-        $quiz = \App\Quiz::find($id);
-        
-
-        if (\Auth::id() === $quiz->user_id) {
-            $quiz->delete();
-        }
-
-        return redirect()->back();
-    }
-    
-    
-    public function create()
+    //create title / store and destroy
+        public function create()
     {
         if (\Auth::check()) {
         $user = \Auth::user();
@@ -154,6 +115,98 @@ public function show($id)
             return view('welcome');
     }
     }
+    
+    public function store(Request $request)
+    {
+        $user = \Auth::user();
+        
+        $this->validate($request, [
+            'title' => 'required|max:191',
+            // 'question' => 'required|max:191',
+            // 'answer' => 'required|max:191',
+        ]);
+
+        $quiz = $request->user()->quizzes()->create([
+            'title' => $request->title,
+        ]);
+        
+        // dd($title->id);
+        // dd($title);
+        // $mondai->questions()->create([
+        //     'question' => $request->question,
+        //     'answer'=> $request->answer,
+        //     ]);
+
+         return view ('quizzes.createquestion', [
+           
+            'user' => $user,
+            'quiz' => $quiz
+            ]);
+            
+    }
+    
+    public function destroy($id)
+    {
+        $quiz = \App\Quiz::find($id);
+        
+
+        if (\Auth::id() === $quiz->user_id) {
+            $quiz->delete();
+        }
+
+        return redirect()->back();
+    }
+    
+    
+
+    
+    //createquestionand storequestion
+     public function createquestion()
+    {
+        if (\Auth::check()) {
+        $user = \Auth::user();
+  
+        
+       return view('quizzes.createquestion', [
+            'user' => $user,
+      
+      
+            
+            ]);
+    }else {
+            return view('welcome');
+    }
+    }
+    
+    
+    public function storequestion(Request $request)
+    {
+        $this->validate($request, [
+            // 'title' => 'required|max:191',
+            'question' => 'required|max:191',
+            'answer' => 'required|max:191',
+        ]);
+        // $question = $request->create([
+        //      'question' => $request->question,
+        //     'answer'=> $request->answer,
+        // ]);
+      $quiz = Quiz::find($request->get("id"));
+    //   $quiz->questions()->create([
+    //         'question' => $request->question,
+    //         'answer'=> $request->answer,
+           
+    //         ]);
+        
+        $quiz->questions()->create([
+            'question' => $request->question,
+            'answer'=> $request->answer,
+            ]);
+
+         return redirect('/');
+    }
+    
+    
+    
     
     //editing function
     
