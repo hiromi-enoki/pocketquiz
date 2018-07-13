@@ -1,5 +1,6 @@
 
 <ul class="media-list">
+     <div class="wrapper">
 @foreach ($quizzes as $quiz)
     <?php $user = $quiz->user; ?>
     <li class="media">
@@ -30,7 +31,7 @@
                 <!--    <p>questions</p>-->
                 <!--</div>-->
             </div>
- 
+
     </li>
 @endforeach
 </ul>
