@@ -161,7 +161,9 @@ public function show($id)
         public function edit($id)
     {
        $quiz = \App\Quiz::find($id);
+       $question = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('questions.question','questions.answer')->get();
 
+    //   dd($quiz->questions()->get()->toArray()[0]['answer']);
         return view('quizzes.edit', [
             'quiz' => $quiz,
         ]);
@@ -170,13 +172,27 @@ public function show($id)
         public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'title' => 'required',
-            // 'question' => 'required|max:191',
-            // 'answer' => 'required|max:191',
+            'title' => 'required|max:191',
+            'question' => 'required|max:191',
+            'answer' => 'required|max:191',
         ]);
         $quiz = Quiz::find($id);
-        $quiz->title = $request->title;
-        $quiz->save();
+
+        // $quiz->title = $request->title;
+        // $quiz->questions = $request->question;
+        // $quiz->answer = $request->answer;
+        // $quiz->save();
+
+        $quiz->update([
+            'title' => $request->title,
+        ]);
+
+        
+        $quiz->questions()->update([
+            'question' => $request->question,
+            'answer'=> $request->answer,
+           
+            ]);
 
         return redirect('/');
     }
