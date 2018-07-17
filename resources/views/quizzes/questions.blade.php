@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<link rel="stylesheet" href="public/css/questions.css">
+<!--<link rel="stylesheet" href="public/css/questions.css">-->
               <!--        <h1>くるくるさせるページ</h1>-->
               <!--<h2>quizzes.question</h2>-->
         <div class="wrapper" class="clearfix">
