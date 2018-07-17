@@ -38,8 +38,9 @@ Route::group(['middleware' => ['auth']], function () {
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('quizzes', 'QuizzesController');
     Route::get('newquiz/{id}', 'QuizzesController@create')->name('quizzes.create');
-    // Route::get('editquiz/{id}', 'QuizzesController@edit')->name('quizzes.edit');
-    // Route::get('editquiz/{id}', 'QuizzesController@update')->name('quizzes.edit');
+    
+    Route::get('newquestion', 'QuizzesController@createquestion')->name('quizzes.createquestion');
+    Route::post('newquestion', 'QuizzesController@storequestion')->name('quizzes.storequestion');
 });
 
 // route to quizzes.mypage
