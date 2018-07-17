@@ -12,9 +12,9 @@
                   {!! Form::open(['route' => 'quizzes.storequestion']) !!}
                       <div class="form-group">
                           {!! Form::hidden('id', $quiz->id) !!}
-                          <p>question</p>
+                          <img src="{{ secure_asset("images/question.jpg") }}" alt="q pic">
                           {!! Form::textarea('question', old('question'), ['class' => 'form-control', 'rows' => '2']) !!}<br>
-                             <p>answer</p>
+                          <img src="{{ secure_asset("images/answer.jpg") }}" alt="a pic">
                           {!! Form::textarea('answer', old('answer'), ['class' => 'form-control', 'rows' => '2']) !!}<br>
                           {!! Form::submit('ADD', ['class' => 'btn btn-info btn-block']) !!}
                       </div>
