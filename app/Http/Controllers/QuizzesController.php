@@ -73,29 +73,30 @@ public function show($id)
             return view('welcome');
     }}
     
-    public function action($id)
-    {
-        if (\Auth::check()) {
-         $user = \Auth::user();
-        $quiz = Quiz::find($id);  //quiz model
+    // くるくるページ
+    // public function action($id)
+    // {
+    //     if (\Auth::check()) {
+    //      $user = \Auth::user();
+    //     $quiz = Quiz::find($id);  //quiz model
         
-        $quizzes = $user->quizzes()->orderBy('created_at', 'desc')->paginate(10);
-        $questions = $quiz->questions()->orderBy('created_at', 'desc')->paginate(10);
+    //     $quizzes = $user->quizzes()->orderBy('created_at', 'desc')->paginate(10);
+    //     $questions = $quiz->questions()->orderBy('created_at', 'desc')->paginate(10);
  
 
         
-        return view ('quizzes.questions', [
-            'quiz' => $quiz,
-            // 'question' => $question,
-            'questions' => $questions,
-            // 'answers' => $answers,
-            'quizzes' => $quizzes,
-            'user' => $user,
-            ]);
-    }else {
-            return view('welcome');
-    }
-    }
+    //     return view ('quizzes.questions', [
+    //         'quiz' => $quiz,
+    //         // 'question' => $question,
+    //         'questions' => $questions,
+    //         // 'answers' => $answers,
+    //         'quizzes' => $quizzes,
+    //         'user' => $user,
+    //         ]);
+    // }else {
+    //         return view('welcome');
+    // }
+    // }
         
     
     //create title / store and destroy
@@ -137,11 +138,11 @@ public function show($id)
         //     'answer'=> $request->answer,
         //     ]);
 
-         return view ('quizzes.createquestion', [
+         return redirect (route('quizzes.createquestion',[
            
-            'user' => $user,
-            'quiz' => $quiz
-            ]);
+            'user' => $user->id,
+            'quiz' => $quiz->id
+            ]));
             
     }
     
@@ -161,14 +162,17 @@ public function show($id)
 
     
     //createquestionand storequestion
-     public function createquestion()
+     public function createquestion($id)
     {
         if (\Auth::check()) {
         $user = \Auth::user();
+        $quiz = Quiz::find($id);
+
   
         
        return view('quizzes.createquestion', [
             'user' => $user,
+            'quiz' => $quiz
       
       
             
@@ -182,27 +186,45 @@ public function show($id)
     public function storequestion(Request $request)
     {
         $this->validate($request, [
-            // 'title' => 'required|max:191',
             'question' => 'required|max:191',
             'answer' => 'required|max:191',
         ]);
-        // $question = $request->create([
-        //      'question' => $request->question,
-        //     'answer'=> $request->answer,
-        // ]);
-      $quiz = Quiz::find($request->get("id"));
-    //   $quiz->questions()->create([
-    //         'question' => $request->question,
-    //         'answer'=> $request->answer,
-           
-    //         ]);
-        
+        $user = \Auth::user();
+        $quiz = Quiz::find($request->get("id"));
         $quiz->questions()->create([
             'question' => $request->question,
             'answer'=> $request->answer,
             ]);
+        switch ($request->input('action')) {
+        case 'complete':
+            return redirect('/'); 
+            break;
 
-         return redirect('/');
+        case 'add_question':
+                    
+            return redirect (route('quizzes.createquestion',[
+           
+            'user' => $user->id,
+            'quiz' => $quiz->id
+            ]));
+            
+            break;
+
+        case 'add_quiz':
+             
+        return view('quizzes.create', [
+            'user' => $user,
+            ]);
+            break;
+    }
+        // if (\Auth::id() === $quiz->user_id) {
+
+        //  return view('quizzes.create', [
+        //     'user' => $user
+        //     ]);
+                 
+        
+   
     }
     
     
