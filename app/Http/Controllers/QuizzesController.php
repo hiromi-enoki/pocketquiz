@@ -140,7 +140,6 @@ public function show($id)
     //createquestion, storequestion and destroyquestion
      public function createquestion($id)
     {
-        // login or not
         if (\Auth::check()) {
         $user = \Auth::user();
         $quiz = Quiz::find($id);
@@ -271,7 +270,5 @@ public function show($id)
             'user' => $user,
             ]);
     }
-    
-    
-        
+     
 }

@@ -35,7 +35,7 @@
                         <label for="cp_toggle01"><span></span></label>
                         <div class="cp_menu">
             <ul>
-                <li>{!! link_to_route('users.show', 'My profile', ['id' => Auth::id()]) !!}</li>
+                <li>{!! link_to_route('users.mypage', 'My profile', ['id' => Auth::id()]) !!}</li>
                 <li>{!! link_to_route('logout.get', 'Logout') !!}</li>
             </ul>
             
