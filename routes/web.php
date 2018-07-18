@@ -55,10 +55,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('quizzes', 'QuizzesController', ['only' => ['store', 'destroy']]);
 });
 
-    
-    
-   
-});
 
 // route to quizzes.mypage
 Route::get('mypage/{id}', 'QuizzesController@mypage')->name('quizzes.mypage');
