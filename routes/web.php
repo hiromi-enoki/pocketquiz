@@ -37,14 +37,39 @@ Route::group(['middleware' => ['auth']], function () {
 //route to quizzes.create to make a page to 'make a new quiz'
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('quizzes', 'QuizzesController');
-    Route::get('newquiz/{id}', 'QuizzesController@create')->name('quizzes.create');
-    
-    Route::get('newquestion', 'QuizzesController@createquestion')->name('quizzes.createquestion');
+    Route::get('newquiz', 'QuizzesController@create')->name('quizzes.create');
+    Route::get('newquestion/{quiz}', 'QuizzesController@createquestion')->name('quizzes.createquestion');
     Route::post('newquestion', 'QuizzesController@storequestion')->name('quizzes.storequestion');
+    Route::delete('deletequestion/{id}', 'QuizzesController@destroyquestion')->name('quizzes.destroyquestion');
+    
+    Route::get('editquestion/{id}', 'QuizzesController@editquestion')->name('quizzes.editquestion');
+    Route::put('editquestion/{id}', 'QuizzesController@updatequestion')->name('quizzes.updatequestion');
 });
 
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
+    Route::group(['prefix' => 'users/{id}'], function () {
+        Route::post('favorite', 'UserFavoriteController@store')->name('user.favorite');
+        Route::delete('unfavorite', 'UserFavoriteController@destroy')->name('user.unfavorite');
+        Route::get('favoritings', 'UsersController@favoritings')->name('users.favoritings');
+        
+    });
+
+    Route::resource('quizzes', 'QuizzesController', ['only' => ['store', 'destroy']]);
+});
+
+
 // route to quizzes.mypage
+<<<<<<< HEAD
 Route::get('mypage/{id}', 'QuizzesController@mypage')->name('quizzes.mypage');
 
 // route to search function
 Route::get('/search', 'SearchController@getIndex');
+=======
+Route::get('mypage/{id}', 'UsersController@mypage')->name('users.mypage');
+
+// route to users.mypage&users.myquestion
+Route::get('mypage/{id}', 'UsersController@mypage')->name('users.mypage');
+Route::get('myquestions/{id}', 'UsersController@myquestion')->name('users.myquestion');
+>>>>>>> origin/master

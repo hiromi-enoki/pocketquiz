@@ -10,9 +10,13 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!--<a class="navbar-brand" href="/">PocketQuiz</a>ロゴボタンデザイン変更-->
+<<<<<<< HEAD
             
                 <a href="/" class="pocketquiz_btn">PocketQuiz</a>
             
+=======
+                <a href="/" class="pocketquiz_btn">PocketQuiz</a>
+>>>>>>> origin/master
                 <!--ロゴボタン-->
             </div>
             
@@ -20,7 +24,20 @@
                 <ul class="nav navbar-nav navbar-right">
                     @if (Auth::check())
                         <!--<li>{!! link_to_route('users.index', 'Users') !!}</li>-->
+                    <form class="navbar-form navbar-left" role="search">
+				    <div class="form-group">
+				    	<input type="text" class="form-control" placeholder="検索キーワード">
+	                </div>
+			             <button type="submit" class="btn btn-default">GO</button>
+		             </form>
+                        <!--<li>{!! link_to_route('quizzes.create', 'Make a NEW QUIZ', auth()->user()->id) !!}</li>クリエイトボタンデザイン変更-->
+                    <li>
+                         <a href="{{ route('quizzes.create', auth()->user()->id) }}" class="makeanewquiz_btn">Make a NEW QUIZ</a>
+                    </li>
+                        <!--クリエイトボタン -->
+                    <li>  
                         
+<<<<<<< HEAD
                         <!--<li>{!! link_to_route('quizzes.create', 'Make a NEW QUIZ', auth()->user()->id) !!}</li>クリエイトボタンデザイン変更-->
                     <li>
                          <a href="{{ route('quizzes.create', auth()->user()->id) }}" class="makeanewquiz_btn">Make a NEW QUIZ</a>
@@ -66,6 +83,24 @@
         </div>
     </div>
 </div>
+=======
+                        <div class="cp_cont">
+                        <div class="cp_offcm01">
+                        <input type="checkbox" id="cp_toggle01">
+                        <label for="cp_toggle01"><span></span></label>
+                        <div class="cp_menu">
+            <ul>
+                <li>{!! link_to_route('users.mypage', 'My profile', ['id' => Auth::id()]) !!}</li>
+                <li>{!! link_to_route('logout.get', 'Logout') !!}</li>
+            </ul>
+            
+            
+            
+        </div>
+    </div>
+</div>
+</div>
+>>>>>>> origin/master
 </li>
 </div> 
                         <!--</li>-->
@@ -75,6 +110,7 @@
                         <!--<li>{!! link_to_route('login', 'Login') !!}</li>-->
                     @endif
                 </ul>
+                
             </div>
         </div>
     </nav>

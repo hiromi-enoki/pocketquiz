@@ -1,7 +1,7 @@
 @charset "utf-8";
 *{
-  margin: 0;
-  padding: 0;
+  margin: 5px;
+  padding: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -303,6 +303,17 @@ margin: 0 auto;
 }
 
 
+<<<<<<< HEAD
+=======
+.hoge {
+    display: flex;
+    
+}
+
+
+
+
+>>>>>>> origin/master
 /*ユーザーボタン*/
 .user_btn {
     display: inline-block;
@@ -345,14 +356,20 @@ text-decoration: none;
 color: inherit;
 }
 .cp_cont {
-height:10vh;/*ナブバー幅*/
+height:5vh;/*ナブバー幅*/
 }
-.cp_offcm01 {
-position: absolute;
-top: 20px;
-right: 20px;
-display: inline-block;
-}
+/*.cp_offcm01 {*/
+/*position: absolute;*/
+/*top: 20px;*/
+/*right: 20px;*/
+
+  
+/*}*/
+
+
+
+
+
 /* menu */
 .cp_offcm01 .cp_menu {
 position: fixed;
@@ -395,7 +412,7 @@ transform: translateX(-100vw);
 /* menu toggle */
 .cp_offcm01 #cp_toggle01 ~ label {
 display: block;
-padding: 0.5em;
+padding: 0px;
 cursor: pointer;
 -webkit-transition: 0.5s transform;
 transition: 0.5s transform;
@@ -411,13 +428,12 @@ transform: translateX(-250px);
 .cp_offcm01 #cp_toggle01 ~ label::before {
 font-family: 'FontAwesome';
 content: '≡';
-font-size: 3em
+font-size: 3em /*≡と×のサイズ*/
 }
 .cp_offcm01 #cp_toggle01:checked ~ label::before {
 content: '×';
 }
 
-
 #nav ul li{ 	
     display: inline;
- }
+ } 
