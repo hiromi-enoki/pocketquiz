@@ -12,10 +12,7 @@ class Quiz extends Model
     {
         return $this->belongsTo(User::class);
     }
-    
-    
-    
-    
+
     public function questions()
     {
         return $this->hasMany(Question::class, 'q_id');
