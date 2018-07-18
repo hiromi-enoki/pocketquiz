@@ -3,8 +3,7 @@
 @extends('layouts.app')
 
 @section('content')
-            <!--確認用-->
-            <!--  <h2>quizzes.show</h2>-->
+
     <div class="row">
         <div class="image text-center">
         <img src="{{ secure_asset("images/quizlist.jpg") }}" alt="quizlist pic"></div>
@@ -35,31 +34,28 @@
                                  <td>
                                 {!! nl2br(e($question->answer)) !!}
                                 </td>
+                                
                                 <td>
-                                delete
+                                   <!--<a href="{{ route('quizzes.destroyquestion', $question->id) }}">delete</a> -->
+                                   
+                                    {!! Form::open(['route' => ['quizzes.destroyquestion', $question->id], 'method' => 'delete']) !!}
+                                    
+                                        {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
+                                    {!! Form::close() !!}
+                                    
                                 </td>
+                                
                                 <td>
                                 edit
                                 </td>
-                            
                             </tr>
                             @endforeach
-                            
                     </table>
-                    
-                    <!--<div class="panel-body">-->
-                       <!--trying to access questions.blade-->
-                     
-                    <!--    @foreach ($questions as $question)-->
-                    <!--        <a href="{{ route('quizzes.questions', $question->q_id) }}">{{ $question->question }}</a>-->
-                    <!--    @endforeach-->
                       
-                    </div>
-                    
-                    </div>
-                
-              
+                </div>
             </div>
-    @endsection
+            </div>
         </div>
+    @endsection
+       
         

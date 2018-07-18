@@ -40,6 +40,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('newquiz', 'QuizzesController@create')->name('quizzes.create');
     Route::get('newquestion/{quiz}', 'QuizzesController@createquestion')->name('quizzes.createquestion');
     Route::post('newquestion', 'QuizzesController@storequestion')->name('quizzes.storequestion');
+    Route::delete('deletequestion/{id}', 'QuizzesController@destroyquestion')->name('quizzes.destroyquestion');
 });
 
 

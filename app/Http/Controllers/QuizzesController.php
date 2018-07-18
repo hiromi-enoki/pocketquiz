@@ -73,31 +73,7 @@ public function show($id)
             return view('welcome');
     }}
     
-    // くるくるページ
-    // public function action($id)
-    // {
-    //     if (\Auth::check()) {
-    //      $user = \Auth::user();
-    //     $quiz = Quiz::find($id);  //quiz model
-        
-    //     $quizzes = $user->quizzes()->orderBy('created_at', 'desc')->paginate(10);
-    //     $questions = $quiz->questions()->orderBy('created_at', 'desc')->paginate(10);
- 
 
-        
-    //     return view ('quizzes.questions', [
-    //         'quiz' => $quiz,
-    //         // 'question' => $question,
-    //         'questions' => $questions,
-    //         // 'answers' => $answers,
-    //         'quizzes' => $quizzes,
-    //         'user' => $user,
-    //         ]);
-    // }else {
-    //         return view('welcome');
-    // }
-    // }
-        
     
     //create title / store and destroy
         public function create()
@@ -218,14 +194,15 @@ public function show($id)
             ]);
             break;
     }
-        // if (\Auth::id() === $quiz->user_id) {
+    }
+    
+     public function destroyquestion($id)
+    {
+      
+        $question = Question::find($id);
+        $question->delete();
 
-        //  return view('quizzes.create', [
-        //     'user' => $user
-        //     ]);
-                 
-        
-   
+        return redirect()->back();
     }
     
     
