@@ -45,3 +45,6 @@ Route::group(['middleware' => ['auth']], function () {
 
 // route to quizzes.mypage
 Route::get('mypage/{id}', 'QuizzesController@mypage')->name('quizzes.mypage');
+
+// route to search function
+Route::get('/search', 'SearchController@getIndex');
