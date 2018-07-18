@@ -42,6 +42,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('newquestion/{quiz}', 'QuizzesController@createquestion')->name('quizzes.createquestion');
     Route::post('newquestion', 'QuizzesController@storequestion')->name('quizzes.storequestion');
     Route::delete('deletequestion/{id}', 'QuizzesController@destroyquestion')->name('quizzes.destroyquestion');
+    
+    Route::get('editquestion/{id}', 'QuizzesController@editquestion')->name('quizzes.editquestion');
+    Route::put('editquestion/{id}', 'QuizzesController@updatequestion')->name('quizzes.updatequestion');
 });
 
 // route to users.mypage&users.myquestion
