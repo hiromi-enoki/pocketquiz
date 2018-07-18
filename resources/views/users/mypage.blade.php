@@ -16,7 +16,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <div class="text-center">
-                    <div class="btn btn-warning"><a href="{{ route('quizzes.show', $quiz->id) }}">
+                    <div class="btn btn-warning"><a href="{{ route('users.myquestion', $quiz->id) }}">
                         <h3 class="panel-title">{!! nl2br(e($quiz->title)) !!}</h3>
                     </a></div>
                 <div class="panel-body button-inline">
@@ -24,7 +24,7 @@
                         {!! Form::open(['route' => ['quizzes.destroy', $quiz->id], 'method' => 'delete']) !!}
                             {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
                         {!! Form::close() !!}
-                                            @endif
+                    @endif
                      @if (Auth::id() == $quiz->user_id)
                             <div class="btn btn-success btn-xs"><a href="{{ route('quizzes.edit', ['id' => $quiz->id]) }}">Edit</a></div>
                     @endif

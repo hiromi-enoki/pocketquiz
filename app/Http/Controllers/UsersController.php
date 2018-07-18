@@ -68,7 +68,6 @@ class UsersController extends Controller
         $quizzes = $user->quizzes()->orderBy('created_at', 'desc')->paginate(10);
         $questions = $quiz->questions()->orderBy('created_at', 'desc')->paginate(10);
         
-        
         return view('users.myquestions',[
             'quiz' => $quiz,
             // 'question' => $question,
