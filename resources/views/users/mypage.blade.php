@@ -3,6 +3,8 @@
 
     <div class="image text-center">
         <img src="{{ secure_asset("images/myquizlist.jpg") }}" alt="myquizlist pic">
+        <img src="{{ secure_asset("images/anata.jpg") }}" alt="anata pic">
+        <br><br>
     </div>
 
 <ul class="media-list">
