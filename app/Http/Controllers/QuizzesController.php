@@ -164,6 +164,7 @@ public function show($id)
     //createquestionand storequestion
      public function createquestion($id)
     {
+        // login or not
         if (\Auth::check()) {
         $user = \Auth::user();
         $quiz = Quiz::find($id);

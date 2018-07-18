@@ -38,10 +38,26 @@ Route::group(['middleware' => ['auth']], function () {
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('quizzes', 'QuizzesController');
     Route::get('newquiz', 'QuizzesController@create')->name('quizzes.create');
-    
     Route::get('newquestion/{quiz}', 'QuizzesController@createquestion')->name('quizzes.createquestion');
     Route::post('newquestion', 'QuizzesController@storequestion')->name('quizzes.storequestion');
 });
+
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
+    Route::group(['prefix' => 'users/{id}'], function () {
+        Route::post('favorite', 'UserFavoriteController@store')->name('user.favorite');
+        Route::delete('unfavorite', 'UserFavoriteController@destroy')->name('user.unfavorite');
+        Route::get('favoritings', 'UsersController@favoritings')->name('users.favoritings');
+        
+    });
+
+    Route::resource('quizzes', 'QuizzesController', ['only' => ['store', 'destroy']]);
+});
+
+
+// route to quizzes.mypage
+Route::get('mypage/{id}', 'QuizzesController@mypage')->name('quizzes.mypage');
 
 // route to users.mypage&users.myquestion
 Route::get('mypage/{id}', 'UsersController@mypage')->name('users.mypage');

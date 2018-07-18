@@ -34,7 +34,7 @@ class UsersController extends Controller
         return view('users.show', $data);
     }
     
-    public function mypage($id)
+     public function mypage($id)
     {
         if (\Auth::check()) {
         $user = \Auth::user();
@@ -81,4 +81,23 @@ class UsersController extends Controller
             return view('welcome');
     }  
     }
+    
+    
+    
+    public function favoritings($id)
+    {
+        $quiz = Quiz::find($id);
+        $favoritings = $quiz->favoritings()->paginate(10);
+
+        $data = [
+            'quiz' => $quiz,
+            'quizzes' => $favoritings,
+        ];
+
+        // $data += $this->counts($user);
+
+        return view('users.favoritings',$data);
+    }
+    
+    
 }
