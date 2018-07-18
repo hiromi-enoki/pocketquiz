@@ -231,7 +231,7 @@ public function show($id)
         //     'answer'=> $request->answer,
         //   ]);
 
-        return redirect('/');
+        return redirect('mypage/{id} ');
     }
     
     
