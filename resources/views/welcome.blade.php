@@ -2,9 +2,10 @@
 
 @section('content')
 
-    <img src="{{ secure_asset("images/pocketquiz.jpg") }}" alt="pocketquiz pic">
-    <img src="{{ secure_asset("images/welcome.png") }}" alt="welcome pic"　width="600" height="500">
-    
+<div>
+    <img src="{{ secure_asset("images/pocketquiz.jpg") }}" alt="pocketquiz pic" class="chuou">
+    <img src="{{ secure_asset("images/welcome.png") }}" alt="welcome pic"　width="100%" class="chuou">
+</div>
     
      @if (Auth::check())
         <?php $user = Auth::user(); ?>
