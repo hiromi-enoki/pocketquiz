@@ -7,8 +7,7 @@
     {!! Form::model($quiz, ['route' => ['quizzes.update', $quiz->id], 'method' => 'put']) !!}
 
         {!! Form::label('title', 'TITLE:') !!}
-        {!! Form::text('title') !!}<br>
-        
+        {!! Form::textarea('title') !!}<br>
         <!--{!! Form::label('question', 'QUESTION:') !!}-->
         <!--<input name="question" type="text" value = "{{$quiz->questions()->get()->toArray()[0]['question']}}" id="question"><br>-->
         
