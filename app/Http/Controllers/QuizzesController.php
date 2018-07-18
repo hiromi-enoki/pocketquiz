@@ -270,27 +270,5 @@ public function show($id)
 
         return redirect('/');
     }
-        public function mypage($id)
-    {
-        if (\Auth::check()) {
-        $user = \Auth::user();
-        $question = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('questions.question')->get();
-        $answer = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('questions.answer')->get();
-        // $questions = $quiz->questions()->orderBy('created_at', 'desc')->paginate(10);
-        // $answers = $quiz->answers()->orderBy('created_at', 'desc')->paginate(10);
-        $quiz = Quiz::find($id); 
-        $quizzes = $user->quizzes()->orderBy('created_at', 'desc')->paginate(10);
         
-        return view('quizzes.mypage',[
-            'question' => $question,
-            'quiz' => $quiz,
-            'quizzes' => $quizzes,
-            // 'questions' => $questions,
-            // 'answers' => $answers,
-            'user' => $user
-            ]);
-    }else {
-            return view('welcome');
-    }  
-    }
 }
