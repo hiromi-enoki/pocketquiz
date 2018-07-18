@@ -11,6 +11,7 @@
                     <div class="btn btn-warning"><a href="{{ route('quizzes.show', $quiz->id) }}">
                         <h3 class="panel-title">{!! nl2br(e($quiz->title)) !!}</h3>
                     </a></div>
+                    @include('user_favorite.favorite_button', ['user' => $user])
                 <div class="panel-body button-inline">
                     @if (Auth::id() == $quiz->user_id)
                         {!! Form::open(['route' => ['quizzes.destroy', $quiz->id], 'method' => 'delete']) !!}

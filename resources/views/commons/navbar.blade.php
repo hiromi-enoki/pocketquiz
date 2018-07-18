@@ -15,6 +15,7 @@
                     @if (Auth::check())
                         <!--<li>{!! link_to_route('users.index', 'Users') !!}</li>-->
                         <li>{!! link_to_route('quizzes.create', 'Make a NEW QUIZ', auth()->user()->id) !!}</li>
+                        
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->nickname }} <span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -36,6 +37,7 @@
                         <!--<li>{!! link_to_route('login', 'Login') !!}</li>-->
                     @endif
                 </ul>
+                
             </div>
         </div>
     </nav>

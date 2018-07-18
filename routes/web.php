@@ -40,4 +40,18 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('newquiz/{id}', 'QuizzesController@create')->name('quizzes.create');
     // Route::get('editquiz/{id}', 'QuizzesController@edit')->name('quizzes.edit');
     // Route::get('editquiz/{id}', 'QuizzesController@update')->name('quizzes.edit');
+    
+});
+
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
+    Route::group(['prefix' => 'users/{id}'], function () {
+        Route::post('favorite', 'UserFavoriteController@store')->name('user.favorite');
+        Route::delete('unfavorite', 'UserFavoriteController@destroy')->name('user.unfavorite');
+        Route::get('favoritings', 'UsersController@favoritings')->name('users.favoritings');
+        
+    });
+
+    Route::resource('quizzes', 'QuizzesController', ['only' => ['store', 'destroy']]);
 });
