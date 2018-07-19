@@ -1,29 +1,27 @@
 <?php
  
 namespace App\Http\Controllers;
- 
+
+use Illuminate\Http\Request;
 use App\Quiz;
-use Request;
+
  
 class SearchController extends Controller
 {
     public function getIndex(Request $request)
     {
         // 検索するテキスト取得
-        $keyword =$request::input('keyword');
-        
-        $query = Quiz::query();
- 
-  #もしキーワードがあったら
-  if(!empty($keyword))
-  {
-    $query->where('quiz','%'.$keyword.'%');
-  }
- 
-  #ページネーション
-  $data = $query->orderBy('created_at','desc')->paginate(10);
-  return view('users.show')
+        $keyword =$request->get('keyword');
+        $query = Quiz::query()->where('title','like','%'.$keyword.'%'); 
 
-  ->with('keyword',$keyword );
-    }
+ 
+        // ページネーション
+        $data = $query->orderBy('created_at','desc')->paginate(9);
+        $quizzes = $data;
+        return view('users.show')
+      
+        ->with('keyword',$keyword)
+        ->with('quizzes', $quizzes);
+    
+  }
 }

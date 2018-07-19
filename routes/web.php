@@ -66,3 +66,7 @@ Route::get('mypage/{id}', 'UsersController@mypage')->name('users.mypage');
 // route to users.mypage&users.myquestion
 Route::get('mypage/{id}', 'UsersController@mypage')->name('users.mypage');
 Route::get('myquestions/{id}', 'UsersController@myquestion')->name('users.myquestion');
+
+
+// route to serch function
+Route::get('/search','SearchController@getIndex')->name('quiz.search');
