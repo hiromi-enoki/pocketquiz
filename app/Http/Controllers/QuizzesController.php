@@ -73,31 +73,7 @@ public function show($id)
             return view('welcome');
     }}
     
-    // くるくるページ
-    // public function action($id)
-    // {
-    //     if (\Auth::check()) {
-    //      $user = \Auth::user();
-    //     $quiz = Quiz::find($id);  //quiz model
-        
-    //     $quizzes = $user->quizzes()->orderBy('created_at', 'desc')->paginate(10);
-    //     $questions = $quiz->questions()->orderBy('created_at', 'desc')->paginate(10);
- 
 
-        
-    //     return view ('quizzes.questions', [
-    //         'quiz' => $quiz,
-    //         // 'question' => $question,
-    //         'questions' => $questions,
-    //         // 'answers' => $answers,
-    //         'quizzes' => $quizzes,
-    //         'user' => $user,
-    //         ]);
-    // }else {
-    //         return view('welcome');
-    // }
-    // }
-        
     
     //create title / store and destroy
         public function create()
@@ -161,22 +137,16 @@ public function show($id)
     
 
     
-    //createquestionand storequestion
+    //createquestion, storequestion and destroyquestion
      public function createquestion($id)
     {
-        // login or not
         if (\Auth::check()) {
         $user = \Auth::user();
         $quiz = Quiz::find($id);
-
-  
         
        return view('quizzes.createquestion', [
             'user' => $user,
             'quiz' => $quiz
-      
-      
-            
             ]);
     }else {
             return view('welcome');
@@ -218,27 +188,27 @@ public function show($id)
             ]);
             break;
     }
-        // if (\Auth::id() === $quiz->user_id) {
+    }
+    
+     public function destroyquestion($id)
+    {
+      
+        $question = Question::find($id);
+        $question->delete();
 
-        //  return view('quizzes.create', [
-        //     'user' => $user
-        //     ]);
-                 
-        
-   
+        return redirect()->back();
     }
     
     
     
     
-    //editing function
+    //edit-quiz function
     
         public function edit($id)
     {
        $quiz = \App\Quiz::find($id);
     //   $question = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('questions.question','questions.answer')->get();
 
-    //   dd($quiz->questions()->get()->toArray()[0]['answer']);
         return view('quizzes.edit', [
             'quiz' => $quiz,
         ]);
@@ -248,28 +218,57 @@ public function show($id)
     {
         $this->validate($request, [
             'title' => 'required|max:191',
-            'question' => 'required|max:191',
-            'answer' => 'required|max:191',
+            // 'question' => 'required|max:191',
+            // 'answer' => 'required|max:191',
         ]);
         $quiz = Quiz::find($id);
-
-        // $quiz->title = $request->title;
-        // $quiz->questions = $request->question;
-        // $quiz->answer = $request->answer;
-        // $quiz->save();
 
         $quiz->update([
             'title' => $request->title,
         ]);
-
-        
-        $quiz->questions()->update([
-            'question' => $request->question,
-            'answer'=> $request->answer,
-           
-            ]);
+        // $quiz->questions()->update([
+        //     'question' => $request->question,
+        //     'answer'=> $request->answer,
+        //   ]);
 
         return redirect('/');
     }
+    
+    
+    //edit-question function
+          public function editquestion($id)
+    {
+       $question = \App\Question::find($id);
+    //   $question = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('questions.question','questions.answer')->get();
+
+        return view('quizzes.editquestion', [
+            'question' => $question,
+        ]);
+    }
+    
+        public function updatequestion(Request $request, $id)
+    {
+        $this->validate($request, [
+            // 'title' => 'required|max:191',
+            'question' => 'required|max:191',
+            'answer' => 'required|max:191',
+        ]);
+        $question = Question::find($id);
+        $user = \Auth::user();
+        $quizzes = $user->quizzes()->orderBy('created_at', 'desc')->paginate(10);
         
+        $question->update([
+            'question' => $request->question,
+            'answer'=> $request->answer,
+            
+           
+            ]);
+
+        return view ('users.mypage',[
+          
+            'quizzes' => $quizzes,
+            'user' => $user,
+            ]);
+    }
+     
 }

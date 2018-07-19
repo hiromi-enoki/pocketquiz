@@ -4,7 +4,7 @@
 
 <div>
     <img src="{{ secure_asset("images/pocketquiz.jpg") }}" alt="pocketquiz pic" class="chuou">
-    <img src="{{ secure_asset("images/welcome.png") }}" alt="welcome pic"　width="100%" class="chuou">
+    <img src="{{ secure_asset("images/welcome.bmp") }}" alt="welcome pic"　width="100%" class="chuou">
 </div>
     
      @if (Auth::check())
