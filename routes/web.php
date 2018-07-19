@@ -29,10 +29,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('quizzes', 'QuizzesController', ['only' => ['store', 'show','destroy']]);
 });
 
-//trying to see questions
-Route::group(['middleware' => ['auth']], function () {
-    Route::get('questions/{id}', 'QuizzesController@action')->name('quizzes.questions');
-});
 
 //route to quizzes.create to make a page to 'make a new quiz'
 Route::group(['middleware' => ['auth']], function () {

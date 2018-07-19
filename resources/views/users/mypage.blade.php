@@ -3,63 +3,72 @@
 <div class="row">
     <div class="image text-center">
         <img src="{{ secure_asset("images/myquizlist.jpg") }}" alt="myquizlist pic">
-        <img src="{{ secure_asset("images/anata.jpg") }}" alt="anata pic">
-        <br><br>
     </div>
 
-<ul class="media-list">
-     <div class="wrapper">
-@foreach ($quizzes as $quiz)
-    <?php $user = $quiz->user; ?>
-    <li class="media">
-        <div class="media-body">
-            
-
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <div class="text-center">
-                    <div class="btn btn-warning"><a href="{{ route('users.myquestion', $quiz->id) }}">
-                        <h3 class="panel-title">{!! nl2br(e($quiz->title)) !!}</h3>
-                    </a></div>
-                <div class="panel-body button-inline">
-                    @if (Auth::id() == $quiz->user_id)
-                        {!! Form::open(['route' => ['quizzes.destroy', $quiz->id], 'method' => 'delete']) !!}
-                            {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
-                        {!! Form::close() !!}
-                    @endif
-                     @if (Auth::id() == $quiz->user_id)
-                            <div class="btn btn-success btn-xs"><a href="{{ route('quizzes.edit', ['id' => $quiz->id]) }}">Edit</a></div>
-                    @endif
+    <ul class="media-list">
+         <div class="wrapper">
+    @foreach ($quizzes as $quiz)
+        <?php $user = $quiz->user; ?>
+        <li class="media">
+            <div class="media-body">
+                
+    
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="text-center">
+                        <div class="btn btn-warning"><a href="{{ route('users.myquestion', $quiz->id) }}">
+                            <h3 class="panel-title">{!! nl2br(e($quiz->title)) !!}</h3>
+                        </a></div>
+                    <div class="panel-body button-inline">
+                        @if (Auth::id() == $quiz->user_id)
+                            {!! Form::open(['route' => ['quizzes.destroy', $quiz->id], 'method' => 'delete']) !!}
+                                {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
+                            {!! Form::close() !!}
+                        @endif
+    
+                         @if (Auth::id() == $quiz->user_id)
+                                <div class="btn btn-success btn-xs"><a href="{{ route('quizzes.edit', ['id' => $quiz->id]) }}">Edit</a></div>
+                        @endif
+                        
+                        <div>
+                            made by {!! nl2br(e($user->nickname)) !!}
+                        </div>
+                        
+                </div>
                     
-                    <div>
-                        made by {!! nl2br(e($user->nickname)) !!}
-                    </div>
-                    
-            </div>
-                <!--<div class="panel-body">-->
-                <!--    <p>questions</p>-->
-                <!--</div>-->
-            </div>
-
-    </li>
-@endforeach
-</ul>
-{!! $quizzes->render() !!}
-
-
-</div>
+                </div>
+    
+        </li>
+    @endforeach
+    </ul>
+    {!! $quizzes->render() !!}
+    
+    
+    </div>
 
 <div class="row">
     <table class="table">
+        <table class="table table-striped">
     <tr>
-        <th class="text-center">title</th>
-        <th class="text-center">made by</th>
-    </tr>
-    <tr>
-        <td>{!! nl2br(e($quiz->title)) !!}</td>
-        <td>{!! nl2br(e($user->nickname)) !!}</td>
+        <th>Title</th>
+        <th>Made by</th>
+        <th>Done Time</th>
         
     </tr>
+        @foreach ($favoritings as $favoriting)           
+        
+        <tr>
+             <td><a href="{{ route('quizzes.show', $favoriting->id) }}">
+                 {!! nl2br(e($favoriting->title)) !!}</a>
+                 </td>
+                 <td>
+                 {!! nl2br(e($favoriting->user->nickname)) !!}
+                 </td>
+                 <td>
+                 {!! nl2br(e($favoriting->updated_at)) !!}
+                 </td>
+        </tr>
+        @endforeach
     
 </table>
 </div>

@@ -40,12 +40,15 @@ class UsersController extends Controller
         if (\Auth::check()) {
         $user = \Auth::user();
         $quizzes = $user->quizzes()->orderBy('created_at', 'desc')->paginate(10);
-
-
+        $quiz = Quiz::all(); //すべてのクイズを出す
+        $favoritings = $user->favoritings()->orderBy('created_at', 'desc')->paginate(10);
+        // dd($favoritings->get()->toArray());
         
         return view('users.mypage',[
             'quizzes' => $quizzes,
             'user' => $user,
+            'quiz' => $quiz,
+            'favoritings' => $favoritings,
             ]);
     }else {
             return view('welcome');
@@ -63,6 +66,7 @@ class UsersController extends Controller
         $quizzes = $user->quizzes()->orderBy('created_at', 'desc')->paginate(10);
         $questions = $quiz->questions()->orderBy('created_at', 'desc')->paginate(10);
         
+        
         return view('users.myquestions',[
             'quiz' => $quiz,
             // 'question' => $question,
@@ -75,23 +79,5 @@ class UsersController extends Controller
             return view('welcome');
     }  
     }
-    
-    
-    
-    public function favoritings($id)
-    {
-        $quiz = Quiz::find($id);
-        $favoritings = $quiz->favoritings()->paginate(10);
-
-        $data = [
-            'quiz' => $quiz,
-            'quizzes' => $favoritings,
-        ];
-
-        // $data += $this->counts($user);
-
-        return view('users.favoritings',$data);
-    }
-    
     
 }
