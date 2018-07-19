@@ -3,6 +3,7 @@
 <div class="row">
     <div class="image text-center">
         <img src="{{ secure_asset("images/myquizlist.jpg") }}" alt="myquizlist pic">
+        <img src="{{ secure_asset("images/anata.jpg") }}" alt="anata pic">
     </div>
 
 <ul class="media-list">
