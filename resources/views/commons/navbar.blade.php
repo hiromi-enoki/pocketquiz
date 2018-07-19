@@ -50,7 +50,7 @@
                         <li>{!! link_to_route('quizzes.create', 'Make a NEW QUIZ', ['id' => Auth::id()], ['class' => 'blue_btn']) !!}</li>
                         <!--クリエイトボタン -->
 
-                            <li class="visible-xs">{!! link_to_route('users.show', 'My profile', ['id' => Auth::id()], ['class' => 'blue_btn']) !!}</li>
+                            <li class="visible-xs">{!! link_to_route('users.mypage', 'My profile', ['id' => Auth::id()], ['class' => 'blue_btn']) !!}</li>
                             <li class="visible-xs">{!! link_to_route('logout.get', 'Logout', null, ['class' => 'blue_btn']) !!}</li>
 
                         <li class="hidden-xs">
@@ -60,7 +60,7 @@
                             <label for="cp_toggle01"></label>
                                 <div class="cp_menu">
                                     <ul>
-                                        <li>{!! link_to_route('users.show', 'My profile', ['id' => Auth::id()]) !!}</li>
+                                        <li>{!! link_to_route('users.mypage', 'My profile', ['id' => Auth::id()]) !!}</li>
                                         <li>{!! link_to_route('logout.get', 'Logout') !!}</li>
                                     </ul>
                                 </div>
