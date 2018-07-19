@@ -34,4 +34,52 @@ class User extends Authenticatable
         return $this->hasMany(Quiz::class);
     }
     
+
+
+
+
+
+
+    public function favoritings()
+        {
+            return $this->belongsToMany(Quiz::class, 'user_favorite', 'user_id', 'favorite_id')->withTimestamps();
+        }
+        
+        public function favorite($userId)
+    {
+        // confirm if already following
+        $exist = $this->is_favoriting($userId);
+        
+        if ($exist) {
+            // do nothing if already following
+            return false;
+        } else {
+            // follow if not following
+            $this->favoritings()->attach($userId);
+            return true;
+        }
+    }
+    
+    public function unfavorite($userId)
+    {
+        // confirming if already following
+        $exist = $this->is_favoriting($userId);
+        
+    
+    
+        if ($exist) {
+            // stop following if following
+            $this->favoritings()->detach($userId);
+            return true;
+        } else {
+            // do nothing if not following
+            return false;
+        }
+    }
+    
+        
+        public function is_favoriting($userId) {
+        return $this->favoritings()->where('favorite_id', $userId)->exists();
+        }
+        
 }

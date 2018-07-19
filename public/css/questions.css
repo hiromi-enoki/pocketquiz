@@ -286,6 +286,7 @@ margin: 0 auto;
 }
 
 
+
 /*ユーザーボタン*/
 .user_btn {
     display: inline-block;
@@ -398,8 +399,6 @@ content: '×';
 #nav ul li{ 	
     display: inline;
  } 
- 
- 
- 
- 
+
  body { padding-top: 70px; } /*コンテントがnavbarとかぶらないように
+

@@ -1,28 +1,17 @@
+<!--mypageから飛ぶクイズ一覧ページ-->
+
 @extends('layouts.app')
 
 @section('content')
 
-    <h1>{!! nl2br(e($quiz->title)) !!}の編集ページ</h1>
-
-    {!! Form::model($quiz, ['route' => ['quizzes.update', $quiz->id], 'method' => 'put']) !!}
-
-        {!! Form::label('title', 'TITLE:') !!}
-        {!! Form::textarea('title') !!}<br>
-        <!--{!! Form::label('question', 'QUESTION:') !!}-->
-        <!--<input name="question" type="text" value = "{{$quiz->questions()->get()->toArray()[0]['question']}}" id="question"><br>-->
-        
-        <!--{!! Form::label('answer', 'ANSWER:') !!}-->
-        <!--<input name="answer" type="text" value = "{{$quiz->questions()->get()->toArray()[0]['answer']}}" id="answer"><br>-->
-        
-        {!! Form::submit('タイトルをUPDATE') !!}
-
-    {!! Form::close() !!}
-                        <!--<div class="btn btn-warning"><a href="{{ route('users.myquestion', $quiz->id) }}">-->
+    <div class="row">
+        <div class="image text-center">
+        <img src="{{ secure_asset("images/quizlist.jpg") }}" alt="quizlist pic"></div>
         <div class="col-lg-12">
             <div class="quiz">
                 <div class="panel panel-default">
                     <div class="panel-heading text-center">
-                         <p class="question-title">QUIZ TITLE: {!! nl2br(e($quiz->title)) !!}の中のQuestion/Answerを編集</p>
+                         <p class="question-title">QUIZ TITLE: {!! nl2br(e($quiz->title)) !!}</p>
                     </div>
                 </div>
                     <table class="table table-striped">
@@ -65,4 +54,7 @@
                 </div>
             </div>
             </div>
-@endsection
+        </div>
+    @endsection
+       
+        
