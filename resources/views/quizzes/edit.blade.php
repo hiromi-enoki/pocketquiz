@@ -8,16 +8,11 @@
 
         {!! Form::label('title', 'TITLE:') !!}
         {!! Form::textarea('title') !!}<br>
-        <!--{!! Form::label('question', 'QUESTION:') !!}-->
-        <!--<input name="question" type="text" value = "{{$quiz->questions()->get()->toArray()[0]['question']}}" id="question"><br>-->
-        
-        <!--{!! Form::label('answer', 'ANSWER:') !!}-->
-        <!--<input name="answer" type="text" value = "{{$quiz->questions()->get()->toArray()[0]['answer']}}" id="answer"><br>-->
+
         
         {!! Form::submit('タイトルをUPDATE') !!}
 
     {!! Form::close() !!}
-                        <!--<div class="btn btn-warning"><a href="{{ route('users.myquestion', $quiz->id) }}">-->
         <div class="col-lg-12">
             <div class="quiz">
                 <div class="panel panel-default">
