@@ -32,6 +32,8 @@
         <?php $i++ ?>
             @endforeach
         </div>
+        <div class="btn btn-success btn-md"><a href="{{ route('users.show', ['id' => $user->id]) }}">Homeに戻る</a></div>
+
 
 </div>
 </div>
