@@ -230,10 +230,14 @@ public function show($id)
         public function edit($id)
     {
        $quiz = \App\Quiz::find($id);
-    //   $question = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('questions.question','questions.answer')->get();
+      $question = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('questions.question','questions.answer')->get();
+              $questions = $quiz->questions()->orderBy('created_at', 'desc')->paginate(10);
+
 
         return view('quizzes.edit', [
             'quiz' => $quiz,
+            'question' => $question,
+            'questions' => $questions
         ]);
     }
     
@@ -254,7 +258,7 @@ public function show($id)
         //     'answer'=> $request->answer,
         //   ]);
 
-        return redirect('/');
+        return redirect('mypage/{id} ');
     }
     
     
