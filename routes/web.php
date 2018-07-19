@@ -29,25 +29,42 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('quizzes', 'QuizzesController', ['only' => ['store', 'show','destroy']]);
 });
 
-//trying to see questions
-Route::group(['middleware' => ['auth']], function () {
-    Route::get('questions/{id}', 'QuizzesController@action')->name('quizzes.questions');
-});
 
 //route to quizzes.create to make a page to 'make a new quiz'
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('quizzes', 'QuizzesController');
     Route::get('newquiz', 'QuizzesController@create')->name('quizzes.create');
-    
     Route::get('newquestion/{quiz}', 'QuizzesController@createquestion')->name('quizzes.createquestion');
     Route::post('newquestion', 'QuizzesController@storequestion')->name('quizzes.storequestion');
     Route::delete('deletequestion/{id}', 'QuizzesController@destroyquestion')->name('quizzes.destroyquestion');
+    Route::get('confirmquestion', 'QuizzesController@createconfirm')->name('quizzes.createcomfirm');
     
     Route::get('editquestion/{id}', 'QuizzesController@editquestion')->name('quizzes.editquestion');
     Route::put('editquestion/{id}', 'QuizzesController@updatequestion')->name('quizzes.updatequestion');
+    Route::get('confirmedit', 'QuizzesController@editconfirm')->name('quizzes.editcomfirm');
 });
+
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
+    Route::group(['prefix' => 'users/{id}'], function () {
+        Route::post('favorite', 'UserFavoriteController@store')->name('user.favorite');
+        Route::delete('unfavorite', 'UserFavoriteController@destroy')->name('user.unfavorite');
+        Route::get('favoritings', 'UsersController@favoritings')->name('users.favoritings');
+        
+    });
+
+    Route::resource('quizzes', 'QuizzesController', ['only' => ['store', 'destroy']]);
+});
+
+
+// route to quizzes.mypage
+Route::get('mypage/{id}', 'UsersController@mypage')->name('users.mypage');
 
 // route to users.mypage&users.myquestion
 Route::get('mypage/{id}', 'UsersController@mypage')->name('users.mypage');
 Route::get('myquestions/{id}', 'UsersController@myquestion')->name('users.myquestion');
 
+
+// route to serch function
+Route::get('/search','SearchController@getIndex')->name('quiz.search');

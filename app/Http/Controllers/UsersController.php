@@ -8,6 +8,8 @@ use App\User;
 
 use App\Quiz;
 
+
+
 class UsersController extends Controller
 {
     public function index()
@@ -15,10 +17,9 @@ class UsersController extends Controller
         $users = User::paginate(10);
         return view('users.index', [
             'users' => $users,
-        
         ]);
     }
-    
+
     public function show($id)
     {
         $user = User::find($id);
@@ -34,23 +35,20 @@ class UsersController extends Controller
         return view('users.show', $data);
     }
     
-    public function mypage($id)
+     public function mypage($id)
     {
         if (\Auth::check()) {
         $user = \Auth::user();
-        $quiz = Quiz::find($id);  //quiz model
-        
         $quizzes = $user->quizzes()->orderBy('created_at', 'desc')->paginate(10);
-        $questions = $quiz->questions()->orderBy('created_at', 'desc')->paginate(10);
-        
+        $quiz = Quiz::all(); //すべてのクイズを出す
+        $favoritings = $user->favoritings()->orderBy('created_at', 'desc')->paginate(10);
+        // dd($favoritings->get()->toArray());
         
         return view('users.mypage',[
-            'quiz' => $quiz,
-            // 'question' => $question,
-            'questions' => $questions,
-            // 'answers' => $answers,
             'quizzes' => $quizzes,
             'user' => $user,
+            'quiz' => $quiz,
+            'favoritings' => $favoritings,
             ]);
     }else {
             return view('welcome');
@@ -68,6 +66,7 @@ class UsersController extends Controller
         $quizzes = $user->quizzes()->orderBy('created_at', 'desc')->paginate(10);
         $questions = $quiz->questions()->orderBy('created_at', 'desc')->paginate(10);
         
+        
         return view('users.myquestions',[
             'quiz' => $quiz,
             // 'question' => $question,
@@ -80,4 +79,5 @@ class UsersController extends Controller
             return view('welcome');
     }  
     }
+    
 }
