@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-
+<div class="row">
     <div class="image text-center">
         <img src="{{ secure_asset("images/myquizlist.jpg") }}" alt="myquizlist pic">
     </div>
@@ -44,4 +44,21 @@
 </ul>
 {!! $quizzes->render() !!}
 
+
+</div>
+
+<div class="row">
+    <table class="table">
+    <tr>
+        <th class="text-center">title</th>
+        <th class="text-center">made by</th>
+    </tr>
+    <tr>
+        <td>{!! nl2br(e($quiz->title)) !!}</td>
+        <td>{!! nl2br(e($user->nickname)) !!}</td>
+        
+    </tr>
+    
+</table>
+</div>
 @endsection
