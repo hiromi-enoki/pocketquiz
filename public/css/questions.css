@@ -15,6 +15,9 @@ h1{
   margin: 2rem 0;
 }
 
+.panel-title{
+  word-wrap: break-word;
+}
 
 
 .wrapper{
@@ -249,6 +252,7 @@ footer small {
 .button_wrapper{
   text-align: center;
   position: relative;
+
 }
 
 
@@ -266,6 +270,23 @@ img {
 .chuou {
 display: block;
 margin: 0 auto;
+}
+
+/*パネルデフォルトの横の長さ指定*/
+.panel-default{
+  max-width: 1200px;
+  text-align: center;
+}
+
+/*タイトルボタン*/
+.w-break{
+  font-size: 25px;
+  height: 25px;
+  width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  
 }
 
 
@@ -301,19 +322,11 @@ margin: 0 auto;
     background: #67c5ff;
     color: white;
 }
-
-
-<<<<<<< HEAD
-=======
 .hoge {
     display: flex;
     
 }
 
-
-
-
->>>>>>> origin/master
 /*ユーザーボタン*/
 .user_btn {
     display: inline-block;
