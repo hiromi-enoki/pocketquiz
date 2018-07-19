@@ -21,14 +21,20 @@
                 </a></div>
                     
                 <div class="panel-body button-inline">
-                    @if (Auth::id() == $quiz->user_id)
-                        {!! Form::open(['route' => ['quizzes.destroy', $quiz->id], 'method' => 'delete']) !!}
-                            {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
+                  
+                   @if (Auth::id() == $quiz->user_id)
+                            <!--<div class="btn btn-success btn-xs"><a href="{{ route('quizzes.edit', ['id' => $quiz->id]) }}">Edit</a></div>-->
+                        {!! Form::open(['route' => ['quizzes.edit', $quiz->id], 'method' => 'get']) !!}
+                        {!! Form::submit('Edit', ['class' => 'btn btn-success btn-xs']) !!}
                         {!! Form::close() !!}
                     @endif
-                     @if (Auth::id() == $quiz->user_id)
-                            <div class="btn btn-success btn-xs"><a href="{{ route('quizzes.edit', ['id' => $quiz->id]) }}">Edit</a></div>
+                  
+                    @if (Auth::id() == $quiz->user_id)
+                        {!! Form::open(['route' => ['quizzes.destroy', $quiz->id], 'method' => 'delete']) !!}
+                        {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
+                        {!! Form::close() !!}
                     @endif
+                    
                     
                     <div>
                         made by {!! nl2br(e($user->nickname)) !!}
