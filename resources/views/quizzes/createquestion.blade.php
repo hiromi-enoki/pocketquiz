@@ -21,7 +21,7 @@
                        
                             <button class="btn btn-info btn-block" type="submit" name="action" value="complete">COMPLETE</button>
                             <button class="btn btn-info btn-block" type="submit" name="action" value="add_question">ADD another question/answer</button>
-                            <button class="btn btn-info btn-block" type="submit" name="action" value="add_quiz">ADD a new Quiz Title</button>
+                            <!--<button class="btn btn-info btn-block" type="submit" name="action" value="add_quiz">ADD a new Quiz Title</button>-->
                       </div>
                   {!! Form::close() !!}
             @endif

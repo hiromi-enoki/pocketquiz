@@ -191,7 +191,10 @@ public function show($id)
 			]);
 		switch ($request->input('action')) {
 		case 'complete':
-			return redirect('/'); 
+			return view('quizzes.createconfirm',[
+			    'user' => $user,
+			    'quiz' => $quiz
+			    ]); 
 			break;
 
 		case 'add_question':
@@ -212,6 +215,10 @@ public function show($id)
 			break;
 	}
 	}
+	
+
+	
+	
 	
 	 public function destroyquestion($id)
 	{
@@ -258,7 +265,7 @@ public function show($id)
 		//     'answer'=> $request->answer,
 		//   ]);
 
-		return redirect('mypage/{id} ');
+		return redirect()->back();
 	}
 	
 	
