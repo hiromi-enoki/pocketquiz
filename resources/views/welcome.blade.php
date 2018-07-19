@@ -13,7 +13,7 @@
     @else
     
         <div class="text-center">
-            <br><br><br><br><br>
+            <br><br><br><br>
             {!! link_to_route('signup.get', 'Sign up', null, ['class' => 'btn btn-lg btn-warning']) !!}
             
             {!! link_to_route('login', 'Log in',null, ['class' => 'btn btn-lg btn-info']) !!}
