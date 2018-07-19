@@ -7,7 +7,7 @@
         <div class="image text-center">
             <img src="{{ secure_asset("images/addnewquiz.jpg") }}" alt="new quiz pic">
         </div>
-        <br><br>editconfirm
+        <br><br>
             <h1>"{!! nl2br(e($question->question)) !!}"<br>のQuestion/AnswerがEditされました！</h1>
             <div class="text-center">
             <div class="btn btn-success btn-lg"><a href="{{ route('users.mypage', ['id' => $user->id]) }}">ほかのタイトルのQuizをEditする</a></div><br><br>
