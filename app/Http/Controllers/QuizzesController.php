@@ -270,7 +270,5 @@ public function show($id)
             'user' => $user,
             ]);
     }
-    
-    
-        
+     
 }
