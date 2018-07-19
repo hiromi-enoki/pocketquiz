@@ -1,10 +1,8 @@
 @extends('layouts.app')
 @section('content')
-
+<div class="row">
     <div class="image text-center">
         <img src="{{ secure_asset("images/myquizlist.jpg") }}" alt="myquizlist pic">
-        <img src="{{ secure_asset("images/anata.jpg") }}" alt="anata pic">
-        <br><br>
     </div>
 
 <ul class="media-list">
@@ -45,4 +43,30 @@
 </ul>
 {!! $quizzes->render() !!}
 
+<div class="row">
+    <table class="table">
+        <table class="table table-striped">
+    <tr>
+        <th>Title</th>
+        <th>Made by</th>
+        <th>Done Time</th>
+        
+    </tr>
+        @foreach ($favoritings as $favoriting)           
+        
+        <tr>
+             <td><a href="{{ route('quizzes.show', $favoriting->id) }}">
+                 {!! nl2br(e($favoriting->title)) !!}</a>
+                 </td>
+                 <td>
+                 {!! nl2br(e($favoriting->user->nickname)) !!}
+                 </td>
+                 <td>
+                 {!! nl2br(e($favoriting->updated_at)) !!}
+                 </td>
+        </tr>
+        @endforeach
+    
+</table>
+</div>
 @endsection
