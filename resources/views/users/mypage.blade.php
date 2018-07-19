@@ -15,30 +15,29 @@
         <div class="media-body">
             
 
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <div class="text-center">
-                    <div class="btn btn-warning"><a href="{{ route('users.myquestion', $quiz->id) }}">
+            <div class="panel panel-warning">
+                
+                <div class="panel-heading text-center">
+                  
                         <h3 class="panel-title">{!! nl2br(e($quiz->title)) !!}</h3>
-                    </a></div>
-                <div class="panel-body button-inline">
+                    
+                    
+                <div class="panel-body">
+                    
+                    <div class="btn-group" role="group">
+                    @if (Auth::id() == $quiz->user_id)
+                            <div class="btn btn-success btn-sm"><a href="{{ route('quizzes.edit', ['id' => $quiz->id]) }}">Edit</a></div>
+                    @endif
                     @if (Auth::id() == $quiz->user_id)
                         {!! Form::open(['route' => ['quizzes.destroy', $quiz->id], 'method' => 'delete']) !!}
-                            {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
+                            {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-sm']) !!}
                         {!! Form::close() !!}
                     @endif
-                     @if (Auth::id() == $quiz->user_id)
-                            <div class="btn btn-success btn-xs"><a href="{{ route('quizzes.edit', ['id' => $quiz->id]) }}">Edit</a></div>
-                    @endif
-                    
-                    <div>
-                        made by {!! nl2br(e($user->nickname)) !!}
+                     
                     </div>
-                    
+                    </div>
             </div>
-                <!--<div class="panel-body">-->
-                <!--    <p>questions</p>-->
-                <!--</div>-->
+                  </div>
             </div>
 
     </li>
