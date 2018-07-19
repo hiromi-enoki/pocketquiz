@@ -262,9 +262,15 @@ margin: 0 auto;
 	border: dotted 1px #FFF;
 }
 
+.logo_position{
+    margin:10px;
+}
+
+
+
 
 /*クリエイトボタン*/
-.makeanewquiz_btn {
+.blue_btn {
     display: inline-block;
     padding: 0.5em 1em;
     text-decoration: none;
@@ -274,7 +280,7 @@ margin: 0 auto;
     transition: .4s;
 }
 
-.makeanewquiz_btn:hover {
+.blue_btn:hover {
     background: #67c5ff;
     color: white;
 }
