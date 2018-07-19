@@ -45,6 +45,7 @@ Route::group(['middleware' => ['auth']], function () {
     
     Route::get('editquestion/{id}', 'QuizzesController@editquestion')->name('quizzes.editquestion');
     Route::put('editquestion/{id}', 'QuizzesController@updatequestion')->name('quizzes.updatequestion');
+    Route::get('confirmedit', 'QuizzesController@editconfirm')->name('quizzes.editcomfirm');
 });
 
 

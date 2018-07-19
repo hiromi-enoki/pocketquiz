@@ -298,10 +298,11 @@ public function show($id)
 		   
 			]);
 
-		return view ('users.mypage',[
+		return view ('quizzes.editconfirm',[
 		  
 			'quizzes' => $quizzes,
-			'user' => $user,
+			'question' => $question,
+			'user' => $user
 			]);
 	}
 }

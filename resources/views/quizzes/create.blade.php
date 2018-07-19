@@ -20,7 +20,7 @@
                           <!--{!! Form::submit('ADD Your question', ['class' => 'btn btn-primary btn-block']) !!}-->
                           <!--<img src="{{ secure_asset("images/answer.jpg") }}" alt="answer pic">-->
                           <!--{!! Form::textarea('answer', old('answer'), ['class' => 'form-control', 'rows' => '2']) !!}<br>-->
-                          {!! Form::submit('question/answer', ['class' => 'btn btn-info btn-block']) !!}
+                          {!! Form::submit('このタイトルのQuizにQuestion/Answerを追加する', ['class' => 'btn btn-success btn-block']) !!}
                       </div>
                   
             @endif
