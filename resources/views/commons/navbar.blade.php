@@ -39,16 +39,16 @@
                             <div class="cp_offcm01">
                             <input type="checkbox" id="cp_toggle01">
                             <label for="cp_toggle01"></label>
-                            <div class="cp_menu">
-                            <ul>
-                                <li>{!! link_to_route('users.show', 'My profile', ['id' => Auth::id()]) !!}</li>
-                                <li>{!! link_to_route('logout.get', 'Logout') !!}</li>
-                            </ul>
-                            </div>
+                                <div class="cp_menu">
+                                    <ul>
+                                        <li>{!! link_to_route('users.show', 'My profile', ['id' => Auth::id()]) !!}</li>
+                                        <li>{!! link_to_route('logout.get', 'Logout') !!}</li>
+                                    </ul>
+                                </div>
                             </div>
                             </div>
                         </li>
-                </ul>
+                    </ul>
             
             </div>
                     <!--</li>-->
