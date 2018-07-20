@@ -19,12 +19,13 @@
                         made by {!! nl2br(e($user->nickname)) !!}
                         @include('user_favorite.favorite_button', ['user' => $user])
                     </div>
-                    
+    
             </div>
                 <!--<div class="panel-body">-->
                 <!--    <p>questions</p>-->
                 <!--</div>-->
             </div>
+            
 
     </li>
 @endforeach
