@@ -45,7 +45,7 @@
         </div>
     @endif
     <br></br>
-    <div class="btn pocketquiz_btn btn-md"><a href="{{ route('users.show', ['id' => $user->id]) }}">Homeに戻る</a></div>
+    <div class="btn pocketquiz_btn btn-md"><a href="/">Homeに戻る</a></div>
         
 
 
