@@ -44,7 +44,7 @@
 
                                 <td>
                                     {!! Form::open(['route' => ['quizzes.destroyquestion', $question->id], 'method' => 'delete']) !!}
-                                    {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
+                                    {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs', 'onClick' => 'return deletePost(this);']) !!}
                                     {!! Form::close() !!}
                                 </td>
                             </tr>
@@ -54,4 +54,18 @@
             </div>
         </div>
     </div>
+    
+    <script>
+
+function deletePost(e) {
+  'use strict';
+ 
+  if (confirm('本当にDeleteしていいですか?')) {
+  document.getElementById('form_' + e.dataset.id).submit();
+  }else{ 
+return false;
+      
+  } 
+}
+</script>
 @endsection

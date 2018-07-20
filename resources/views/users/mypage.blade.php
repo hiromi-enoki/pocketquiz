@@ -31,7 +31,7 @@
                   
                     @if (Auth::id() == $quiz->user_id)
                         {!! Form::open(['route' => ['quizzes.destroy', $quiz->id], 'method' => 'delete']) !!}
-                        {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
+                        {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs', 'onClick' => 'return deletePost(this);']) !!}
                         {!! Form::close() !!}
                     @endif
                     
@@ -74,4 +74,18 @@
     
 </table>
 </div>
+
+<script>
+
+function deletePost(e) {
+  'use strict';
+ 
+  if (confirm('本当にDeleteしていいですか?')) {
+  document.getElementById('form_' + e.dataset.id).submit();
+  }else{ 
+return false;
+      
+  } 
+}
+</script>
 @endsection
