@@ -343,7 +343,7 @@ position: fixed;
 top: 0;
 right: -100vw;
 width: 250px;
-height: 100%;
+margin-top: 150px;
 cursor: pointer;
 -webkit-transition: 0.53s transform;
 transition: 0.53s transform;
