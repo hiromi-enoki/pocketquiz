@@ -32,8 +32,7 @@
                             <tr>
                                 <td>{!! nl2br(e($question->question)) !!}</td>
                                 <td>{!! nl2br(e($question->answer)) !!}</td>
-                                <!--<td><div class="btn btn-success btn-xs"><a href="{{ route('quizzes.editquestion', ['id' => $question->id]) }}">Edit</a></div></td>-->
-                                
+
                                 <td>
                                     {!! Form::open(['route' => ['quizzes.editquestion', $question->id], 'method' => 'get']) !!}
                                     {!! Form::submit('Edit', ['class' => 'btn btn-success btn-xs']) !!}
@@ -54,7 +53,7 @@
         </div>
     
     
-    <script>
+<script>
 
 function deletePost(e) {
   'use strict';
