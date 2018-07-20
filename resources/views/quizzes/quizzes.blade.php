@@ -1,6 +1,7 @@
 
 <ul class="media-list">
      <div class="wrapper">
+         
 @foreach ($quizzes as $quiz)
     <?php $user = $quiz->user; ?>
     <li class="media">
@@ -18,6 +19,8 @@
                         
                         made by {!! nl2br(e($user->nickname)) !!}
                         @include('user_favorite.favorite_button', ['user' => $user])
+                        
+                        
                     </div>
                     
             </div>
