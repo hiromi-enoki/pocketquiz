@@ -8,6 +8,7 @@
 
         {!! Form::label('title', 'TITLE:') !!}
         {!! Form::textarea('title') !!}<br>
+
         {!! Form::submit('タイトルをUPDATE') !!}
 
     {!! Form::close() !!}
