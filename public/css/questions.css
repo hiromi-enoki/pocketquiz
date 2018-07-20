@@ -117,6 +117,10 @@ h1{
     -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
 }
 
+.text-center{
+  max-width: 1200px;
+  }
+
 .back{
     position: absolute;
     top: 0;
@@ -209,22 +213,6 @@ footer small {
     color: #000;
 }
 
-@media screen and (max-width: 64rem){
-  .col{
-    width: calc(33.333333% - 2rem);
-  }
-}
-
-@media screen and (max-width: 48rem){
-  .col{
-    width: calc(50% - 2rem);
-  }
-}
-
-@media screen and (max-width: 32rem){
-  .col{
-    width: 100%;
-}}
 
 .button_wrapper{
   text-align: center;

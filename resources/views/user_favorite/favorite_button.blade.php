@@ -1,7 +1,7 @@
 
     @if (Auth::user()->is_favoriting($quiz->id))
         {!! Form::open(['route' => ['user.unfavorite', $quiz->id], 'method' => 'delete']) !!}
-            {!! Form::submit('Done!!', ['class' => "btn btn-danger btn-xs"]) !!}
+            {!! Form::submit('終わり＼(^o^)／', ['class' => "btn btn-danger btn-xs"]) !!}
         {!! Form::close() !!}
     @else
         {!! Form::open(['route' => ['user.favorite', $quiz->id]]) !!}
