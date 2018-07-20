@@ -13,7 +13,8 @@
             
              @if (count($quizzes) > 0)
                     <div class="text-center"> 
-                        @include('quizzes.quizzes', ['quizzes' => $quizzes])
+
+                        @include('quizzes.quizzes', ['quizzes' => $quizzes, 'me' => $me])
                             
                     
                           

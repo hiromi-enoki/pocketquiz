@@ -291,6 +291,7 @@ margin: 0 auto;
 }
 
 
+
 /*ユーザーボタン*/
 .user_btn {
     display: inline-block;
@@ -342,7 +343,7 @@ position: fixed;
 top: 0;
 right: -100vw;
 width: 250px;
-height: 100%;
+margin-top: 150px;
 cursor: pointer;
 -webkit-transition: 0.53s transform;
 transition: 0.53s transform;
@@ -433,3 +434,8 @@ body { padding-top: 0px; } /*コンテントがnavbarとかぶらないように
   z-index: 1;
   top:0px;
 }
+
+ /*mypage edit delete button 横並び*/
+ .button-inline form{
+   display:inline;
+ }
