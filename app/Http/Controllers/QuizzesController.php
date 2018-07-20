@@ -145,11 +145,12 @@ public function show($id)
 			
 	}
 	
+	// delete quiz title
 	public function destroy($id)
 	{
 		$quiz = \App\Quiz::find($id);
-		
-
+		$questions = $quiz->questions;
+	
 		if (\Auth::id() === $quiz->user_id) {
 			$quiz->delete();
 		}
@@ -220,13 +221,35 @@ public function show($id)
 	
 	
 	
-	 public function destroyquestion($id)
+	 public function destroyquestion(Request $request, $id)
 	{
-	  
+		$quiz = Quiz::find( $request->quizid);
+		// dd($quiz->questions());
+		
 		$question = Question::find($id);
-		$question->delete();
+		
+		
+		//$quiz = $question->quiz();
 
+
+		$have_question = $quiz->questions();
+		
+		// dd($have_question->count());
+		
+		if ($have_question->count() > 1)  {
+			$question->delete();
+			
 		return redirect()->back();
+	
+		}else  {
+
+				$question->delete();
+				$quiz->delete();
+				
+		return redirect('mypage/{id}');		
+				}
+
+		
 	}
 	
 	

@@ -1,4 +1,4 @@
-<!--mypageから飛ぶクイズ一覧ページ-->
+<!--mypageから飛ぶクイズ一覧ページ 削除予定0720-->
 
 @extends('layouts.app')
 
@@ -38,7 +38,7 @@
                                 <td>
 
                                     {!! Form::open(['route' => ['quizzes.destroyquestion', $question->id], 'method' => 'delete']) !!}
-                                    
+                                        {!! Form::hidden('quizid', $quiz->id) !!}
                                         {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
                                     {!! Form::close() !!}
                                     

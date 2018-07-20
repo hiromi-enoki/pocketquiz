@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1>{!! nl2br(e($question->question)) !!}の問題編集ページ</h1>
+    <h1>「{!! nl2br(e($question->question)) !!}」を編集するよ</h1>
 
     {!! Form::model($question, ['route' => ['quizzes.updatequestion', $question->id], 'method' => 'put']) !!}
         

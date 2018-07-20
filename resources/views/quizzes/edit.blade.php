@@ -8,12 +8,7 @@
 
         {!! Form::label('title', 'TITLE:') !!}
         {!! Form::textarea('title') !!}<br>
-        <!--{!! Form::label('question', 'QUESTION:') !!}-->
-        <!--<input name="question" type="text" value = "{{$quiz->questions()->get()->toArray()[0]['question']}}" id="question"><br>-->
-        
-        <!--{!! Form::label('answer', 'ANSWER:') !!}-->
-        <!--<input name="answer" type="text" value = "{{$quiz->questions()->get()->toArray()[0]['answer']}}" id="answer"><br>-->
-        
+    
         {!! Form::submit('タイトルをUPDATE') !!}
 
     {!! Form::close() !!}
@@ -49,8 +44,8 @@
                                 <td>
 
                                     {!! Form::open(['route' => ['quizzes.destroyquestion', $question->id], 'method' => 'delete']) !!}
-                                    
-                                        {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
+                                    {!! Form::hidden('quizid', $quiz->id) !!}
+                                    {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
                                     {!! Form::close() !!}
                                     
                                 </td>
