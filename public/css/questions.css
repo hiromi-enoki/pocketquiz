@@ -421,5 +421,10 @@ content: '×';
     display: inline;
  } 
 
- body { padding-top: 70px; } /*コンテントがnavbarとかぶらないように
-
+/*コンテントがnavbarとかぶらないように*/
+ body { padding-top: 70px; } 
+ 
+ /*mypage edit delete button 横並び*/
+ .button-inline form{
+   display:inline;
+ }

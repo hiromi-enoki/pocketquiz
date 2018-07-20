@@ -15,9 +15,6 @@
              @if (count($quizzes) > 0)
                     <div class="text-center"> 
                         @include('quizzes.quizzes', ['quizzes' => $quizzes])
-                            <aside>
-                                <p>ランキングあとで入れるよ</p>
-                            </aside>
                     
                           
                     </div>

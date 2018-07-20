@@ -22,7 +22,9 @@ class QuizzesController extends Controller
 	{
 		if (\Auth::check()) {
 			 $user = \Auth::user();
-			 $quizzes = Quiz::orderBy('id', 'DESC')->paginate(9);
+			 $quizzes = Quiz::orderBy('id', 'DESC')
+			 ->paginate(9)
+			 ;
 	
 		return view('users.show',[
 			'quizzes' => $quizzes]);
@@ -56,8 +58,12 @@ public function show($id)
 		$user = \Auth::user();
 		$quiz = Quiz::find($id);  //quiz model
 		
-		$quizzes = $user->quizzes()->orderBy('created_at', 'desc')->paginate(10);
-		$questions = $quiz->questions()->orderBy('created_at', 'desc')->paginate(10);
+		$quizzes = $user->quizzes()->orderBy('created_at', 'desc')
+		->paginate(10)
+		;
+		$questions = $quiz->questions()->orderBy('created_at', 'desc')
+		->paginate(10)
+		;
 	 // $answers = $quiz->answers()->orderBy('created_at', 'desc')->paginate(10);
 		
 		return view('quizzes.show',[
@@ -79,8 +85,12 @@ public function show($id)
 		 $user = \Auth::user();
 		$quiz = Quiz::find($id);  //quiz model
 		
-		$quizzes = $user->quizzes()->orderBy('created_at', 'desc')->paginate(10);
-		$questions = $quiz->questions()->orderBy('created_at', 'desc')->paginate(10);
+		$quizzes = $user->quizzes()->orderBy('created_at', 'desc')
+		->paginate(10)
+		;
+		$questions = $quiz->questions()->orderBy('created_at', 'desc')
+		->paginate(10)
+		;
  
 
 		
@@ -238,7 +248,8 @@ public function show($id)
 	{
 	   $quiz = \App\Quiz::find($id);
 	  $question = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('questions.question','questions.answer')->get();
-			  $questions = $quiz->questions()->orderBy('created_at', 'desc')->paginate(10);
+			  $questions = $quiz->questions()->orderBy('created_at', 'desc') ->paginate(10)
+			  ;
 
 
 		return view('quizzes.edit', [
