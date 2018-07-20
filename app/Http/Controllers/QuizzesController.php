@@ -23,9 +23,13 @@ class QuizzesController extends Controller
 		if (\Auth::check()) {
 			 $user = \Auth::user();
 			 $quizzes = Quiz::orderBy('id', 'DESC')->paginate(9);
+			 $favoritings = $user->favoritings();
 	
 		return view('users.show',[
-			'quizzes' => $quizzes]);
+			'me' => $user,
+			'quizzes' => $quizzes,
+			'favoritings' => $favoritings,
+			]);
 		}else {
 			return view('welcome');
 		}
