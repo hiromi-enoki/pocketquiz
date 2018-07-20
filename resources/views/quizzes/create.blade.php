@@ -3,10 +3,10 @@
 @section('content')
     <div class="addquestion">
         <div class="row">
-        <div class="image text-center">
-            <img src="{{ secure_asset("images/addnewquiz.jpg") }}" alt="new quiz pic">
-            <img src="{{ secure_asset("images/addcat.jpg") }}" alt="addcat pic">
-        </div>
+            <div class="image text-center">
+                <img src="{{ secure_asset("images/addnewquiz.jpg") }}" alt="new quiz pic">
+                <img src="{{ secure_asset("images/addcat.jpg") }}" alt="addcat pic">
+            </div>
         <br><br>
             <div class="text-left">
                 @if (Auth::id() == $user->id)
@@ -18,7 +18,7 @@
                           {!! Form::submit('このタイトルのQuizにQuestion/Answerを追加する', ['class' => 'btn btn-success btn-block']) !!}
                       </div>
                   
-            @endif
+                @endif
             </div>
         </div>
     </div>

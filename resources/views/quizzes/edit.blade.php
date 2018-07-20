@@ -52,7 +52,7 @@
                 </table>
             </div>
         </div>
-    </div>
+    
     
     <script>
 
@@ -67,4 +67,6 @@ return false;
   } 
 }
 </script>
+
+
 @endsection
