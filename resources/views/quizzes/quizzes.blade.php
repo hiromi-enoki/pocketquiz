@@ -11,7 +11,9 @@
                     <div class="btn btn-warning"><a href="{{ route('quizzes.show', $quiz->id) }}">
                         <h3 class="panel-title">
                                 <p class="w-break">{!! nl2br(e($quiz->title)) !!}</p></h3>
+                                
                     </div>
+                
                     <div>
                         made by {!! nl2br(e($user->nickname)) !!}
                         @include('user_favorite.favorite_button', ['user' => $user])
@@ -19,6 +21,7 @@
                     </a></div>
             </div>
         </div>
+        
         
     </ul>
     </div>
