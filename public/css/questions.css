@@ -121,6 +121,10 @@ h1{
     -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
 }
 
+.text-center{
+  max-width: 1200px;
+  }
+
 .back{
     position: absolute;
     top: 0;
