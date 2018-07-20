@@ -32,6 +32,8 @@
         <?php $i++ ?>
             @endforeach
         </div>
+        <div class="btn pocketquiz_btn btn-md"><a href="/">Homeに戻る</a></div>
+
 
 </div>
 </div>

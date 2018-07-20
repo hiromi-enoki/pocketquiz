@@ -3,7 +3,6 @@
   margin: 5px;
   padding: 0px;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
 }
 
 h1{
@@ -21,9 +20,6 @@ h1{
 
 
 .wrapper{
-  /*width: 90%;*/
-  /*margin: 0 auto;*/
-  /*max-width: 80rem;*/
   display: flex;
   flex-wrap : wrap;
   justify-content: space-between;
@@ -31,8 +27,7 @@ h1{
 
 .wrapper li{
   
-   width:30%;
-  /*line-height: 30px;*/
+  width:30%;
   margin: 0;
   padding: 0;
 }
@@ -52,8 +47,8 @@ h1{
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+      justify-content: center;
 }
 
 .col{
@@ -70,7 +65,7 @@ h1{
   text-align: justify;
 }
 
-.front,
+.front
 .back{
   background-size: cover;
     background-position: center;
@@ -111,6 +106,7 @@ h1{
             backface-visibility: hidden;
     border-radius: 10px;
 }
+
 .container:check .front,
 .container:check .back{
     -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
@@ -234,25 +230,6 @@ footer small {
     width: 100%;
 }}
 
-/*.square_btn{*/
-/*    height:20%;*/
-/*    width:5%;*/
-/*    display: inline-table;*/
-/*    padding: 0.5em 1em;*/
-/*    text-decoration: none;*/
-/*    background: #668ad8;*/
-/*    color: #FFF;*/
-/*    border-radius: 4px;*/
-/*    box-shadow: 0px 0px 0px 5px #668ad8;*/
-/*    border: dashed 1px #FFF;*/
-/*    margin-left: auto;*/
-/*    margin-right: auto;*/
-/*}*/
-
-/*.square_btn:hover{*/
-/*	border: dotted 1px #FFF;*/
-/*}*/
-
 .button_wrapper{
   text-align: center;
   position: relative;
@@ -310,9 +287,15 @@ margin: 0 auto;
 	border: dotted 1px #FFF;
 }
 
+.logo_position{
+    margin:10px;
+}
+
+
+
 
 /*クリエイトボタン*/
-.makeanewquiz_btn {
+.blue_btn {
     display: inline-block;
     padding: 0.5em 1em;
     text-decoration: none;
@@ -322,14 +305,11 @@ margin: 0 auto;
     transition: .4s;
 }
 
-.makeanewquiz_btn:hover {
+.blue_btn:hover {
     background: #67c5ff;
     color: white;
 }
-.hoge {
-    display: flex;
-    
-}
+
 
 /*ユーザーボタン*/
 .user_btn {
@@ -346,14 +326,6 @@ margin: 0 auto;
     background: #7fffbf;
     color: white;
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -382,9 +354,6 @@ height:5vh;/*ナブバー幅*/
 
   
 /*}*/
-
-
-
 
 
 /* menu */
@@ -454,3 +423,6 @@ content: '×';
 #nav ul li{ 	
     display: inline;
  } 
+
+ body { padding-top: 70px; } /*コンテントがnavbarとかぶらないように
+

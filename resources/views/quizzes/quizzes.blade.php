@@ -15,8 +15,9 @@
 
                     
                     <div>
-                        @include('user_favorite.favorite_button', ['user' => $user])
+                        
                         made by {!! nl2br(e($user->nickname)) !!}
+                        @include('user_favorite.favorite_button', ['user' => $user])
                     </div>
                     
             </div>
