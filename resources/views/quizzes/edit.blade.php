@@ -6,12 +6,14 @@
 
     {!! Form::model($quiz, ['route' => ['quizzes.update', $quiz->id], 'method' => 'put']) !!}
 
-        {!! Form::label('title', 'TITLE:') !!}
+        {!! Form::label('title', 'TITLE:') !!}<br>
         {!! Form::textarea('title') !!}<br>
-
-        {!! Form::submit('タイトルをUPDATE') !!}
+        {!! Form::submit('UPDATE') !!}
 
     {!! Form::close() !!}
+
+<br><br>
+
         <div class="col-lg-12">
             <div class="quiz">
                 <div class="panel panel-default">
