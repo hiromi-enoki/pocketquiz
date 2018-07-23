@@ -35,7 +35,9 @@
                             <label for="cp_toggle01"></label>
                                 <div class="cp_menu">
                                     <ul>
-                                        <li>{!! link_to_route('users.mypage', 'My profile', ['id' => Auth::id()]) !!}</li>
+                                        <li>{!! link_to_route('users.mypage', 'My Page', ['id' => Auth::id()]) !!}</li>
+                                        <li>{!! link_to_route('quizzes.create', 'Make a NEW QUIZ', ['id' => Auth::id()]) !!}</li>
+                                        <li role="separator" class="divider"></li>
                                         <li>{!! link_to_route('logout.get', 'Logout') !!}</li>
                                     </ul>
                                 </div>
