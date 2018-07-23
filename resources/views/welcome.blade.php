@@ -20,6 +20,9 @@
             {!! link_to_route('login', 'Log in',null, ['class' => 'btn btn-lg btn-info']) !!}
             
         </div>
-    </div>
+<br><br>       
+<div>
+        <img src="{{ secure_asset("images/6square.bmp") }}" alt="what you can do" class="chuou">    
+</div>
     @endif
 @endsection
