@@ -32,20 +32,10 @@
         <?php $i++ ?>
             @endforeach
         </div>
-        <div class=favobutton>
-            
-        @if (Auth::user()->is_favoriting($quiz->id))
-        {!! Form::open(['route' => ['user.unfavorite', $quiz->id], 'method' => 'delete']) !!}
-            {!! Form::submit('Done!!', ['class' => "btn btn-danger btn-lg"]) !!}
-        {!! Form::close() !!}
-    @else
-        {!! Form::open(['route' => ['user.favorite', $quiz->id]]) !!}
-            {!! Form::submit('終わったら押してね', ['class' => "btn btn-primary btn-lg"]) !!}
-        {!! Form::close() !!}
-        </div>
-    @endif
+        
+        @include('user_favorite.favorite_button', ['quiz' => $quiz])
     <br></br>
-    <div class="btn pocketquiz_btn btn-md"><a href="{{ route('users.show', ['id' => $user->id]) }}">Homeに戻る</a></div>
+    <div class="btn pocketquiz_btn btn-md"><a href="/">Homeに戻る</a></div>
         
 
 

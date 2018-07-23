@@ -2,8 +2,7 @@
 
 @section('content')
 
-    <div class="row">
-            
+        
             <div class="image text-center">
                 <img src="{{ secure_asset("images/contents.jpg") }}" alt="contents pic">
                 <img src="{{ secure_asset("images/minna.jpg") }}" alt="minna pic">
@@ -14,19 +13,15 @@
             
              @if (count($quizzes) > 0)
                     <div class="text-center"> 
-                        @include('quizzes.quizzes', ['quizzes' => $quizzes])
-                            <aside>
-                                <p>ランキングあとで入れるよ</p>
-                            </aside>
+
+                        @include('quizzes.quizzes', ['quizzes' => $quizzes, 'me' => $me])
+                            
                     
                           
                     </div>
+                </div>
             @endif
-            </div>
-            
-       
-    </div>
-    
+
 @endsection
 
 

@@ -3,7 +3,7 @@
 @section('content')
 
 <div>
-    <img src="{{ secure_asset("images/pocketquiz.bmp") }}" alt="pocketquiz pic" class="chuou"><br><br>
+    <img src="{{ secure_asset("images/pocketquiz.bmp") }}" alt="pocketquiz pic" class="chuou"><br>
     <img src="{{ secure_asset("images/welcome.bmp") }}" alt="welcome pic" class="chuou">
 </div>
 
@@ -14,7 +14,7 @@
     @else
     
         <div class="text-center">
-            <br><br>
+            <br>
             {!! link_to_route('signup.get', 'Sign up', null, ['class' => 'btn btn-lg btn-warning']) !!}
             
             {!! link_to_route('login', 'Log in',null, ['class' => 'btn btn-lg btn-info']) !!}

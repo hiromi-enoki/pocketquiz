@@ -23,9 +23,13 @@ class QuizzesController extends Controller
 		if (\Auth::check()) {
 			 $user = \Auth::user();
 			 $quizzes = Quiz::orderBy('id', 'DESC')->paginate(9);
+			 $favoritings = $user->favoritings();
 	
 		return view('users.show',[
-			'quizzes' => $quizzes]);
+			'me' => $user,
+			'quizzes' => $quizzes,
+			'favoritings' => $favoritings,
+			]);
 		}else {
 			return view('welcome');
 		}
@@ -56,8 +60,12 @@ public function show($id)
 		$user = \Auth::user();
 		$quiz = Quiz::find($id);  //quiz model
 		
-		$quizzes = $user->quizzes()->orderBy('created_at', 'desc')->paginate(10);
-		$questions = $quiz->questions()->orderBy('created_at', 'desc')->paginate(10);
+		$quizzes = $user->quizzes()->orderBy('created_at', 'desc')
+		->paginate(10)
+		;
+		$questions = $quiz->questions()->orderBy('created_at', 'desc')
+		->paginate(10)
+		;
 	 // $answers = $quiz->answers()->orderBy('created_at', 'desc')->paginate(10);
 		
 		return view('quizzes.show',[
@@ -79,8 +87,12 @@ public function show($id)
 		 $user = \Auth::user();
 		$quiz = Quiz::find($id);  //quiz model
 		
-		$quizzes = $user->quizzes()->orderBy('created_at', 'desc')->paginate(10);
-		$questions = $quiz->questions()->orderBy('created_at', 'desc')->paginate(10);
+		$quizzes = $user->quizzes()->orderBy('created_at', 'desc')
+		->paginate(10)
+		;
+		$questions = $quiz->questions()->orderBy('created_at', 'desc')
+		->paginate(10)
+		;
  
 
 		
@@ -145,11 +157,12 @@ public function show($id)
 			
 	}
 	
+	// delete quiz title
 	public function destroy($id)
 	{
 		$quiz = \App\Quiz::find($id);
-		
-
+		$questions = $quiz->questions;
+	
 		if (\Auth::id() === $quiz->user_id) {
 			$quiz->delete();
 		}
@@ -220,13 +233,35 @@ public function show($id)
 	
 	
 	
-	 public function destroyquestion($id)
+	 public function destroyquestion(Request $request, $id)
 	{
-	  
+		$quiz = Quiz::find( $request->quizid);
+		// dd($quiz->questions());
+		
 		$question = Question::find($id);
-		$question->delete();
+		
+		
+		//$quiz = $question->quiz();
 
+
+		$have_question = $quiz->questions();
+		
+		// dd($have_question->count());
+		
+		if ($have_question->count() > 1)  {
+			$question->delete();
+			
 		return redirect()->back();
+	
+		}else  {
+
+				$question->delete();
+				$quiz->delete();
+				
+		return redirect('mypage/{id}');		
+				}
+
+		
 	}
 	
 	
@@ -238,7 +273,8 @@ public function show($id)
 	{
 	   $quiz = \App\Quiz::find($id);
 	  $question = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('questions.question','questions.answer')->get();
-			  $questions = $quiz->questions()->orderBy('created_at', 'desc')->paginate(10);
+			  $questions = $quiz->questions()->orderBy('created_at', 'desc') ->paginate(10)
+			  ;
 
 
 		return view('quizzes.edit', [

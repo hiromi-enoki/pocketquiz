@@ -10,6 +10,8 @@ class SearchController extends Controller
 {
     public function getIndex(Request $request)
     {
+         $user = \Auth::user();
+        
         // 検索するテキスト取得
         $keyword =$request->get('keyword');
         $query = Quiz::query()->where('title','like','%'.$keyword.'%'); 
@@ -21,7 +23,9 @@ class SearchController extends Controller
         return view('users.show')
       
         ->with('keyword',$keyword)
+        ->with('me', $user)
         ->with('quizzes', $quizzes);
+    
     
   }
 }

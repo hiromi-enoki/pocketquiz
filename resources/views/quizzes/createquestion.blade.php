@@ -13,14 +13,18 @@
                   {!! Form::open(['route' => 'quizzes.storequestion']) !!}
                       <div class="form-group">
                           {!! Form::hidden('id', $quiz->id) !!}
+                          <img src="{{ secure_asset("images/title.jpg") }}" alt="title pic">
+                         <div class="panel panel-success"><div class="panel-heading">{!! nl2br(e($quiz->title)) !!}t</div></div>
+                         
+                         
                           <img src="{{ secure_asset("images/question.jpg") }}" alt="q pic"><br>
                           {!! Form::textarea('question', old('question'), ['class' => 'form-control', 'rows' => '2']) !!}<br>
                           <img src="{{ secure_asset("images/answer.jpg") }}" alt="a pic"><br>
                           {!! Form::textarea('answer', old('answer'), ['class' => 'form-control', 'rows' => '2']) !!}<br>
                           <!--{!! Form::submit('ADD', ['class' => 'btn btn-info btn-block']) !!}-->
                        
-                            <button class="btn btn-info btn-block" type="submit" name="action" value="add_question">{!! nl2br(e($quiz->title)) !!}のQuizにさらにQuestion/Ansewrを追加する</button>
-                            <button class="btn btn-success btn-block" type="submit" name="action" value="complete">{!! nl2br(e($quiz->title)) !!}のQuizのクイズ作成を完了する</button>
+                            <button class="btn btn-info btn-block" type="submit" name="action" value="add_question">このQuizにさらにQuestion/Answerを追加する</button>
+                            <button class="btn btn-success btn-block" type="submit" name="action" value="complete">このQuizのクイズ作成を完了する</button>
                         
                             <!--<button class="btn btn-info btn-block" type="submit" name="action" value="add_quiz">ADD a new Quiz Title</button>-->
                       </div>
