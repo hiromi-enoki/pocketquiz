@@ -2,18 +2,26 @@
 
 @section('content')
 
-    <h1>「{!! nl2br(e($question->question)) !!}」を編集するよ</h1>
+    <div class="text-center">
+        <img src="{{ secure_asset("images/editpage.jpg") }}" alt="login pic">
+    </div>
 
+
+    <h1>【{!! nl2br(e($question->question)) !!}】の問題編集ページ</h1>
+
+<div class="col-md-12">
     {!! Form::model($question, ['route' => ['quizzes.updatequestion', $question->id], 'method' => 'put']) !!}
         
-        {!! Form::label('question', 'QUESTION:') !!}
+       <th scope="col"><h2>Question</h2></th>
         {!! Form::textarea('question') !!}<br>
-        
-        {!! Form::label('answer', 'ANSWER:') !!}
+        <div id='title'>
+      <th scope="col"><h2>Answer</h2></th>
         {!! Form::textarea('answer') !!}<br>
-        
-        {!! Form::submit('UPDATE') !!}
+        </div>
+        {!! Form::submit('UPDATE', ['class' => 'btn btn-warning btn-xs']) !!}
 
     {!! Form::close() !!}
+</div>
+
 
 @endsection

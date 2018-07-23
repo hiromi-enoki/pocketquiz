@@ -242,7 +242,7 @@ margin: 0 auto;
 /*タイトルボタン*/
 .w-break{
   font-size: 25px;
-  height: 25px;
+  height: 30px;
   width: 200px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -394,7 +394,7 @@ transform: translateX(-250px);
 }
 .cp_offcm01 #cp_toggle01 ~ label::before {
 font-family: 'FontAwesome';
-content: '★';
+content: url(../images/icon.jpg);
 font-size: 6em; /*≡と×のサイズ*/
 float:right;
 
@@ -420,6 +420,8 @@ body { padding-top: 0px; } /*コンテントがnavbarとかぶらないように
   width: 400px;
   height: 25px;
 }
+
+
 /*入力フォームのサイズ*/
 
 
@@ -435,7 +437,21 @@ body { padding-top: 0px; } /*コンテントがnavbarとかぶらないように
   top:0px;
 }
 
+
+
+
+h2:first-letter {
+font-size: 2em;
+color: #00bfff;
+}
  /*mypage edit delete button 横並び*/
  .button-inline form{
    display:inline;
  }
+
+textarea {
+  width: 100%;
+  height: 25px;
+
+}
+

@@ -19,6 +19,8 @@
                     
                         @if ($me->is_favoriting($quiz->id) == 1)    
                             <p><span class="glyphicon glyphicon-ok"></span> DONE</p>
+                        @else
+                            <p><span class="glyphicon glyphicon-remove"></span> NOT YET</p>  
                         @endif
             
                         
