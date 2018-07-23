@@ -9,6 +9,7 @@
 
     <h1>【{!! nl2br(e($question->question)) !!}】の問題編集ページ</h1>
 
+<div class="col-md-12">
     {!! Form::model($question, ['route' => ['quizzes.updatequestion', $question->id], 'method' => 'put']) !!}
         
        <th scope="col"><h2>Question</h2></th>
@@ -20,5 +21,7 @@
         {!! Form::submit('UPDATE', ['class' => 'btn btn-warning btn-xs']) !!}
 
     {!! Form::close() !!}
+</div>
+
 
 @endsection

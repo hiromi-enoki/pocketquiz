@@ -20,9 +20,10 @@
                 <!--ロゴボタン-->
             
             </div>
-            
+               <?php $user = \Auth::user(); ?>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
+                
                     @if (Auth::check())
                         <!--検索機能-->
                     <form class="navbar-form navbar-left" role="search"　method="get" action="/search">
@@ -34,15 +35,11 @@
                  
                         <!--<li>{!! link_to_route('quizzes.create', 'Make a NEW QUIZ', auth()->user()->id) !!}</li>旧クリエイトボタン-->
                         <!--<a href="{{ route('quizzes.create', auth()->user()->id) }}" class="makeanewquiz_btn">Make a NEW QUIZ</a>違う表示法-->
+                        <li class="visible-xs">{!! link_to_route('users.mypage', $user->nickname . 'のページ', ['id' => Auth::id()], ['class' => 'blue_btn']) !!}</li>
                         <li>{!! link_to_route('quizzes.create', 'Make a NEW QUIZ', ['id' => Auth::id()], ['class' => 'blue_btn']) !!}</li>
+                        <li class="visible-sm visible-md visible-lg">  <div class="logo_position"> Hi,<br>{{ Auth::user()->nickname }}</div></li>
                         <!--クリエイトボタン -->
-                        
-                        
-                        
-                        
-
-                            <li class="visible-xs">{!! link_to_route('users.mypage', 'My profile', ['id' => Auth::id()], ['class' => 'blue_btn']) !!}</li>
-                            <li class="visible-xs">{!! link_to_route('logout.get', 'Logout', null, ['class' => 'blue_btn']) !!}</li>
+                        <li class="visible-xs">{!! link_to_route('logout.get', 'ログアウト', null, ['class' => 'blue_btn']) !!}</li>
 
                         <!--<li class="hidden-xs">-->
                         <!--    <div class="cp_cont">-->
@@ -58,9 +55,6 @@
                         <!--    </div>-->
                         <!--    </div>-->
                         <!--</li>-->
-                        
-                        
-                        
                     </ul>
             
             </div>
@@ -72,6 +66,6 @@
                 @endif
 </div>
 
-        </div>
+    
     </nav>
 </header>

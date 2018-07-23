@@ -14,6 +14,9 @@ h1{
   margin: 2rem 0;
 }
 
+.panel-title{
+  word-wrap: break-word;
+}
 
 
 .wrapper{
@@ -59,7 +62,7 @@ h1{
           transform-style: preserve-3d;
     -webkit-perspective: 10000px;
             perspective: 10000px;
-  text-align: justify;
+text-align: justify;
 }
 
 .front
@@ -206,26 +209,11 @@ footer small {
     color: #000;
 }
 
-@media screen and (max-width: 64rem){
-  .col{
-    width: calc(33.333333% - 2rem);
-  }
-}
-
-@media screen and (max-width: 48rem){
-  .col{
-    width: calc(50% - 2rem);
-  }
-}
-
-@media screen and (max-width: 32rem){
-  .col{
-    width: 100%;
-}}
 
 .button_wrapper{
   text-align: center;
   position: relative;
+
 }
 
 
@@ -243,6 +231,23 @@ img {
 .chuou {
 display: block;
 margin: 0 auto;
+}
+
+/*パネルデフォルトの横の長さ指定*/
+.panel-default{
+  max-width: 1200px;
+  text-align: center;
+}
+
+/*タイトルボタン*/
+.w-break{
+  font-size: 25px;
+  height: 30px;
+  width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  
 }
 
 
@@ -405,6 +410,10 @@ content: '×';
 body { padding-top: 0px; } /*コンテントがnavbarとかぶらないように*/
 
 
+.button_wrapper{
+  text-align: center;
+  position: relative;
+}
 
 .title textarea{
   resize: none;
@@ -435,3 +444,14 @@ h2:first-letter {
 font-size: 2em;
 color: #00bfff;
 }
+ /*mypage edit delete button 横並び*/
+ .button-inline form{
+   display:inline;
+ }
+
+textarea {
+  width: 100%;
+  height: 25px;
+
+}
+

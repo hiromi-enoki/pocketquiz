@@ -3,13 +3,14 @@
 @section('content')
 
     <div class="text-center">
-        <img src="{{ secure_asset("images/editpage.jpg") }}" alt="login pic">
+        <img src="{{ secure_asset("images/editpage.jpg") }}" alt="editpage pic">
     </div>
 
 
     <h1>【{!! nl2br(e($quiz->title)) !!}】の編集ページ</h1>
 
     {!! Form::model($quiz, ['route' => ['quizzes.update', $quiz->id], 'method' => 'put']) !!}
+
 
      <div id='title'>
             <th scope="col"><h2>Title</h2></th>
@@ -23,14 +24,14 @@
             {!! Form::submit('UPDATE', ['class' => 'btn btn-warning btn-xs']) !!}
             {!! Form::close() !!}
         </div>
-                        <!--<div class="btn btn-warning"><a href="{{ route('users.myquestion', $quiz->id) }}">-->
+
         <div class="col-lg-12">
             <div class="quiz">
-                <!--<div class="panel panel-default">-->
-                <!--    <div class="panel-heading text-center">-->
-                <!--         <p class="question-title">QUIZ TITLE: 【{!! nl2br(e($quiz->title)) !!}】の中のQuestion/Answerを編集</p>-->
-                <!--    </div>-->
-                <!--</div>-->
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">
+                         <p class="question-title">QUIZ TITLE: 【{!! nl2br(e($quiz->title)) !!}】の中のQuestion/Answerを編集</p>
+                    </div>
+                </div>
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -57,7 +58,8 @@
         
                                 <td>
                                     {!! Form::open(['route' => ['quizzes.destroyquestion', $question->id], 'method' => 'delete']) !!}
-                                    {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
+                                    {!! Form::hidden('quizid', $quiz->id) !!}
+                                    {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs', 'onClick' => 'return deletePost(this);']) !!}
                                     {!! Form::close() !!}
                                 </td>
                             </tr>
@@ -66,5 +68,21 @@
                 </table>
             </div>
         </div>
-    </div>
+    
+    
+<script>
+
+function deletePost(e) {
+  'use strict';
+ 
+  if (confirm('本当にDeleteしていいですか?\n※問題が一つしかない場合、それを削除すると{!! nl2br(e($quiz->title)) !!}のタイトル自体も削除されます')) {
+  document.getElementById('form_' + e.dataset.id).submit();
+  }else{ 
+return false;
+      
+  } 
+}
+</script>
+
+
 @endsection
