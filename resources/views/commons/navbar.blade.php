@@ -36,6 +36,7 @@
                         <!--<li>{!! link_to_route('quizzes.create', 'Make a NEW QUIZ', auth()->user()->id) !!}</li>旧クリエイトボタン-->
                         <!--<a href="{{ route('quizzes.create', auth()->user()->id) }}" class="makeanewquiz_btn">Make a NEW QUIZ</a>違う表示法-->
                         <li>{!! link_to_route('quizzes.create', 'Make a NEW QUIZ', ['id' => Auth::id()], ['class' => 'blue_btn']) !!}</li>
+                         <li>  <div class="logo_position"> Hi,<br>{{ Auth::user()->nickname }}</li></div>
                         <!--クリエイトボタン -->
                         
                         
