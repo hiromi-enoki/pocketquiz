@@ -10,7 +10,7 @@
     <div class="quiz">
         <div class="panel panel-default">
             <div class="panel-heading text-center">
-                <span class="glyphicon glyphicon-flag">{!! nl2br(e($quiz->title)) !!}</span>
+                <p class="question-title">◆TITLE◆ {!! nl2br(e($quiz->title)) !!}</p>
             </div>
             <?php $i = 1?>
 
