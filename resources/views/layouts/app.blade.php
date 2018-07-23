@@ -22,7 +22,7 @@
     
         @include('commons.navbar')
       
-      
+      <?php $user = \Auth::user(); ?>
             <div class="hamburger">
                 
                             <!--<li class="visible-xs">{!! link_to_route('users.mypage', 'My profile', ['id' => Auth::id()], ['class' => 'blue_btn']) !!}</li>-->
@@ -36,10 +36,12 @@
                             <label for="cp_toggle01"></label>
                                 <div class="cp_menu">
                                     <ul>
-                                        <li>{!! link_to_route('users.mypage', 'My Page', ['id' => Auth::id()]) !!}</li>
+
+                                        <li>{!! link_to_route('users.mypage', $user->nickname . 'のページ', ['id' => Auth::id()]) !!}</li>
                                         <li>{!! link_to_route('quizzes.create', 'Make a NEW QUIZ', ['id' => Auth::id()]) !!}</li>
                                         <li role="separator" class="divider"></li>
-                                        <li>{!! link_to_route('logout.get', 'Logout') !!}</li>
+                                         <li>{!! link_to_route('logout.get', 'ログアウト') !!}</li>
+
                                     </ul>
                                 </div>
                             </div>
