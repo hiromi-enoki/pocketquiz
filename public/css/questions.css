@@ -439,3 +439,9 @@ body { padding-top: 0px; } /*コンテントがnavbarとかぶらないように
  .button-inline form{
    display:inline;
  }
+
+textarea {
+  width: 100%;
+  height: 25px;
+
+}
