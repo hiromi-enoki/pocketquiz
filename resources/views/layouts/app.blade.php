@@ -16,23 +16,7 @@
         <link rel="stylesheet" href="{{ secure_asset('css/questions.css') }}">
         
         
-        <meta http-equiv="Content-Style-Type" content="text/css">
-        <style type="text/css">
-                body { 
-                background-image: url("images/background.jpg");
-                background-size: cover;
-                background-attachment: fixed;
-                background-repeat: no-repeat;
-                background-position: center center;
-                }
-                
-        @media only screen and (max-width: 767px) {
-                body {
-                background-image: url(images/background.jpg);
-  }
-}
-                
-        </style>
+
         
         
     </head>
