@@ -22,7 +22,7 @@ class QuizzesController extends Controller
 	{
 		if (\Auth::check()) {
 			 $user = \Auth::user();
-			 $quizzes = Quiz::orderBy('id', 'DESC')->paginate(9);
+			 $quizzes = Quiz::orderBy('id', 'DESC')->paginate(12);
 			 $favoritings = $user->favoritings();
 	
 		return view('users.show',[
@@ -325,7 +325,7 @@ public function show($id)
 		]);
 		$question = Question::find($id);
 		$user = \Auth::user();
-		$quizzes = $user->quizzes()->orderBy('created_at', 'desc')->paginate(10);
+		$quizzes = $user->quizzes()->orderBy('created_at', 'asc')->paginate(10);
 		
 		$question->update([
 			'question' => $request->question,
