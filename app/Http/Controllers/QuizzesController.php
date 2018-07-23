@@ -63,7 +63,7 @@ public function show($id)
 		$quizzes = $user->quizzes()->orderBy('created_at', 'desc')
 		->paginate(10)
 		;
-		$questions = $quiz->questions()->orderBy('created_at', 'desc')
+		$questions = $quiz->questions()->orderBy('created_at', 'asc')
 		->paginate(10)
 		;
 	 // $answers = $quiz->answers()->orderBy('created_at', 'desc')->paginate(10);
