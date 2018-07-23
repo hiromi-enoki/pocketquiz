@@ -46,7 +46,7 @@
     </li>
 @endforeach
 </ul>
-{!! $quizzes->render() !!}
+
 
 <div class="row">
     <table class="table">
