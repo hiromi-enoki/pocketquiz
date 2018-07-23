@@ -427,3 +427,11 @@ body { padding-top: 0px; } /*コンテントがnavbarとかぶらないように
   z-index: 1;
   top:0px;
 }
+
+
+
+
+h2:first-letter {
+font-size: 2em;
+color: #00bfff;
+}
