@@ -62,7 +62,7 @@ h1{
           transform-style: preserve-3d;
     -webkit-perspective: 10000px;
             perspective: 10000px;
-  text-align: justify;
+text-align: justify;
 }
 
 .front
@@ -154,19 +154,19 @@ h1{
             transform-style: preserve-3d;
 }
 
-.container:hover .back{
-  -webkit-transform: rotateY(0deg);
-          transform: rotateY(0deg);
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-}
+/*.container:hover .back{*/
+/*  -webkit-transform: rotateY(0deg);*/
+/*          transform: rotateY(0deg);*/
+/*  -webkit-transform-style: preserve-3d;*/
+/*          transform-style: preserve-3d;*/
+/*}*/
 
-.container:hover .front{
-  -webkit-transform: rotateY(-180deg);
-          transform: rotateY(-180deg);
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-}
+/*.container:hover .front{*/
+/*  -webkit-transform: rotateY(-180deg);*/
+/*          transform: rotateY(-180deg);*/
+/*  -webkit-transform-style: preserve-3d;*/
+/*          transform-style: preserve-3d;*/
+/*}*/
 
 .front .inner p{
   font-size: 2rem;
@@ -209,22 +209,6 @@ footer small {
     color: #000;
 }
 
-@media screen and (max-width: 64rem){
-  .col{
-    width: calc(33.333333% - 2rem);
-  }
-}
-
-@media screen and (max-width: 48rem){
-  .col{
-    width: calc(50% - 2rem);
-  }
-}
-
-@media screen and (max-width: 32rem){
-  .col{
-    width: 100%;
-}}
 
 .button_wrapper{
   text-align: center;
@@ -307,6 +291,7 @@ margin: 0 auto;
 }
 
 
+
 /*ユーザーボタン*/
 .user_btn {
     display: inline-block;
@@ -358,7 +343,7 @@ position: fixed;
 top: 0;
 right: -100vw;
 width: 250px;
-height: 100%;
+margin-top: 150px;
 cursor: pointer;
 -webkit-transition: 0.53s transform;
 transition: 0.53s transform;
@@ -409,8 +394,10 @@ transform: translateX(-250px);
 }
 .cp_offcm01 #cp_toggle01 ~ label::before {
 font-family: 'FontAwesome';
-content: '≡';
-font-size: 3em /*≡と×のサイズ*/
+content: '★';
+font-size: 6em; /*≡と×のサイズ*/
+float:right;
+
 }
 .cp_offcm01 #cp_toggle01:checked ~ label::before {
 content: '×';
@@ -420,5 +407,35 @@ content: '×';
     display: inline;
  } 
 
- body { padding-top: 70px; } /*コンテントがnavbarとかぶらないように
+body { padding-top: 0px; } /*コンテントがnavbarとかぶらないように*/
 
+
+.button_wrapper{
+  text-align: center;
+  position: relative;
+}
+
+.title textarea{
+  resize: none;
+  width: 400px;
+  height: 25px;
+}
+/*入力フォームのサイズ*/
+
+
+.hamburger{
+  position: sticky;
+  z-index: 2;
+  top:0px;
+}
+
+.hamburger2{
+  position: relative;
+  z-index: 1;
+  top:0px;
+}
+
+ /*mypage edit delete button 横並び*/
+ .button-inline form{
+   display:inline;
+ }

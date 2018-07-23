@@ -14,10 +14,38 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         
         <link rel="stylesheet" href="{{ secure_asset('css/questions.css') }}">
+        
+        
+        
+        
     </head>
-    <body>
+    
         @include('commons.navbar')
+      
+      
+            <div class="hamburger">
+                
+                            <!--<li class="visible-xs">{!! link_to_route('users.mypage', 'My profile', ['id' => Auth::id()], ['class' => 'blue_btn']) !!}</li>-->
+                            <!--<li class="visible-xs">{!! link_to_route('logout.get', 'Logout', null, ['class' => 'blue_btn']) !!}</li>-->
 
+                        <div class="hidden-xs">
+                            <div class="cp_cont">
+                            <div class="cp_offcm01">
+                            <input type="checkbox" id="cp_toggle01">
+                            <label for="cp_toggle01"></label>
+                                <div class="cp_menu">
+                                    <ul>
+                                        <li>{!! link_to_route('users.mypage', 'My profile', ['id' => Auth::id()]) !!}</li>
+                                        <li>{!! link_to_route('logout.get', 'Logout') !!}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            </div>
+                        </div>  
+            </div> 
+      
+      
+      
         <div class="container">
             @include('commons.error_messages')
 

@@ -1,4 +1,4 @@
-<!--mypageから飛ぶクイズ一覧ページ-->
+<!--mypageから飛ぶクイズ一覧ページ 削除予定0720-->
 
 @extends('layouts.app')
 
@@ -34,19 +34,19 @@
                                  <td>
                                 {!! nl2br(e($question->answer)) !!}
                                 </td>
-                                
+                                <td>
+                                    <div class="btn btn-success btn-xs"><a href="{{ route('quizzes.editquestion', ['id' => $question->id]) }}">Edit</a></div>
+                                </td>
                                 <td>
 
                                     {!! Form::open(['route' => ['quizzes.destroyquestion', $question->id], 'method' => 'delete']) !!}
-                                    
-                                        {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
+                                        {!! Form::hidden('quizid', $quiz->id) !!}
+                                        {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs', 'onClick' => 'return deletePost(this);']) !!}
                                     {!! Form::close() !!}
                                     
                                 </td>
                                 
-                                <td>
-                                    <div class="btn btn-success btn-xs"><a href="{{ route('quizzes.editquestion', ['id' => $question->id]) }}">Edit</a></div>
-                                </td>
+                      
                             </tr>
                             @endforeach
                     </table>
@@ -55,6 +55,19 @@
             </div>
             </div>
         </div>
+            <script>
+
+function deletePost(e) {
+  'use strict';
+ 
+  if (confirm('本当にDeleteしていいですか?')) {
+  document.getElementById('form_' + e.dataset.id).submit();
+  }else{ 
+return false;
+      
+  } 
+}
+</script>
     @endsection
        
         

@@ -1,8 +1,11 @@
 <header>
-    <nav class="navbar navbar-default navbar-static-top navbar-fixed-top">
+    <div class="hamburger2">
+    <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
-            <div class="navbar-header">
+
                 
+
+            <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -31,26 +34,34 @@
 		             </form>
                  
                         <!--<li>{!! link_to_route('quizzes.create', 'Make a NEW QUIZ', auth()->user()->id) !!}</li>旧クリエイトボタン-->
+                        <!--<a href="{{ route('quizzes.create', auth()->user()->id) }}" class="makeanewquiz_btn">Make a NEW QUIZ</a>違う表示法-->
                         <li>{!! link_to_route('quizzes.create', 'Make a NEW QUIZ', ['id' => Auth::id()], ['class' => 'blue_btn']) !!}</li>
                         <!--クリエイトボタン -->
+                        
+                        
+                        
+                        
 
                             <li class="visible-xs">{!! link_to_route('users.mypage', 'My profile', ['id' => Auth::id()], ['class' => 'blue_btn']) !!}</li>
                             <li class="visible-xs">{!! link_to_route('logout.get', 'Logout', null, ['class' => 'blue_btn']) !!}</li>
 
-                        <li class="hidden-xs">
-                            <div class="cp_cont">
-                            <div class="cp_offcm01">
-                            <input type="checkbox" id="cp_toggle01">
-                            <label for="cp_toggle01"></label>
-                                <div class="cp_menu">
-                                    <ul>
-                                        <li>{!! link_to_route('users.mypage', 'My profile', ['id' => Auth::id()]) !!}</li>
-                                        <li>{!! link_to_route('logout.get', 'Logout') !!}</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            </div>
-                        </li>
+                        <!--<li class="hidden-xs">-->
+                        <!--    <div class="cp_cont">-->
+                        <!--    <div class="cp_offcm01">-->
+                        <!--    <input type="checkbox" id="cp_toggle01">-->
+                        <!--    <label for="cp_toggle01"></label>-->
+                        <!--        <div class="cp_menu">-->
+                        <!--            <ul>-->
+                        <!--                <li>{!! link_to_route('users.mypage', 'My profile', ['id' => Auth::id()]) !!}</li>-->
+                        <!--                <li>{!! link_to_route('logout.get', 'Logout') !!}</li>-->
+                        <!--            </ul>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--    </div>-->
+                        <!--</li>-->
+                        
+                        
+                        
                     </ul>
             
             </div>
@@ -59,9 +70,9 @@
                 @else
                         <!--<li>{!! link_to_route('signup.get', 'Signup') !!}</li>-->
                         <!--<li>{!! link_to_route('login', 'Login') !!}</li>-->
-
                 @endif
-                
-        </div>
+</div>
+
+    
     </nav>
 </header>
