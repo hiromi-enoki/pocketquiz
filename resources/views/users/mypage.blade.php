@@ -36,6 +36,7 @@
                         </div>
                         
                     </div>
+
                 </div>
                 </div>
         </div>
@@ -44,6 +45,7 @@
      {!! $quizzes->render() !!}
     
 </div>
+
 
  <!--ここからDONE一覧機能-->
      <div class="row">

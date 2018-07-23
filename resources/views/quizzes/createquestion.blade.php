@@ -14,7 +14,7 @@
                       <div class="form-group">
                           {!! Form::hidden('id', $quiz->id) !!}
                           <img src="{{ secure_asset("images/title.jpg") }}" alt="title pic">
-                         <div class="panel panel-success"><div class="panel-heading">{!! nl2br(e($quiz->title)) !!}t</div></div>
+                         <div class="panel panel-success"><div class="panel-heading">{!! nl2br(e($quiz->title)) !!}</div></div>
                          
                          
                           <img src="{{ secure_asset("images/question.jpg") }}" alt="q pic"><br>
