@@ -12,13 +12,13 @@
 <div class="col-md-12">
     {!! Form::model($question, ['route' => ['quizzes.updatequestion', $question->id], 'method' => 'put']) !!}
         
-        {!! Form::label('question', 'QUESTION:') !!}<br>
+       <th scope="col"><h2>Question</h2></th>
         {!! Form::textarea('question') !!}<br>
-        
-        {!! Form::label('answer', 'ANSWER:') !!}<br>
+        <div id='title'>
+      <th scope="col"><h2>Answer</h2></th>
         {!! Form::textarea('answer') !!}<br>
         </div>
-        {!! Form::submit('UPDATE') !!}
+        {!! Form::submit('UPDATE', ['class' => 'btn btn-warning btn-xs']) !!}
 
     {!! Form::close() !!}
 </div>
