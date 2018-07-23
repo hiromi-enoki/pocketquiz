@@ -2,6 +2,11 @@
 
 @section('content')
 
+    <div class="text-center">
+        <img src="{{ secure_asset("images/editpage.jpg") }}" alt="login pic">
+    </div>
+
+
     <h1>【{!! nl2br(e($quiz->title)) !!}】の編集ページ</h1>
 
     {!! Form::model($quiz, ['route' => ['quizzes.update', $quiz->id], 'method' => 'put']) !!}
@@ -39,7 +44,9 @@
                             @foreach ($questions as $question)
                             <tr>
                                 <td>{!! nl2br(e($question->question)) !!}</td>
+                                <div id='title'>
                                 <td>{!! nl2br(e($question->answer)) !!}</td>
+                                </div>
                                 <!--<td><div class="btn btn-success btn-xs"><a href="{{ route('quizzes.editquestion', ['id' => $question->id]) }}">Edit</a></div></td>-->
                                 
                                 <td>
@@ -47,7 +54,7 @@
                                     {!! Form::submit('Edit', ['class' => 'btn btn-success btn-xs']) !!}
                                     {!! Form::close() !!}
                                 </td>
-
+        
                                 <td>
                                     {!! Form::open(['route' => ['quizzes.destroyquestion', $question->id], 'method' => 'delete']) !!}
                                     {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}

@@ -36,16 +36,16 @@
                                 </td>
                                 
                                 <td>
-
+                                    <div class="btn btn-success btn-xs"><a href="{{ route('quizzes.editquestion', ['id' => $question->id]) }}">Edit</a></div>
+                                </td>
+                                
+                                <td>
                                     {!! Form::open(['route' => ['quizzes.destroyquestion', $question->id], 'method' => 'delete']) !!}
                                     
                                         {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
                                     {!! Form::close() !!}
                                     
-                                </td>
-                                
-                                <td>
-                                    <div class="btn btn-success btn-xs"><a href="{{ route('quizzes.editquestion', ['id' => $question->id]) }}">Edit</a></div>
+                                    
                                 </td>
                             </tr>
                             @endforeach
