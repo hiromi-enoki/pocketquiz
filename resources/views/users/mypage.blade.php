@@ -17,7 +17,7 @@
                 <div class="panel panel-warning">
                 <div class="panel-heading text-center">
                           
-                    <h3 class="panel-title">{!! nl2br(e($quiz->title)) !!}</h3>
+                    <p class="x-break">{!! nl2br(e($quiz->title)) !!}</p>
                             
                     <div class="panel-body">
                                 

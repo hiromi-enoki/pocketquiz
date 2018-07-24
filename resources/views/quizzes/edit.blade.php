@@ -7,12 +7,15 @@
     </div>
 
 
-    <h1>You Can Edit【{!! nl2br(e($quiz->title)) !!}】</h1>
+    <!--<h1>You Can Edit【{!! nl2br(e($quiz->title)) !!}】</h1>-->
+     <!--<hr class="style9">-->
+
+    <div class="col-md-12">
 
     {!! Form::model($quiz, ['route' => ['quizzes.update', $quiz->id], 'method' => 'put']) !!}
 
-
-     <div id='title'>
+    
+        <div id='title'>
             <th scope="col"><h2>Title</h2></th>
             {!! Form::textarea('title') !!}
    
@@ -21,7 +24,7 @@
             {!! Form::close() !!}
         </div>
 
-        <div class="col-lg-12">
+        
             <div class="quiz">
 
                 <table class="table table-striped">
@@ -58,12 +61,22 @@
                             @endforeach
                         </tbody>
                 </table>
-                 <div class='inline-block'><h2>More Q/A?
+                        <br><br><br>
+                        <hr class="style9">
+                <div class='inline-block'><h2>More Q/A?
                           {!! Form::open(['route' => ['quizzes.createquestion', $quiz->id], 'method' => 'get']) !!}
                             {!! Form::submit('ADD More Questions/Answers to this Quiz', ['class' => 'btn btn-primary btn-md btn-block']) !!}
-                            {!! Form::close() !!}</h2></div>
+                            {!! Form::close() !!}</h2>
+                </div>
+                <div class="text-center">
+                    <div class="logo_position">
+                        <a href="{{ route('users.mypage', ['id' => $user->id]) }}" class="pocketquiz_btn2">Back to My Page</a>
+                    </div>
+                </div>
+                <!--<a href="{{ route('users.mypage', ['id' => $user->id]) }}" button type="button" class="btn btn-success btn-lg">-->
+                <!--Back to My Page</a>-->
             </div>
-        </div>
+   </div>     
     
     
 <script>
