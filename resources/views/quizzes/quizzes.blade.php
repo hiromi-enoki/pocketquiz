@@ -18,14 +18,13 @@
                         
                     
                         @if ($me->is_favoriting($quiz->id) == 1)    
-                            <p><span class="glyphicon glyphicon-ok"></span> DONE</p>
+                            <p><span class="glyphicon glyphicon-ok" style="color:#ff7777"></span> DONE</p>
                         @else
-                            <p><span class="glyphicon glyphicon-remove"></span> NOT YET</p>  
+                            <p><span class="glyphicon glyphicon-remove" style="color:#99e1e5"></span> NOT YET</p>  
                         @endif
-            
-                        
+
                     </div>
-                    </a></div>
+                    </div>
             </div>
         </div>
         
