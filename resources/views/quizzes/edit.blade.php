@@ -15,11 +15,7 @@
      <div id='title'>
             <th scope="col"><h2>Title</h2></th>
             {!! Form::textarea('title') !!}
-        <!--{!! Form::label('question', 'QUESTION:') !!}-->
-        <!--<input name="question" type="text" value = "{{$quiz->questions()->get()->toArray()[0]['question']}}" id="question"><br>-->
-        
-        <!--{!! Form::label('answer', 'ANSWER:') !!}-->
-        <!--<input name="answer" type="text" value = "{{$quiz->questions()->get()->toArray()[0]['answer']}}" id="answer"><br>-->
+   
         
             {!! Form::submit('UPDATE', ['class' => 'btn btn-warning btn-xs']) !!}
             {!! Form::close() !!}
@@ -30,7 +26,10 @@
                 <div class="panel panel-default">
                     <div class="panel-heading text-center">
                          <p class="question-title">QUIZ TITLE: 【{!! nl2br(e($quiz->title)) !!}】の中のQuestion/Answerを編集</p>
-                    </div>
+                            {!! Form::open(['route' => ['quizzes.createquestion', $quiz->id], 'method' => 'get']) !!}
+                            {!! Form::submit('ADD', ['class' => 'btn btn-primary btn-xs']) !!}
+                            {!! Form::close() !!}
+                        </div>
                 </div>
                 <table class="table table-striped">
                     <thead>
@@ -48,8 +47,7 @@
                                 <div id='title'>
                                 <td>{!! nl2br(e($question->answer)) !!}</td>
                                 </div>
-                                <!--<td><div class="btn btn-success btn-xs"><a href="{{ route('quizzes.editquestion', ['id' => $question->id]) }}">Edit</a></div></td>-->
-                                
+
                                 <td>
                                     {!! Form::open(['route' => ['quizzes.editquestion', $question->id], 'method' => 'get']) !!}
                                     {!! Form::submit('Edit', ['class' => 'btn btn-success btn-xs']) !!}
