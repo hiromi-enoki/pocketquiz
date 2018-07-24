@@ -24,11 +24,6 @@
                         @endif
             
                         
-                        <!--<p><span class="glyphicon glyphicon-ok"></span> DONE</p>-->
-                        <!--<button type="button" class="btn btn-default btn-sm">-->
-                        <!--<span class="glyphicon glyphicon-ok-circle"></span> OK-->
-                        <!--</button>-->
-                        <!--@include('user_favorite.favorite_button', ['user' => $user])-->
                     </div>
                     </a></div>
             </div>
