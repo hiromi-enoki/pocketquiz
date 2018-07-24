@@ -463,3 +463,8 @@ textarea {
 
 }
 
+.style9 {
+	border-top: 1px dashed #8c8b8b;
+	border-bottom: 1px dashed #fff;
+}
+
