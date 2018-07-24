@@ -11,7 +11,9 @@
      
     @if (Auth::user()->is_favoriting($quiz->id))
     
-        <div class="btn pocketquiz_btn btn-md"><a href="/">Home</a></div>
+        <div class="logo_position">
+                <a href="/" class="pocketquiz_btn">Home</a>
+        </div>
         
    @endif
 <br></br>
@@ -45,7 +47,9 @@
         
         @include('user_favorite.favorite_button', ['quiz' => $quiz])
     <br></br>
-    <div class="btn pocketquiz_btn btn-md"><a href="/">Home</a></div>
+    <div class="logo_position">
+                <a href="/" class="pocketquiz_btn">Home</a>
+    </div>
         
 
 

@@ -9,17 +9,10 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     
-                    <a href="{{ route('quizzes.show', $quiz->id) }}" button type="button" class="btn btn-warning btn-lg active"><p class="w-break">{!! nl2br(e($quiz->title)) !!}</p></a>
-                    
-                    
-                    <!--<div class="btn btn-warning">-->
-                    <!--    <a href="{{ route('quizzes.show', $quiz->id) }}">-->
-                    <!--        <h3 class="panel-title">-->
-                    <!--            <p class="w-break">{!! nl2br(e($quiz->title)) !!}</p>-->
-                    <!--        </h3>-->
-                    <!--    </a>-->
-                    <!--</div>-->
-                
+                    <a href="{{ route('quizzes.show', $quiz->id) }}" button type="button" class="btn btn-warning btn-lg active">
+                        <p class="w-break">{!! nl2br(e($quiz->title)) !!}</p>
+                    </a>
+
                     <div>
                         made by {!! nl2br(e($user->nickname)) !!}
                         
