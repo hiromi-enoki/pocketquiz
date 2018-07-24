@@ -463,3 +463,11 @@ textarea {
 
 }
 
+/*mypage タイトル...でるよ*/
+.x-break{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  
+}
+
