@@ -13,7 +13,7 @@
                   {!! Form::open(['route' => 'quizzes.store']) !!}
                       <div class="form-group">
                           <img src="{{ secure_asset("images/title.jpg") }}" alt="title pic">
-                          {!! Form::textarea('title', old('title'), ['class' => 'form-control', 'rows' => '2']) !!}<br>
+                          {!! Form::textarea('title', old('title'), array('placeholder'=>'クイズのタイトルを入れてね　（ex:〇〇クイズ、なぞなぞ）'), ['class' => 'form-control', 'rows' => '2']) !!}<br>
                         
                           {!! Form::submit('このタイトルのQuizにQuestion/Answerを追加する', ['class' => 'btn btn-success btn-block']) !!}
                       </div>

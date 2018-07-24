@@ -18,9 +18,9 @@
                          
                          
                           <img src="{{ secure_asset("images/question.jpg") }}" alt="q pic"><br>
-                          {!! Form::textarea('question', old('question'), ['class' => 'form-control', 'rows' => '2']) !!}<br>
+                          {!! Form::textarea('question', old('question'), array('placeholder'=>'問題文をここに書いてね (ex.パンはパンでも食べられないパンは？)'), ['class' => 'form-control', 'rows' => '2']) !!}<br>
                           <img src="{{ secure_asset("images/answer.jpg") }}" alt="a pic"><br>
-                          {!! Form::textarea('answer', old('answer'), ['class' => 'form-control', 'rows' => '2']) !!}<br>
+                          {!! Form::textarea('answer', old('answer'), array('placeholder'=>'答えをここに書いてね (ex.フライパン)'), ['class' => 'form-control', 'rows' => '2']) !!}<br>
                           <!--{!! Form::submit('ADD', ['class' => 'btn btn-info btn-block']) !!}-->
                        
                             <button class="btn btn-info btn-block" type="submit" name="action" value="add_question">このQuizにさらにQuestion/Answerを追加する</button>
