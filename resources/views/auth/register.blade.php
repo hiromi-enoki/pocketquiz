@@ -26,7 +26,7 @@
                 </div>
                 {!! Form::submit('Sign up', ['class' => 'btn btn-warning btn-block']) !!}
             {!! Form::close() !!}
-            <p>Done before? {!! link_to_route('login', 'log in') !!}</p>
+            <p>Done before? <font color="#0000ff">{!! link_to_route('login', 'Log in!') !!}</p>
         </div>
     </div>
     

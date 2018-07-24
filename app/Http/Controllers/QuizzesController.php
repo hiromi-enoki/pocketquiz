@@ -341,4 +341,20 @@ public function show($id)
 			'user' => $user
 			]);
 	}
+	
+	
+	public function addquestion($id)
+	{
+		if (\Auth::check()) {
+		$user = \Auth::user();
+		$quiz = Quiz::find($id);
+		
+	   return view('quizzes.createquestion', [
+			'user' => $user,
+			'quiz' => $quiz
+			]);
+	}else {
+			return view('welcome');
+	}
+	}
 }
