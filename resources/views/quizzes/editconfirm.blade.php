@@ -11,7 +11,7 @@
             <h1>「{!! nl2br(e($question->question)) !!}」<br>の項目が更新されました！</h1>
             <div class="text-center">
                 <div class="logo_position">
-                <a href="{{ route('users.mypage', ['id' => $user->id]) }}" button type="button" class="btn btn-success btn-lg">
+                <a href="{{ route('users.mypage', ['id' => $user->id]) }}" button type="button" class="pocketquiz_btn2 btn-lg">
                 他のQuiz TitleをEditする</a>
                 
                 <br><br><br>
