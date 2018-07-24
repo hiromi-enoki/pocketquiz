@@ -15,12 +15,6 @@
      <div id='title'>
             <th scope="col"><h2>Title</h2></th>
             {!! Form::textarea('title') !!}
-        <!--{!! Form::label('question', 'QUESTION:') !!}-->
-        <!--<input name="question" type="text" value = "{{$quiz->questions()->get()->toArray()[0]['question']}}" id="question"><br>-->
-        
-        <!--{!! Form::label('answer', 'ANSWER:') !!}-->
-        <!--<input name="answer" type="text" value = "{{$quiz->questions()->get()->toArray()[0]['answer']}}" id="answer"><br>-->
-        
             {!! Form::submit('UPDATE', ['class' => 'btn btn-warning btn-xs']) !!}
             {!! Form::close() !!}
         </div>
@@ -48,7 +42,7 @@
                                 <div id='title'>
                                 <td>{!! nl2br(e($question->answer)) !!}</td>
                                 </div>
-                                <!--<td><div class="btn btn-success btn-xs"><a href="{{ route('quizzes.editquestion', ['id' => $question->id]) }}">Edit</a></div></td>-->
+                                
                                 
                                 <td>
                                     {!! Form::open(['route' => ['quizzes.editquestion', $question->id], 'method' => 'get']) !!}
