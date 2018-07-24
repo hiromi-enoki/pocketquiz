@@ -43,7 +43,7 @@
         <?php $i++ ?>
             @endforeach
         </div>
-        
+
         @include('user_favorite.favorite_button', ['quiz' => $quiz])
     <br></br>
   
