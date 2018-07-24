@@ -5,7 +5,6 @@
         <div class="row">
             <div class="image text-center">
                 <img src="{{ secure_asset("images/addnewquiz.jpg") }}" alt="new quiz pic">
-                <img src="{{ secure_asset("images/addcat.jpg") }}" alt="addcat pic">
             </div>
         <br><br>
             <div class="text-left">
