@@ -28,7 +28,7 @@
                         <!--検索機能-->
                     <form class="navbar-form navbar-left" role="search"　method="get" action="/search">
 				    <div class="form-group">
-				    	<input name='keyword' type="text" class="form-control" placeholder="検索キーワード">
+				    	<input name='keyword' type="text" class="form-control" placeholder="KEYWARD">
 	                </div>
 			             <button type="submit" class="btn btn-default">GO</button>
 		             </form>

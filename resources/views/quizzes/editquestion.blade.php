@@ -7,7 +7,7 @@
     </div>
 
 
-    <h1>【{!! nl2br(e($question->question)) !!}】の問題編集ページ</h1>
+    <h1>Edit the ...【{!! nl2br(e($question->question)) !!}】</h1>
 
 <div class="col-md-12">
     {!! Form::model($question, ['route' => ['quizzes.updatequestion', $question->id], 'method' => 'put']) !!}

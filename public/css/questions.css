@@ -7,12 +7,19 @@
 
 h1{
   font-size: 2.5rem;
-  font-family: 'Montserrat';
   font-weight: normal;
   color: #444;
   text-align: center;
   margin: 2rem 0;
 }
+
+body { 
+  padding-top: 0px;  /*コンテントがnavbarとかぶらないように*/
+  
+  font-family: cursive!important;
+  
+}
+
 
 .panel-title{
   word-wrap: break-word;
@@ -394,8 +401,8 @@ transform: translateX(-250px);
 }
 .cp_offcm01 #cp_toggle01 ~ label::before {
 font-family: 'FontAwesome';
-content: url(../images/icon.jpg);
-font-size: 6em; /*≡と×のサイズ*/
+content: url(../images/menu.png);
+font-size: 5em; /*≡と×のサイズ*/
 float:right;
 
 }
@@ -407,7 +414,8 @@ content: '×';
     display: inline;
  } 
 
-body { padding-top: 0px; } /*コンテントがnavbarとかぶらないように*/
+
+
 
 
 .button_wrapper{
@@ -451,7 +459,7 @@ color: #00bfff;
 
 textarea {
   width: 100%;
-  height: 25px;
+  height: 50px;
 
 }
 

@@ -7,7 +7,7 @@
     </div>
 
 
-    <h1>【{!! nl2br(e($quiz->title)) !!}】の編集ページ</h1>
+    <h1>Edit the ...【{!! nl2br(e($quiz->title)) !!}】</h1>
 
     {!! Form::model($quiz, ['route' => ['quizzes.update', $quiz->id], 'method' => 'put']) !!}
 
@@ -27,11 +27,11 @@
 
         <div class="col-lg-12">
             <div class="quiz">
-                <div class="panel panel-default">
-                    <div class="panel-heading text-center">
-                         <p class="question-title">QUIZ TITLE: 【{!! nl2br(e($quiz->title)) !!}】の中のQuestion/Answerを編集</p>
-                    </div>
-                </div>
+                <!--<div class="panel panel-default">-->
+                <!--    <div class="panel-heading text-center">-->
+                <!--         <p class="question-title">QUIZ TITLE: 【{!! nl2br(e($quiz->title)) !!}】の中のQuestion/Answerを編集</p>-->
+                <!--    </div>-->
+                <!--</div>-->
                 <table class="table table-striped">
                     <thead>
                         <tr>
