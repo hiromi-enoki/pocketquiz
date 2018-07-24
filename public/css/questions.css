@@ -464,7 +464,6 @@ textarea {
 
 }
 
-
 .tag {
     padding: 0.5em 1em;
     margin: 2em 0;
@@ -480,5 +479,9 @@ textarea {
   text-overflow: ellipsis;
   white-space: nowrap;
   
+.style9 {
+	border-top: 1px dashed #8c8b8b;
+	border-bottom: 1px dashed #fff;
+
 }
 
