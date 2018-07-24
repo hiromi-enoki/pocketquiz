@@ -9,7 +9,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     
-                    <a href="{{ route('quizzes.show', $quiz->id) }}" button type="button" class="btn btn-warning btn-lg active">
+                    <a href="{{ route('quizzes.show', $quiz->id) }}" button type="button" class="btn btn-warning btn-lg">
                         <p class="w-break">{!! nl2br(e($quiz->title)) !!}</p>
                     </a>
 
