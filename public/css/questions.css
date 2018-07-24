@@ -402,12 +402,14 @@ transform: translateX(-250px);
 .cp_offcm01 #cp_toggle01 ~ label::before {
 font-family: 'FontAwesome';
 content: url(../images/menu.png);
-font-size: 5em; /*≡と×のサイズ*/
+/*font-size: 5em; ≡と×のサイズ*/
 float:right;
 
 }
 .cp_offcm01 #cp_toggle01:checked ~ label::before {
 content: url(../images/close.png);
+
+  
 }
 
 #nav ul li{ 	
@@ -463,6 +465,16 @@ textarea {
 
 }
 
+
+.tag {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    border: double 5px #4ec4d3;
+}
+.tag p {
+    margin: 0; 
+    padding: 0;
+}
 /*mypage タイトル...でるよ*/
 .x-break{
   overflow: hidden;
