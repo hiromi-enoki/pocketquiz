@@ -16,8 +16,7 @@ h1{
 body { 
   padding-top: 0px;  /*コンテントがnavbarとかぶらないように*/
   
-  font-family: cursive!important;
-  
+  font-family: 'M+ 1p', Roboto,'Droid Sans', cursive;
 }
 
 
@@ -401,7 +400,7 @@ transform: translateX(-250px);
 }
 .cp_offcm01 #cp_toggle01 ~ label::before {
 font-family: 'FontAwesome';
-content: url(../images/menu.png);
+content: url(../images/menu1.png);
 /*font-size: 5em; ≡と×のサイズ*/
 float:right;
 
