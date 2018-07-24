@@ -4,8 +4,17 @@
 
 <div class="text-center">
     <img src="{{ secure_asset("images/quizlist.jpg") }}" alt="quizlist pic">
-
+    
+    
+   
 <div class="row">
+     
+    @if (Auth::user()->is_favoriting($quiz->id))
+    
+        <div class="btn pocketquiz_btn btn-md"><a href="/">Home</a></div>
+        
+   @endif
+<br></br>
 <div class="col-lg-12">
     <div class="quiz">
         <div class="panel panel-default">
@@ -33,20 +42,10 @@
         <?php $i++ ?>
             @endforeach
         </div>
-        <div class=favobutton>
-            
-        @if (Auth::user()->is_favoriting($quiz->id))
-        {!! Form::open(['route' => ['user.unfavorite', $quiz->id], 'method' => 'delete']) !!}
-            {!! Form::submit('Done!!', ['class' => "btn btn-danger btn-lg"]) !!}
-        {!! Form::close() !!}
-    @else
-        {!! Form::open(['route' => ['user.favorite', $quiz->id]]) !!}
-            {!! Form::submit('終わったら押してね', ['class' => "btn btn-primary btn-lg"]) !!}
-        {!! Form::close() !!}
-        </div>
-    @endif
+        
+        @include('user_favorite.favorite_button', ['quiz' => $quiz])
     <br></br>
-    <div class="btn pocketquiz_btn btn-md"><a href="/">Homeに戻る</a></div>
+    <div class="btn pocketquiz_btn btn-md"><a href="/">Home</a></div>
         
 
 

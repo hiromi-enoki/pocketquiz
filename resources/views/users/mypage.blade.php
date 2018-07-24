@@ -59,8 +59,9 @@
         </tr>
         @foreach ($favoritings as $favoriting)           
         <tr>
-             <td><a href="{{ route('quizzes.show', $favoriting->id) }}">
+             <td><font color="#0000ff"><a href="{{ route('quizzes.show', $favoriting->id) }}">
                  {!! nl2br(e($favoriting->title)) !!}</a>
+                 
                  </td>
                  <td>
                  {!! nl2br(e($favoriting->user->nickname)) !!}
