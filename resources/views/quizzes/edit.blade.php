@@ -70,7 +70,7 @@
                 </div>
                 <div class="text-center">
                     <div class="logo_position">
-                        <a href="{{ route('users.mypage', ['id' => $user->id]) }}" class="pocketquiz_btn">Back to My Page</a>
+                        <a href="{{ route('users.mypage', ['id' => $user->id]) }}" class="pocketquiz_btn2">Back to My Page</a>
                     </div>
                 </div>
                 <!--<a href="{{ route('users.mypage', ['id' => $user->id]) }}" button type="button" class="btn btn-success btn-lg">-->
