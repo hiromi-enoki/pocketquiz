@@ -9,9 +9,11 @@
         </div>
         <br><br>
             <h1>「{!! nl2br(e($question->question)) !!}」<br>の項目が更新されました！</h1>
-            <div class="text-center">
+            <div class="text-center"><div class="logo_position">
             <div class="btn btn-success btn-lg"><a href="{{ route('users.mypage', ['id' => $user->id]) }}">他のQuiz TitleをEditする</a></div><br><br>
-            <div class="btn pocketquiz_btn btn-md"><a href="/">Homeにもどる</a></div>
+            
+                <a href="/" class="pocketquiz_btn">Back to Home</a>
+            </div>
 
             </div>
         </div>
