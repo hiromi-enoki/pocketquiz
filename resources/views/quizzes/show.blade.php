@@ -10,7 +10,7 @@
     <div class="quiz">
         <div class="panel panel-default">
             <div class="panel-heading text-center">
-                <p class="question-title">◆TITLE◆ {!! nl2br(e($quiz->title)) !!}</p>
+                <p class="question-title">◆QUIZ TITLE◆ <p>{!! nl2br(e($quiz->title)) !!}</p></p>
             </div>
             <?php $i = 1?>
 

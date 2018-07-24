@@ -4,10 +4,8 @@
 
         
             <div class="image text-center">
-                <img src="{{ secure_asset("images/contents.jpg") }}" alt="contents pic">
-                <img src="{{ secure_asset("images/minna.jpg") }}" alt="minna pic">
-                <br><br>
-            
+                <img src="{{ secure_asset("images/minna.bmp") }}" alt="contents and minna pic">
+                <br>
             <div>
                 
             

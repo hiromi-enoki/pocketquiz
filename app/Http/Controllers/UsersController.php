@@ -15,6 +15,7 @@ class UsersController extends Controller
     public function index()
     {
         $users = User::paginate(9);
+        
         return view('users.index', [
             'users' => $users,
         ]);
@@ -40,11 +41,11 @@ class UsersController extends Controller
         if (\Auth::check()) {
         $user = \Auth::user();
         $quizzes = $user->quizzes()->orderBy('created_at', 'desc')
-        ->paginate(9)
+        ->Paginate(50000)
         ;
         $quiz = Quiz::all(); //すべてのクイズを出す
         $favoritings = $user->favoritings()->orderBy('created_at', 'desc')
-        ->paginate(9)
+        ->Paginate(50000)
         ;
         // dd($favoritings->get()->toArray());
         
