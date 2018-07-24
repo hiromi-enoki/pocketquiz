@@ -407,7 +407,7 @@ float:right;
 
 }
 .cp_offcm01 #cp_toggle01:checked ~ label::before {
-content: '×';
+content: url(../images/close.png);
 }
 
 #nav ul li{ 	
