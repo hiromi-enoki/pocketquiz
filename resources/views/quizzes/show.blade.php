@@ -10,8 +10,11 @@
 <div class="row">
      
     @if (Auth::user()->is_favoriting($quiz->id))
-    <h1>{!! nl2br(e($quiz->title)) !!}のクイズを完了しました！</h1>
-        <div class="btn pocketquiz_btn btn-md"><a href="/">Homeにもどる</a></div>
+    <h1>You Completed the Quiz<br>"{!! nl2br(e($quiz->title)) !!}"</h1>
+        <div class="logo_position">
+                <a href="/" class="pocketquiz_btn">Back to Home</a>
+        </div>
+       
         
    @endif
 <br></br>
@@ -49,8 +52,11 @@
   
         @if (Auth::user()->is_favoriting($quiz->id))
         @else
-         <div class="btn pocketquiz_btn btn-md"><a href="/">Homeにもどる</a></div>
-   @endif
+  <div class="logo_position">
+                <a href="/" class="pocketquiz_btn">Back to Home</a>
+    </div>   @endif
+
+        
 
 
 </div>
