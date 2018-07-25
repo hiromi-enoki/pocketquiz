@@ -8,7 +8,7 @@
 </div>
 
     
-     @if (Auth::check())
+    @if (Auth::check())
         <?php $user = Auth::user(); ?>
         {{ $user->nickname }}
     @else
@@ -24,5 +24,8 @@
 <div>
         <img src="{{ secure_asset("images/6square.bmp") }}" alt="what you can do" class="chuou">    
 </div>
+
     @endif
+    
+    
 @endsection
