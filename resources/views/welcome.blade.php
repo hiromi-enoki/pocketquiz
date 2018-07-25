@@ -56,11 +56,11 @@
 
 
     @endif
-    
+     <div class="hidden-xs">
     <div class="text-center">
-      <h2>Wanna try Pocket Quiz on your portable device?</h2>
+      <h2>On your smartphone?</h2>
       <img src="{{ secure_asset("images/qr-code.png") }}" id="qrcode" alt="pocketquiz QRcode"><br>
-    </div>  
+    </div>  </div>
       
     
     

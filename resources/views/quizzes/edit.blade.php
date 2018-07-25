@@ -16,7 +16,7 @@
 
     
         <div id='title'>
-            <th scope="col"><h2>Title</h2></th>
+            <th scope="col"><h4>Quiz Title</h4></th>
             {!! Form::textarea('title') !!}
             {!! Form::submit('UPDATE this Title', ['class' => 'btn btn-warning btn-block']) !!}
             {!! Form::close() !!}
@@ -64,12 +64,12 @@
                 </table>
                 </div>
                 </div>
-                        <br><br><br>
+                        
                         <hr class="style9">
-                <div class='inline-block'><h2>More Q/A?
+                <div class='inline-block'><h4>More Q & A?
                           {!! Form::open(['route' => ['quizzes.createquestion', $quiz->id], 'method' => 'get']) !!}
-                            {!! Form::submit('ADD More Questions/Answers to this Quiz', ['class' => 'btn btn-primary btn-md btn-block']) !!}
-                            {!! Form::close() !!}</h2>
+                            {!! Form::submit('ADD More Q & A to this Quiz', ['class' => 'btn btn-primary btn-md btn-block']) !!}
+                            {!! Form::close() !!}</h4>
                 </div>
                 <div class="text-center">
                     <div class="logo_position">

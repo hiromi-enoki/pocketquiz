@@ -3,9 +3,11 @@
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
 
-                
-
-            <div class="navbar-header">
+          <div class="navbar-header">      
+                <div class="logo_position">
+                <a href="/" class="pocketquiz_btn">PocketQuiz</a>
+                </div>
+            @if (Auth::check())
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -14,9 +16,7 @@
                 </button>
                 
                 <!--<a class="navbar-brand" href="/">PocketQuiz</a>旧ロゴボタン-->
-                <div class="logo_position">
-                <a href="/" class="pocketquiz_btn">PocketQuiz</a>
-                </div>
+            
                 <!--ロゴボタン-->
             
             </div>
@@ -24,7 +24,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                 
-                    @if (Auth::check())
+                 
                         <!--検索機能-->
                     <form class="navbar-form navbar-left" role="search"　method="get" action="/search">
 				    <div class="form-group">
@@ -41,20 +41,7 @@
                         <!--クリエイトボタン -->
                         <li class="visible-xs">{!! link_to_route('logout.get', 'Logout', null, ['class' => 'blue_btn']) !!}</li>
 
-                        <!--<li class="hidden-xs">-->
-                        <!--    <div class="cp_cont">-->
-                        <!--    <div class="cp_offcm01">-->
-                        <!--    <input type="checkbox" id="cp_toggle01">-->
-                        <!--    <label for="cp_toggle01"></label>-->
-                        <!--        <div class="cp_menu">-->
-                        <!--            <ul>-->
-                        <!--                <li>{!! link_to_route('users.mypage', 'My profile', ['id' => Auth::id()]) !!}</li>-->
-                        <!--                <li>{!! link_to_route('logout.get', 'Logout') !!}</li>-->
-                        <!--            </ul>-->
-                        <!--        </div>-->
-                        <!--    </div>-->
-                        <!--    </div>-->
-                        <!--</li>-->
+         
                     </ul>
             
             </div>
