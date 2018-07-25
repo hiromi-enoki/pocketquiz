@@ -10,7 +10,7 @@
 <div class="row">
      
     @if (Auth::user()->is_favoriting($quiz->id))
-    <h1>You Completed the Quiz<br><br>"{!! nl2br(e($quiz->title)) !!}"</h1>
+    <h1>＼You Completed the Quiz!!／<br><br>"{!! nl2br(e($quiz->title)) !!}"</h1>
         <div class="logo_position">
                 <a href="/" class="pocketquiz_btn">Back to Home</a>
         </div>

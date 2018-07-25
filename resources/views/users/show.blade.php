@@ -4,7 +4,7 @@
 
         
             <div class="image text-center">
-                <img src="{{ secure_asset("images/minna.bmp") }}" alt="contents and minna pic">
+                <img src="{{ secure_asset("images/minna.jpg") }}" alt="contents and minna pic">
                 <br>
             <div>
                 
