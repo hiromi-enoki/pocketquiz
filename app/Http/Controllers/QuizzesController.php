@@ -359,4 +359,18 @@ public function show($id)
 			return view('welcome');
 	}
 	}
+	
+	
+	// hidden page のcontroller　ここにつけました
+	public function hiddenpage()
+	{
+	
+		// $user = \Auth::user();
+		
+	   return view('users.hidden', [
+			
+			]);
+
+	}
+	
 }

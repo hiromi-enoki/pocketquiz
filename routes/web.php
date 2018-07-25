@@ -68,3 +68,6 @@ Route::get('myquestions/{id}', 'UsersController@myquestion')->name('users.myques
 
 // route to serch function
 Route::get('/search','SearchController@getIndex')->name('quiz.search');
+
+// route to hidden page
+Route::get('/hidden','QuizzesController@hiddenpage')->name('users.hidden');

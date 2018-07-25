@@ -47,6 +47,8 @@
             <br>
             {!! link_to_route('signup.get', 'Sign up', null, ['class' => 'btn btn-lg btn-warning']) !!}
             
+            <a href="{{URL::to('/hidden')}}"><img src="{{ secure_asset("images/nikukyu.jpg")}}" alt="nikukyu"></a>
+            
             {!! link_to_route('login', 'Log in',null, ['class' => 'btn btn-lg btn-info']) !!}
             
         </div>
