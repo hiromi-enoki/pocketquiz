@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="public/css/questions.css">
 <div>
     <img src="{{ secure_asset("images/pocketquiz.bmp") }}" alt="pocketquiz pic" class="chuou"><br>
-    <!--<img src="{{ secure_asset("images/welcome.bmp") }}" alt="welcome pic" class="chuou">-->
+
 </div>
 
 
@@ -19,10 +19,10 @@
 
 <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="{{ secure_asset("images/welcome.bmp") }}" alt="welcome">
+      <img src="{{ secure_asset("images/welcome.jpg") }}" alt="welcome pic" class="chuou">
     </div>
     <div class="item">
-      <img src="{{ secure_asset("images/6square.bmp") }}" alt="what you can do">
+       <img src="{{ secure_asset("images/6square.jpg") }}" alt="what you can do" class="chuou"> 
     </div>
 </div>
  
@@ -35,6 +35,7 @@
     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
+
 </div>
 
     
@@ -52,10 +53,6 @@
             {!! link_to_route('login', 'Log in',null, ['class' => 'btn btn-lg btn-info']) !!}
             
         </div>
-    
-<!--<div>-->
-<!--        <img src="{{ secure_asset("images/6square.bmp") }}" alt="what you can do" class="chuou">    -->
-<!--</div>-->
 
     @endif
 @endsection
