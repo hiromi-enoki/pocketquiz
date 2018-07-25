@@ -57,5 +57,12 @@
 
     @endif
     
+    <div class="text-center">
+      <h2>Wanna try Pocket Quiz on your portable device?</h2>
+      <img src="{{ secure_asset("images/qr-code.png") }}" id="qrcode" alt="pocketquiz QRcode"><br>
+    </div>  
+      
+    
+    
     
 @endsection
