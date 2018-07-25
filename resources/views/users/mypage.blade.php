@@ -77,7 +77,7 @@
 function deletePost(e) {
   'use strict';
  
-  if (confirm('Are you sure you delete this Quiz?')) {
+  if (confirm('Are you sure you DELETE this Quiz?')) {
   document.getElementById('form_' + e.dataset.id).submit();
   }else{ 
 return false;

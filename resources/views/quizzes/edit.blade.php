@@ -84,7 +84,7 @@
 function deletePost(e) {
   'use strict';
  
-  if (confirm('本当にDeleteしていいですか?\n※問題が一つしかない場合、それを削除すると{!! nl2br(e($quiz->title)) !!}のタイトル自体も削除されます')) {
+  if (confirm('Are you sure you delete this Quiz?\n※Quiz title:{{!! nl2br(e($quiz->title)) !!}}will be also deleted  if the last question is removed.')) {
   document.getElementById('form_' + e.dataset.id).submit();
   }else{ 
 return false;
