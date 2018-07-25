@@ -4,7 +4,7 @@
 
 <div>
     <img src="{{ secure_asset("images/pocketquiz.bmp") }}" alt="pocketquiz pic" class="chuou"><br>
-    <img src="{{ secure_asset("images/welcome.bmp") }}" alt="welcome pic" class="chuou">
+    <img src="{{ secure_asset("images/welcome.jpg") }}" alt="welcome pic" class="chuou">
 </div>
 
     
@@ -24,7 +24,7 @@
         </div>
 <br><br>       
 <div>
-        <img src="{{ secure_asset("images/6square.bmp") }}" alt="what you can do" class="chuou">    
+        <img src="{{ secure_asset("images/6square.jpg") }}" alt="what you can do" class="chuou">    
 </div>
     @endif
 @endsection

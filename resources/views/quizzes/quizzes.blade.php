@@ -37,3 +37,6 @@
     </div>
     </div>
 </ul>
+<div align="right"> 
+<a href="{{URL::to('/hidden')}}"><img src="{{ secure_asset("images/nikukyu.jpg")}}" alt="nikukyu"></a>
+</div>
