@@ -271,20 +271,29 @@ public function show($id)
 	
 		public function edit($id)
 	{
+		if (\Auth::check()) {
 	   	$user = \Auth::user();
 	   	$quiz = \App\Quiz::find($id);
-	  $question = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('questions.question','questions.answer')->get();
+		$question = \DB::table('quizzes')->join('questions', 'quizzes.id', '=', 'questions.q_id')->select('questions.question','questions.answer')->get();
 			  $questions = $quiz->questions()->orderBy('created_at', 'asc') ->paginate(10)
 			  ;
-
+			if (\Auth::user()->id === $quiz->user_id){
 
 		return view('quizzes.edit', [
 			'quiz' => $quiz,
 			'question' => $question,
 			'questions' => $questions,
 			'user' => $user
-		]);
-	}
+		]);}
+			else{
+				
+				return redirect('mypage/{id}');
+			}
+				
+			}
+	   	}	
+	
+	
 	
 		public function update(Request $request, $id)
 	{

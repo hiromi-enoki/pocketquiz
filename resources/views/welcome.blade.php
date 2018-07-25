@@ -39,7 +39,7 @@
 </div>
 
     
-     @if (Auth::check())
+    @if (Auth::check())
         <?php $user = Auth::user(); ?>
         {{ $user->nickname }}
     @else
@@ -54,5 +54,8 @@
             
         </div>
 
+
     @endif
+    
+    
 @endsection
