@@ -10,7 +10,7 @@
     <!--<h1>You Can Edit【{!! nl2br(e($quiz->title)) !!}】</h1>-->
      <!--<hr class="style9">-->
 
-    <div class="col-md-12">
+    <!--<div class="col-md-12">-->
 
     {!! Form::model($quiz, ['route' => ['quizzes.update', $quiz->id], 'method' => 'put']) !!}
 
@@ -18,20 +18,20 @@
         <div id='title'>
             <th scope="col"><h2>Title</h2></th>
             {!! Form::textarea('title') !!}
-   
-        
             {!! Form::submit('UPDATE this Title', ['class' => 'btn btn-warning btn-block']) !!}
             {!! Form::close() !!}
         </div>
 
         
-            <div class="quiz">
-
+            <!--<div class="quiz">-->
+                <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col"><h2>Question</h2></th>
-                            <th scope="col"><h2>Answer</h2></th>
+                            <th scope="col"><h4>Question</h4></th>
+                            <th scope="col"><h4>Answer</h4></th>
                            
                         </tr>
                     </thead>
@@ -40,10 +40,8 @@
                             
                             @foreach ($questions as $question)
                             <tr>
-                                <td>{!! nl2br(e($question->question)) !!}</td>
-                                <div id='title'>
+                                <td><p>{!! nl2br(e($question->question)) !!}</p></td>
                                 <td>{!! nl2br(e($question->answer)) !!}</td>
-                                </div>
 
                                 <td>
                                     {!! Form::open(['route' => ['quizzes.editquestion', $question->id], 'method' => 'get']) !!}
@@ -57,10 +55,15 @@
                                     {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs', 'onClick' => 'return deletePost(this);']) !!}
                                     {!! Form::close() !!}
                                 </td>
+                                
+                                
+                                
                             </tr>
                             @endforeach
                         </tbody>
                 </table>
+                </div>
+                </div>
                         <br><br><br>
                         <hr class="style9">
                 <div class='inline-block'><h2>More Q/A?
@@ -73,10 +76,7 @@
                         <a href="{{ route('users.mypage', ['id' => $user->id]) }}" class="pocketquiz_btn2">Back to My Page</a>
                     </div>
                 </div>
-                <!--<a href="{{ route('users.mypage', ['id' => $user->id]) }}" button type="button" class="btn btn-success btn-lg">-->
-                <!--Back to My Page</a>-->
-            </div>
-   </div>     
+                
     
     
 <script>

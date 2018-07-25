@@ -11,6 +11,8 @@ h1{
   color: #444;
   text-align: center;
   margin: 2rem 0;
+  word-break: break-all;
+  white-space: normal;
 }
 
 body { 
@@ -472,6 +474,13 @@ color: #00bfff;
  .button-inline form{
    display:inline;
  }
+ 
+ 
+ h4:first-letter {
+font-size: 1em;
+color: #00bfff;
+}
+ 
 
 textarea {
   width: 100%;
@@ -493,10 +502,31 @@ textarea {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+  
+  table td{
+    word-break: break-all;
+    white-space: normal;
+  }
+  
+  .btn-ed{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  
+  
+  
+  .td2{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+  }
   
 .style9 {
 	border-top: 1px dashed #8c8b8b;
 	border-bottom: 1px dashed #fff;
 
 }
+
 
