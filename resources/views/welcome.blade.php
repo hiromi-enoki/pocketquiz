@@ -3,7 +3,7 @@
 @section('content')
     <link rel="stylesheet" href="public/css/questions.css">
 <div>
-    <img src="{{ secure_asset("images/pocketquiz.bmp") }}" alt="pocketquiz pic" class="chuou"><br>
+    <img src="{{ secure_asset("images/pocketquiz.jpg") }}" alt="pocketquiz pic" class="chuou"><br>
 
 </div>
 

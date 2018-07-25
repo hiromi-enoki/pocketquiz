@@ -7,7 +7,7 @@
 
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-            <img src="{{ secure_asset("images/newanata.bmp") }}" alt="anata pic">
+            <img src="{{ secure_asset("images/newanata.jpg") }}" alt="anata pic">
            
         <div class="row">
             @foreach ($quizzes as $quiz) <?php $user = $quiz->user; ?>
