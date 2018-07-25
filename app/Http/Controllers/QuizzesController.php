@@ -179,11 +179,15 @@ public function show($id)
 		if (\Auth::check()) {
 		$user = \Auth::user();
 		$quiz = Quiz::find($id);
-		
+			if (\Auth::user()->id === $quiz->user_id){
 	   return view('quizzes.createquestion', [
 			'user' => $user,
 			'quiz' => $quiz
-			]);
+			]);}
+			else{
+				
+				return redirect('mypage/{id}');
+			}
 	}else {
 			return view('welcome');
 	}

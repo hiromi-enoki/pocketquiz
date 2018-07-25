@@ -56,6 +56,13 @@
 
 
     @endif
+     <div class="hidden-xs">
+    <div class="text-center">
+      <h2>On your smartphone?</h2>
+      <img src="{{ secure_asset("images/qr-code.png") }}" id="qrcode" alt="pocketquiz QRcode"><br>
+    </div>  </div>
+      
+    
     
     
 @endsection

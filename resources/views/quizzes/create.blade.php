@@ -14,7 +14,7 @@
                           <img src="{{ secure_asset("images/title.jpg") }}" alt="title pic">
                           {!! Form::textarea('title', old('title'), array('placeholder'=>"クイズのタイトルを入れてね！\n（ex:〇〇クイズ、なぞなぞ）"), ['class' => 'form-control', 'rows' => '2']) !!}<br>
                         
-                          {!! Form::submit('このタイトルのQuizにQuestion/Answerを追加する', ['class' => 'btn btn-success btn-block']) !!}
+                          {!! Form::submit('NEXT STEP : Add Q & A', ['class' => 'btn btn-success btn-block']) !!}
                       </div>
                   
                 @endif

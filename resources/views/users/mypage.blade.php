@@ -53,7 +53,7 @@
         <table class="table table-striped"style="table-layout:fixed;">
         <tr class="success">
         
-        <th>Title</th>
+        <th>Quiz Title</th>
         <th>Made by</th>
         
         </tr>
@@ -77,7 +77,7 @@
 function deletePost(e) {
   'use strict';
  
-  if (confirm('本当にDeleteしていいですか?')) {
+  if (confirm('Are you sure you delete this Quiz?')) {
   document.getElementById('form_' + e.dataset.id).submit();
   }else{ 
 return false;

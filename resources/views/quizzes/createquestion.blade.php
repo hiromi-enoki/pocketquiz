@@ -22,9 +22,9 @@
                           <img src="{{ secure_asset("images/answer.jpg") }}" alt="a pic"><br>
                           {!! Form::textarea('answer', old('answer'), array('placeholder'=>"答えをここに書いてね！\n(ex.フライパン)"), ['class' => 'form-control', 'rows' => '2']) !!}<br>
                           <!--{!! Form::submit('ADD', ['class' => 'btn btn-info btn-block']) !!}-->
+                            <button class="btn btn-info btn-block" type="submit" name="action" value="add_question">Add more Q & A</button>
+                            <button class="btn btn-success btn-block" type="submit" name="action" value="complete">FINAL STEP : Finish</button>
                        
-                            <button class="btn btn-info btn-block" type="submit" name="action" value="add_question">このQuizにさらにQuestion/Answerを追加する</button>
-                            <button class="btn btn-success btn-block" type="submit" name="action" value="complete">このQuizのクイズ作成を完了する</button>
                         
                             <!--<button class="btn btn-info btn-block" type="submit" name="action" value="add_quiz">ADD a new Quiz Title</button>-->
                       </div>

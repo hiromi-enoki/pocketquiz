@@ -6,9 +6,6 @@
         <img src="{{ secure_asset("images/editpage.jpg") }}" alt="login pic">
     </div>
 
-
-    <h1>Edit the ...【{!! nl2br(e($question->question)) !!}】</h1>
-
 <div class="col-md-12">
     {!! Form::model($question, ['route' => ['quizzes.updatequestion', $question->id], 'method' => 'put']) !!}
         
@@ -18,7 +15,7 @@
       <th scope="col"><h2>Answer</h2></th>
         {!! Form::textarea('answer') !!}<br>
         </div>
-        {!! Form::submit('UPDATE', ['class' => 'btn btn-warning btn-xs']) !!}
+        {!! Form::submit('UPDATE this Q & A', ['class' => 'btn btn-warning btn-block']) !!}
 
     {!! Form::close() !!}
 </div>
